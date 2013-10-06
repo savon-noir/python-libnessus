@@ -10,23 +10,11 @@ class NessusHost(object):
         if len(_missing_attr) == 0:
             self.__host_properties = host_properties
         else:
-            print host_properties
-            print _missing_attr
             raise Exception("Not all the attributes to create a decent "
                             "NessusHost are available. "
                             "Missing: ".format(" ".join(_missing_attr)))
 
         self.report_items = report_items
-
-        for (_dictkey, _dictvalue) in self.__host_properties.items():
-            if _dictkey not in _minimal_attr:
-                self.__dict__[_dictkey] = _dictvalue
-
-    def __getattr__(self, keyvalue):
-        _rval = ''
-        if keyvalue in self.__host_properties:
-            _rval = self.__dict__[keyvalue]
-        return _rval
 
     @property
     def name(self):
@@ -46,3 +34,6 @@ class NessusHost(object):
 
     def get_host_properties(self):
         return self.__host_properties
+
+    def get_host_property(self, property_name):
+        return self.__host_properties.get(property_name)

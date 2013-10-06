@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import xml.etree.ElementTree as ET
-from libnessus.objects import NessusHost, NessusReport
+from libnessus.objects import NessusHost, NessusVuln, NessusReport
 
 class NessusParser(object):
     @classmethod
@@ -75,7 +75,33 @@ class NessusParser(object):
 
     @classmethod
     def parse_vulnerability(cls, root=None):
-        return root
+        _vuln_data = {
+            'port': root.attrib.get('port'),
+            'svc_name': root.attrib.get('svc_name'),
+            'protocol': root.attrib.get('protocol'),
+            'severity': root.attrib.get('severity'),
+            'plugin': {
+                'plugin_id': root.attrib.get('pluginId'),
+                'plugin_name': root.attrib.get('pluginName'),
+                'plugin_family': root.attrib.get('pluginFamily'),
+            },
+            'risk_score': {},
+            'vuln_ref': { 'cve': [], 'bid': [], 'osvdb': [],
+                          'iava': [], 'iavb': [], 'xref': []
+            }
+        }
+
+        for elt in root:
+            if 'plugin_' in elt.tag or 'script_version' in elt.tag:
+                _vuln_data['plugin'].update({elt.tag: elt.text})
+            elif elt.tag == 'risk_factor' or 'cvss_' in elt.tag:
+                _vuln_data['risk_score'].update({elt.tag: elt.text})
+            elif elt.tag in ['cve', 'bid', 'osvdb', 'iava', 'iavb', 'xref']:
+                _vuln_data['vuln_ref'][elt.tag].append(elt.text)
+            else:
+                _vuln_data.update({elt.tag: elt.text})
+
+        return NessusVuln(_vuln_data)
 
     @classmethod
     def parse_fromstring(cls, nessus_data, data_type="XML"):
