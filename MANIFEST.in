@@ -1,0 +1,3 @@
+include TODO
+include *.rst *.txt
+recursive-include docs *.rst
