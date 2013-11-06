@@ -118,3 +118,28 @@ class NessusParser(object):
         except IOError:
             raise
         return rval
+
+    @classmethod
+    def parse_fromdict(cls, rdict):
+        nreport = {}
+
+        rdict = rdict.pop()
+        try:
+            if rdict.keys()[0] == '__NessusReport__':
+                r = rdict['__NessusReport__']
+                rname = r['name']
+    
+                hlist = []
+                for _host in r['_NessusReport__hosts']:
+                    _vlist = []
+                    for _vulns in _host['__NessusHost__']['report_items']:
+                        _vdictdata = _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
+                        _vlist.append(NessusVuln(_vdictdata))
+    
+                    _dhp = _host['__NessusHost__']['_NessusHost__host_properties']
+                    nh = NessusHost(_dhp, _vlist)
+                    hlist.append(nh)
+                nreport = NessusReport(name=rname, hosts=hlist)
+        except KeyError:
+            raise
+        return nreport
