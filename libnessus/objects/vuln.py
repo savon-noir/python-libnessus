@@ -59,3 +59,14 @@ class NessusVuln(object):
     def get_vuln_xref(self):
         return self.__vuln_info['vuln_ref']
 
+    @property
+    def synopsis(self):
+        return self.__vuln_info['synopsis']
+
+    @property
+    def description(self):
+        return self.__vuln_info['description']
+
+    @property
+    def solution(self):
+        return self.__vuln_info['solution']
