@@ -86,8 +86,8 @@ class NessusParser(object):
                 'plugin_family': root.attrib.get('pluginFamily'),
             },
             'risk_score': {},
-            'vuln_ref': { 'cve': [], 'bid': [], 'osvdb': [],
-                          'iava': [], 'iavb': [], 'xref': []
+            'vuln_ref': { 'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
+                          'iava': [], 'iavb': [], 'cert': [], 'xref': []}
             }
         }
 
