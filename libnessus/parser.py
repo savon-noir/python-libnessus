@@ -51,7 +51,7 @@ class NessusParser(object):
             if 'name' in nessus_report.attrib:
                 report_name = nessus_report.attrib['name']
             else:
-                report_name = 'unknown'
+                report_name = 'none'
                 sys.stderr.write("warning: Failed to get report name from report")
             nrep = NessusReport(name=report_name, hosts=nessus_hosts)
             nessus_reports.append(nrep)
@@ -60,7 +60,9 @@ class NessusParser(object):
 
     @classmethod
     def parse_host(cls, root=None):
-        _host_name = root.attrib['name'] if 'name' in root.attrib else 'unknown'
+        _host_name = root.attrib['name'] if 'name' in root.attrib else 'none'
+        print _host_name
+        print root.attrib
     
         _host_prop_elt = root.find("HostProperties")
         _dhp = dict([ (e.attrib['name'], e.text) for e in list(_host_prop_elt) ])
@@ -87,7 +89,7 @@ class NessusParser(object):
             },
             'risk_score': {},
             'vuln_ref': { 'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
-                          'iava': [], 'iavb': [], 'cert': [], 'xref': []}
+                          'iava': [], 'iavb': [], 'cert': [], 'xref': []
             }
         }
 
