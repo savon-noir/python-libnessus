@@ -25,11 +25,15 @@ class NessusHost(object):
         return self.__host_properties.get('host-ip')
 
     @property
-    def scan_start(self):
+    def address(self):
+        return self.__host_properties.get('host-ip')
+
+    @property
+    def started(self):
         return self.__host_properties.get('HOST_START')
 
     @property
-    def scan_stopped(self):
+    def ended(self):
         return self.__host_properties.get('HOST_END')
 
     def get_host_properties(self):
