@@ -40,7 +40,12 @@ class NessusParser(object):
 
     @classmethod
     def _parse_xmlv2(cls, root=None):
-        nessus_reports = []
+        """
+            This private method will return 0 or one report(as describe in nessus's doc)
+            :param root: a string representing a part or a complete nessus scan.
+            :return: NessusReport
+        """
+        nrp = None
 
         for nessus_report in root.findall("Report"):
             nessus_hosts = []
@@ -53,10 +58,9 @@ class NessusParser(object):
             else:
                 report_name = 'none'
                 sys.stderr.write("warning: Failed to get report name from report")
-            nrep = NessusReport(name=report_name, hosts=nessus_hosts)
-            nessus_reports.append(nrep)
+            nrp = NessusReport(name=report_name, hosts=nessus_hosts)
        
-        return nessus_reports
+        return nrp
 
     @classmethod
     def parse_host(cls, root=None):
