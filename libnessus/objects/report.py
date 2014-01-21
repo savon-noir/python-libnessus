@@ -1,6 +1,10 @@
-
+#!/usr/bin/env python
 
 class NessusReport(object):
+    """
+        This class represent a Nessus repport, it aims to manipulate
+        in a easy way the content, and present some metadata
+    """
     def __init__(self, name, hosts):
         self.name = name
         self.__hosts = hosts
