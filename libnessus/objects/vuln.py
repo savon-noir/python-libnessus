@@ -11,7 +11,7 @@ class NessusVuln(object):
         if len(_missing_attr) == 0:
             self.__vuln_info = vuln_info
         else:
-            raise Exception("Not all the attributes to create a decent "                                                                                                             
+            raise Exception("Not all the attributes to create a decent "
                             "NessusVuln object are available. "
                             "Missing: ".format(" ".join(_missing_attr)))
 

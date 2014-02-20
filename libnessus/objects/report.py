@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 class NessusReport(object):
     """
         This class represent a Nessus repport, it aims to manipulate

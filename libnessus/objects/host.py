@@ -3,7 +3,7 @@
 
 class NessusHost(object):
     def __init__(self, host_properties={}, report_items=[]):
-        _minimal_attr = set([ 'HOST_START', 'HOST_END', 'host-ip', 'name' ])
+        _minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
         _hostprop_attr = set(host_properties.keys())
         _missing_attr = _minimal_attr.difference(_hostprop_attr)
 
