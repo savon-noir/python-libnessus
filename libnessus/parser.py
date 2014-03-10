@@ -67,8 +67,8 @@ class NessusParser(object):
     @classmethod
     def parse_host(cls, root=None):
         _host_name = root.attrib['name'] if 'name' in root.attrib else 'none'
-        print _host_name
-        print root.attrib
+        #print _host_name
+        #print root.attrib
 
         _host_prop_elt = root.find("HostProperties")
         _dhp = dict([(e.attrib['name'], e.text) for e in list(_host_prop_elt)])

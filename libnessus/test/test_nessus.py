@@ -10,13 +10,13 @@ class TestNessus(unittest.TestCase):
        inherit from this one'''
     def setUp(self):
         '''setup a table of report based on the files in flist '''
-        fdir = os.path.dirname(os.path.realpath(__file__))
+        self.fdir = os.path.dirname(os.path.realpath(__file__))
         self.flist = [
-            {'file': "%s/%s" % (fdir, 'files/nessus_report_local2.nessus'),
+            {'file': "%s/%s" % (self.fdir, 'files/nessus_report_local2.nessus'),
              'hosts': 1},
-            {'file': "%s/%s" % (fdir, 'files/nessus_report_localpci.nessus'),
+            {'file': "%s/%s" % (self.fdir, 'files/nessus_report_localpci.nessus'),
              'hosts': 1},
-            {'file': "%s/%s" % (fdir, 'files/nessus_report_test_local.nessus'),
+            {'file': "%s/%s" % (self.fdir, 'files/nessus_report_test_local.nessus'),
              'hosts': 2},
         ]
         #parse them once and for all
@@ -28,6 +28,6 @@ class TestNessus(unittest.TestCase):
             testfile['report'] = nrp
         #cannot parse these file as it will provoque an excepetion
         self.badlist = [
-            {'file': "%s/%s" % (fdir, 'files/xxxxxxxx.nessus'),
+            {'file': "%s/%s" % (self.fdir, 'files/xxxxxxxx.nessus'),
              'hosts': 0},
         ]
