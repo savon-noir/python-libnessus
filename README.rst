@@ -1,6 +1,8 @@
 python-libnessus
 ==============
 
+|Build Status|
+
 Code status
 -----------
 
