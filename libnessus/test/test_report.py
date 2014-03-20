@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from libnessus.objects import NessusReport
+#from libnessus.objects import NessusReport
+from libnessus.objects import NessusHost
 from test_nessus import TestNessus
 
 
@@ -8,7 +9,19 @@ class TestNessusReport(TestNessus):
     """Test Report object"""
 
     def test_hosts(self):
-        """"""
+        """ Check that all obj in this array are NessusHost
+            Check the number of host in a report
+            Check the attribute is an array
+        """
+        for testfile in self.flist:
+            self.assertEqual(len(testfile['report'].hosts), testfile['hosts'])
+            self.assertEqual(
+                isinstance(testfile['report'].hosts, (
+                    list, tuple)), True)
+            for host in testfile['report'].hosts:
+                self.assertEqual(
+                    isinstance(host, NessusHost), True)
+
     def test_save(self):
         """"""
     def test_diff(self):

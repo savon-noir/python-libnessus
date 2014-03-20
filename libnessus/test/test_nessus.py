@@ -30,4 +30,4 @@ class TestNessus(unittest.TestCase):
         self.badlist = [
             {'file': "%s/%s" % (self.fdir, 'files/xxxxxxxx.nessus'),
              'hosts': 0},
-        ]
+    ]
