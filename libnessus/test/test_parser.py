@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
 from libnessus.parser import NessusParser
-from libnessus.objects import NessusReport
-from test_nessus import TestNessus
 from libnessus.objects import NessusReport, NessusHost, NessusVuln
-from test_nessus import TestNessus
 import xml.etree.ElementTree as ET
 
 
