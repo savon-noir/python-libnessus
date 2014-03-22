@@ -4,6 +4,7 @@ from libnessus.parser import NessusParser
 from libnessus.objects import NessusReport, NessusHost, NessusVuln
 import xml.etree.ElementTree as ET
 
+from test_nessus import TestNessus
 
 class TestParser(TestNessus):
     """Unit test of parser"""
@@ -30,9 +31,6 @@ class TestParser(TestNessus):
 
     def test_parse_host(self):
         """test_parse_host : check host parsing"""
-
-    def test_parse_vulnerability(self):
-        """test_parse_vulnerability : check vuln parsing"""
         fd = open("%s/files/hostnessus.xml" % self.fdir, 'r')
         s = fd.read()
         fd.close()
