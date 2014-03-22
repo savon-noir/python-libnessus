@@ -52,7 +52,7 @@ class NessusReport(object):
 
     @property
     def endtime(self):
-         """Find the end of the scan by checking all host HOST_START"""
+        """Find the end of the scan by checking all host HOST_START"""
         list_date = []
         for host in self.__hosts:
             date_object = datetime.strptime(
