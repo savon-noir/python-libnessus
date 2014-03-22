@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from datetime import datetime
+
 
 class NessusReport(object):
     """
@@ -7,6 +9,7 @@ class NessusReport(object):
         in a easy way the content, and present some metadata
     """
     def __init__(self, name, hosts):
+        """Constructor get a name and an array of hosts"""
         self.name = name
         self.__hosts = hosts
 
@@ -22,7 +25,14 @@ class NessusReport(object):
 
     @property
     def started(self):
-        pass
+        """Find the start of the scan by checking all host HOST_START"""
+        list_date = []
+        for host in self.__hosts:
+            date_object = datetime.strptime(
+                host.started, '%a %b %d %H:%M:%S %Y')
+            list_date.append(date_object)
+        list_date.sort()
+        return list_date[0]
 
     @property
     def commandline(self):
@@ -41,7 +51,14 @@ class NessusReport(object):
 
     @property
     def endtime(self):
-        pass
+        """Find the end of the scan by checking all host HOST_START"""
+        list_date = []
+        for host in self.__hosts:
+            date_object = datetime.strptime(
+                host.started, '%a %b %d %H:%M:%S %Y')
+            list_date.append(date_object)
+        list_date.sort()
+        return list_date[len(list_date)]
 
     @property
     def summary(self):

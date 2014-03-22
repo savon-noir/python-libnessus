@@ -3,6 +3,9 @@
 from libnessus.parser import NessusParser
 from libnessus.objects import NessusReport
 from test_nessus import TestNessus
+from libnessus.objects import NessusReport, NessusHost, NessusVuln
+from test_nessus import TestNessus
+import xml.etree.ElementTree as ET
 
 
 class TestParser(TestNessus):
@@ -33,3 +36,19 @@ class TestParser(TestNessus):
 
     def test_parse_vulnerability(self):
         """test_parse_vulnerability : check vuln parsing"""
+        fd = open("%s/files/hostnessus.xml" % self.fdir, 'r')
+        s = fd.read()
+        fd.close()
+        root = ET.fromstring(s)
+        host = NessusParser.parse_host(root=root)
+        self.assertEqual(
+                          isinstance(host, NessusHost), True)
+
+    def test_parse_vulnerability(self):
+        """test_parse_vulnerability : check vuln parsing"""
+        fd = open("%s/files/reportitems.xml" % self.fdir, 'r')
+        s = fd.read()
+        fd.close()
+        root = ET.fromstring(s)
+        report_item = NessusParser.parse_vulnerability(root)
+        self.assertEqual(isinstance(report_item, NessusVuln), True)
