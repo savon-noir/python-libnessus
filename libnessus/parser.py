@@ -2,6 +2,7 @@
 import xml.etree.ElementTree as ET
 from libnessus.objects import NessusHost, NessusVuln, NessusReport
 
+
 class NessusParser(object):
     @classmethod
     def parse(cls, nessus_data, data_type='XML'):
@@ -40,7 +41,13 @@ class NessusParser(object):
 
     @classmethod
     def _parse_xmlv2(cls, root=None):
-        nessus_reports = []
+        """
+            This private method will return 0 or one report
+            (as describe in nessus's doc)
+            :param root: a string representing a part or a complete nessus scan
+            :return: NessusReport or None
+        """
+        nrp = None
 
         for nessus_report in root.findall("Report"):
             nessus_hosts = []
@@ -52,20 +59,16 @@ class NessusParser(object):
                 report_name = nessus_report.attrib['name']
             else:
                 report_name = 'none'
-                sys.stderr.write("warning: Failed to get report name from report")
-            nrep = NessusReport(name=report_name, hosts=nessus_hosts)
-            nessus_reports.append(nrep)
-       
-        return nessus_reports
+                print("warning: Failed to get report name from report")
+            nrp = NessusReport(name=report_name, hosts=nessus_hosts)
+
+        return nrp
 
     @classmethod
     def parse_host(cls, root=None):
         _host_name = root.attrib['name'] if 'name' in root.attrib else 'none'
-        print _host_name
-        print root.attrib
-    
         _host_prop_elt = root.find("HostProperties")
-        _dhp = dict([ (e.attrib['name'], e.text) for e in list(_host_prop_elt) ])
+        _dhp = dict([(e.attrib['name'], e.text) for e in list(_host_prop_elt)])
         _dhp.update({'name': _host_name})
 
         _vuln_list = []
@@ -88,9 +91,9 @@ class NessusParser(object):
                 'plugin_family': root.attrib.get('pluginFamily'),
             },
             'risk_score': {},
-            'vuln_ref': { 'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
-                          'iava': [], 'iavb': [], 'cert': [], 'xref': []
-            }
+            'vuln_ref': {'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
+                         'iava': [], 'iavb': [], 'cert': [], 'xref': []
+                         }
         }
 
         for elt in root:
@@ -108,7 +111,7 @@ class NessusParser(object):
     @classmethod
     def parse_fromstring(cls, nessus_data, data_type="XML"):
         if not isinstance(nessus_data, str):
-            raise Exception("bad argument type for parse_fromstring(): should be a string")
+            raise Exception("bad argument type : should be a string")
         return cls.parse(nessus_data, data_type)
 
     @classmethod
@@ -130,15 +133,17 @@ class NessusParser(object):
             if rdict.keys()[0] == '__NessusReport__':
                 r = rdict['__NessusReport__']
                 rname = r['name']
-    
+
                 hlist = []
                 for _host in r['_NessusReport__hosts']:
                     _vlist = []
                     for _vulns in _host['__NessusHost__']['report_items']:
-                        _vdictdata = _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
+                        _vdictdata =\
+                            _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
                         _vlist.append(NessusVuln(_vdictdata))
-    
-                    _dhp = _host['__NessusHost__']['_NessusHost__host_properties']
+
+                    _dhp =\
+                        _host['__NessusHost__']['_NessusHost__host_properties']
                     nh = NessusHost(_dhp, _vlist)
                     hlist.append(nh)
                 nreport = NessusReport(name=rname, hosts=hlist)

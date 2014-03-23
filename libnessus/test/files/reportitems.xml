@@ -1,0 +1,54 @@
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+<description>This script displays, for each tested host, information about the scan itself :
+
+ - The version of the plugin set
+ - The type of scanner (Nessus or Nessus Home)
+ - The version of the Nessus Engine
+ - The port scanner(s) used
+ - The port range scanned
+ - Whether credentialed or third-party patch management    checks are possible
+ - The date of the scan
+ - The duration of the scan
+ - The number of hosts scanned in parallel
+ - The number of checks done in parallel</description>
+<fname>scan_info.nasl</fname>
+<plugin_modification_date>2013/11/21</plugin_modification_date>
+<plugin_name>Nessus Scan Information</plugin_name>
+<plugin_publication_date>2005/08/26</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.64 $</script_version>
+<solution>n/a</solution>
+<synopsis>Information about the Nessus scan.</synopsis>
+<plugin_output>Information about this scan : 
+
+Nessus version : 5.2.4
+Plugin feed version : 201401061716
+Scanner edition used : Nessus Home
+Scan policy used : pci
+Scanner IP : 127.0.0.1
+Port scanner(s) : nessus_tcp_scanner 
+Port range : 1-65535
+Thorough tests : no
+Experimental tests : no
+Paranoia level : 2
+Report Verbosity : 1
+Safe checks : yes
+Optimize the test : yes
+Credentialed checks : yes
+Patch management checks : None
+CGI scanning : enabled
+Web application tests : enabled
+Web app tests -  Test mode : single
+Web app tests -  Try all HTTP methods : yes
+Web app tests -  Maximum run time : 10 minutes.
+Web app tests -  Stop at first flaw : param
+Max hosts : 20
+Max checks : 4
+Recv timeout : 15
+Backports : None
+Allow post-scan editing: Yes
+Scan Start Date : 2014/1/7 0:21
+Scan duration : 28683 sec
+</plugin_output>
+</ReportItem>
