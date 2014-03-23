@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-#from libnessus.objects import NessusReport
 from libnessus.objects import NessusHost
 from test_nessus import TestNessus
 from datetime import datetime
@@ -49,10 +48,10 @@ class TestNessusReport(TestNessus):
             rep_end = testfile['report'].endtime
             expected = datetime.strptime(testfile['rep_end'],
                                          '%a %b %d %H:%M:%S %Y')
-            tested_obj = testfile['report']
             err_msg = "In file %s expected : %s value : %s " % (testfile['file'],
                                                                 expected,
                                                                 rep_end)
+            obj = []
             self.assertEqual(rep_end, expected, err_msg)
 
     def test_summary(self):
