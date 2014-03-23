@@ -37,7 +37,17 @@ class NessusHost(object):
         return self.__host_properties.get('HOST_END')
 
     def get_host_properties(self):
+        """Return an dict of properties
+           :return: dict
+        """
         return self.__host_properties
 
     def get_host_property(self, property_name):
-        return self.__host_properties.get(property_name)
+        """return the value of a property
+           :param property_name: The name of the property
+           :return: str or None
+        """
+        if property_name in self._hostprop_attr:
+            return self.__host_properties.get(property_name)
+        else:
+            return None
