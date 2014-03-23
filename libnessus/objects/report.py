@@ -34,20 +34,20 @@ class NessusReport(object):
         list_date.sort()
         return list_date[0]
 
-    @property
-    def commandline(self):
-        pass
-
-    @property
-    def version(self):
-        pass
-
-    @property
-    def scan_type(self):
-        pass
-
-    def get_host_byid(self, host_id):
-        pass
+#    @property
+#    def commandline(self):
+#        pass
+#
+#    @property
+#    def version(self):
+#        pass
+#
+#    @property
+#    def scan_type(self):
+#        pass
+#
+#    def get_host_byid(self, host_id):
+#        pass
 
     @property
     def endtime(self):
@@ -66,19 +66,25 @@ class NessusReport(object):
 
     @property
     def elapsed(self):
-        pass
+        """Return the amount of time of the test
+           :return: datetime
+        """
+        return self.endtime - self.started
 
-    @property
-    def hosts_up(self):
-        pass
-
-    @property
-    def hosts_down(self):
-        pass
+#    @property
+#    def hosts_up(self):
+#        pass
+#
+#    @property
+#    def hosts_down(self):
+#        pass
 
     @property
     def hosts_total(self):
-        pass
+        """Get the total number of hosts
+           :return: int
+        """
+        return len(self.__hosts)
 
-    def get_raw_data(self):
-        pass
+#    def get_raw_data(self):
+#        pass

@@ -34,14 +34,14 @@ class TestNessusReport(TestNessus):
                                             '%a %b %d %H:%M:%S %Y')
             self.assertEqual(rep_start, datefromrep)
 
-    def test_commandline(self):
-        """"""
-    def test_version(self):
-        """"""
-    def test_scan_type(self):
-        """"""
-    def test_get_host_byid(self):
-        """"""
+#    def test_commandline(self):
+#        """"""
+#    def test_version(self):
+#        """"""
+#    def test_scan_type(self):
+#        """"""
+#    def test_get_host_byid(self):
+#        """"""
     def test_endtime(self):
         """Test the endtime of the scan"""
         for testfile in self.flist:
@@ -56,12 +56,31 @@ class TestNessusReport(TestNessus):
     def test_summary(self):
         """"""
     def test_elapsed(self):
-        """"""
-    def test_hosts_up(self):
-        """"""
-    def test_hosts_down(self):
-        """"""
+        """test the difference between end and start time"""
+        for testfile in self.flist:
+            value = testfile['report'].endtime - testfile['report'].started
+            end = datetime.strptime(testfile['rep_end'], '%a %b %d %H:%M:%S %Y')
+            start = datetime.strptime(testfile['rep_start'], '%a %b %d %H:%M:%S %Y')
+            expected = end - start
+            err_msg = "In file %s expected : %s value : %s " % (testfile['file'],
+                                                                expected,
+                                                                value)
+            self.assertEqual(value, expected, err_msg)
+
+#Remove the following -->Useless
+#    def test_hosts_up(self):
+#        """"""
+#    def test_hosts_down(self):
+#        """"""
     def test_hosts_total(self):
-        """"""
-    def test_get_raw_data(self):
-        """"""
+        """Return the number of host in the report"""
+        for testfile in self.flist:
+            value = testfile['report'].hosts_total
+            expected = testfile['hosts']
+            err_msg = "In file %s expected : %s value : %s " % (testfile['file'],
+                                                                expected,
+                                                                value)
+            self.assertEqual(value, expected, err_msg)
+
+#    def test_get_raw_data(self):
+#        """"""
