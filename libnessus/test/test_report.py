@@ -3,6 +3,7 @@
 #from libnessus.objects import NessusReport
 from libnessus.objects import NessusHost
 from test_nessus import TestNessus
+from datetime import datetime
 
 
 class TestNessusReport(TestNessus):
@@ -27,7 +28,13 @@ class TestNessusReport(TestNessus):
     def test_diff(self):
         """"""
     def test_started(self):
-        """"""
+        """Test the startime of the scan"""
+        for testfile in self.flist:
+            rep_start = testfile['report'].started
+            datefromrep = datetime.strptime(testfile['rep_start'],
+                                            '%a %b %d %H:%M:%S %Y')
+            self.assertEqual(rep_start, datefromrep)
+
     def test_commandline(self):
         """"""
     def test_version(self):
@@ -37,7 +44,17 @@ class TestNessusReport(TestNessus):
     def test_get_host_byid(self):
         """"""
     def test_endtime(self):
-        """"""
+        """Test the endtime of the scan"""
+        for testfile in self.flist:
+            rep_end = testfile['report'].endtime
+            expected = datetime.strptime(testfile['rep_end'],
+                                         '%a %b %d %H:%M:%S %Y')
+            tested_obj = testfile['report']
+            err_msg = "In file %s expected : %s value : %s " % (testfile['file'],
+                                                                expected,
+                                                                rep_end)
+            self.assertEqual(rep_end, expected, err_msg)
+
     def test_summary(self):
         """"""
     def test_elapsed(self):

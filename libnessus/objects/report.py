@@ -55,10 +55,10 @@ class NessusReport(object):
         list_date = []
         for host in self.__hosts:
             date_object = datetime.strptime(
-                host.started, '%a %b %d %H:%M:%S %Y')
+                host.ended, '%a %b %d %H:%M:%S %Y')
             list_date.append(date_object)
         list_date.sort()
-        return list_date[len(list_date)]
+        return list_date[len(list_date)-1]
 
     @property
     def summary(self):
