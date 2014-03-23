@@ -51,7 +51,6 @@ class TestNessusReport(TestNessus):
             err_msg = "In file %s expected : %s value : %s " % (testfile['file'],
                                                                 expected,
                                                                 rep_end)
-            obj = []
             self.assertEqual(rep_end, expected, err_msg)
 
     def test_summary(self):
