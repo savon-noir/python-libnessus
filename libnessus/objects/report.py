@@ -12,9 +12,14 @@ class NessusReport(object):
         """Constructor get a name and an array of hosts"""
         self.name = name
         self.__hosts = hosts
+        self.__start = self.__compute_started(self.__hosts)
+        self.__end = self.__compute_ended(self.__hosts)
 
     @property
     def hosts(self):
+        """Return the list of hosts of the scan
+           :return: list
+        """
         return self.__hosts
 
     def save(self, backend):
@@ -25,35 +30,34 @@ class NessusReport(object):
 
     @property
     def started(self):
+        """Return started property
+           :return: datetime
+        """
+        return self.__start
+
+    @staticmethod
+    def __compute_started(hosts):
         """Find the start of the scan by checking all host HOST_START"""
         list_date = []
-        for host in self.__hosts:
+        for host in hosts:
             date_object = datetime.strptime(
                 host.started, '%a %b %d %H:%M:%S %Y')
             list_date.append(date_object)
         list_date.sort()
         return list_date[0]
 
-#    @property
-#    def commandline(self):
-#        pass
-#
-#    @property
-#    def version(self):
-#        pass
-#
-#    @property
-#    def scan_type(self):
-#        pass
-#
-#    def get_host_byid(self, host_id):
-#        pass
-
     @property
     def endtime(self):
-        """Find the end of the scan by checking all host HOST_START"""
+        """Return ended property
+           :return: datetime
+        """
+        return self.__end
+
+    @staticmethod
+    def __compute_ended(hosts):
+        """Find the end of the scan by checking all host HOST_END"""
         list_date = []
-        for host in self.__hosts:
+        for host in hosts:
             date_object = datetime.strptime(
                 host.ended, '%a %b %d %H:%M:%S %Y')
             list_date.append(date_object)
@@ -69,15 +73,7 @@ class NessusReport(object):
         """Return the amount of time of the test
            :return: datetime
         """
-        return self.endtime - self.started
-
-#    @property
-#    def hosts_up(self):
-#        pass
-#
-#    @property
-#    def hosts_down(self):
-#        pass
+        return self.__end - self.__start
 
     @property
     def hosts_total(self):
@@ -85,6 +81,3 @@ class NessusReport(object):
            :return: int
         """
         return len(self.__hosts)
-
-#    def get_raw_data(self):
-#        pass
