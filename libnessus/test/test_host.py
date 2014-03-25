@@ -62,8 +62,47 @@ class TestHost(TestNessus):
                 self.assertEqual(value.ended, expected, err_msg)
                 i = i + 1
 
+    def test_get_summary_total_cves(self):
+        """Test the total number of CVE for the host"""
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            i = 0
+            for value in list_hosts:
+                expected = sample['patch-summary-total-cves'][i]
+                err_msg = "In file %s expected : %s value : %s " % (sample['file'],
+                                                                    expected,
+                                                                    value)
+                self.assertEqual(value.get_summary_total_cves(), expected, err_msg)
+                i = i + 1
+
     def test_get_host_properties(self):
-        """"""
+        """test the number of properties >=4"""
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            for value in list_hosts:
+                expected = ">=4"
+                err_msg = "In file %s expected : %s value : %s " % (sample['file'],
+                                                                    expected,
+                                                                    value)
+
+                self.assertNotEqual(len(value.get_host_properties()), 0, err_msg)
+                self.assertNotEqual(len(value.get_host_properties()), 1, err_msg)
+                self.assertNotEqual(len(value.get_host_properties()), 2, err_msg)
+                self.assertNotEqual(len(value.get_host_properties()), 3, err_msg)
 
     def test_get_host_property(self):
         """"""
+
+    def test_get_total_vuln(self):
+        """Test the total number of ReportItem in a host"""
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            i = 0
+            for value in list_hosts:
+                expected = sample['totalVulnPerHost'][i]
+                err_msg = "In file %s expected : %s value : %s " % (sample['file'],
+                                                                    expected,
+                                                                    value.get_total_vuln())
+                self.assertEqual(value.get_total_vuln(), expected, err_msg)
+                i = i + 1
+
