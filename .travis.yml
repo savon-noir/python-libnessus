@@ -8,8 +8,12 @@ python:
 install:
   - "pip install pep8 --use-mirrors"
   - "pip install pyflakes --use-mirrors"
+  -  "pip install coveralls"
   - "python setup.py install"
 before_script:
   - "pep8 . --exclude test,docs,examples"
   - "pyflakes ."
-script: nosetests
+script: 
+  nosetests --with-coverage --cover-package=libnessus
+after_success:
+  coveralls
