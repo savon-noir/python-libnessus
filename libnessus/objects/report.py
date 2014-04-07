@@ -23,10 +23,10 @@ class NessusReport(object):
         return self.__hosts
 
     def save(self, backend):
-        pass
+        raise NotImplementedError
 
     def diff(self, other):
-        pass
+        raise NotImplementedError
 
     @property
     def started(self):
@@ -66,7 +66,7 @@ class NessusReport(object):
 
     @property
     def summary(self):
-        pass
+        raise NotImplementedError
 
     @property
     def elapsed(self):

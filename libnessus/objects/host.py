@@ -20,8 +20,8 @@ class NessusHost(object):
         """return a string representation of the obj nessusHost"""
         retstr = "{0} {1} {2} {3}".format(self.name,
                                           self.address,
-                                          self.get_host_properties(),
-                                          self.get_total_vuln())
+                                          self.get_host_properties,
+                                          self.get_total_vuln)
         return retstr
 
     @property
@@ -44,12 +44,14 @@ class NessusHost(object):
     def ended(self):
         return self.__host_properties.get('HOST_END')
 
+    @property
     def get_host_properties(self):
         """Return an dict of properties
            :return: dict
         """
         return self.__host_properties
 
+    @property
     def get_hostprop_attr(self):
         """Return a set of keys reprsenting all properties' key
            :return: set
@@ -66,16 +68,19 @@ class NessusHost(object):
         else:
             return None
 
+    @property
     def get_summary_total_cves(self):
         """Return the number of cve that apply to this host
            :return: int
         """
         return self.get_host_property("patch-summary-total-cves")
 
+    @property
     def get_report_items(self):
         """Return an array of vuln"""
         return self.__report_items
 
+    @property
     def get_total_vuln(self):
         """Return the number of vulnerability (reportitem)"""
         return len(self.__report_items)

@@ -34,14 +34,6 @@ class TestNessusReport(TestNessus):
                                             '%a %b %d %H:%M:%S %Y')
             self.assertEqual(rep_start, datefromrep)
 
-#    def test_commandline(self):
-#        """"""
-#    def test_version(self):
-#        """"""
-#    def test_scan_type(self):
-#        """"""
-#    def test_get_host_byid(self):
-#        """"""
     def test_endtime(self):
         """Test the endtime of the scan"""
         for testfile in self.flist:
@@ -67,11 +59,6 @@ class TestNessusReport(TestNessus):
                                                                 value)
             self.assertEqual(value, expected, err_msg)
 
-#Remove the following -->Useless
-#    def test_hosts_up(self):
-#        """"""
-#    def test_hosts_down(self):
-#        """"""
     def test_hosts_total(self):
         """Return the number of host in the report"""
         for testfile in self.flist:
@@ -81,6 +68,3 @@ class TestNessusReport(TestNessus):
                                                                 expected,
                                                                 value)
             self.assertEqual(value, expected, err_msg)
-
-#    def test_get_raw_data(self):
-#        """"""

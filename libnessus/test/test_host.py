@@ -1,11 +1,21 @@
 #!/usr/bin/env python
 
-#from libnessus.objects import NessusHost
+from libnessus.objects import NessusHost
 from test_nessus import TestNessus
 
 
 class TestHost(TestNessus):
     """Test Host object"""
+
+    def test_init(self):
+        """test exception with incomplete obj"""
+        rep = self.flist[0]
+        hosts = rep['report'].hosts
+        host = hosts[0]
+        host_properties = host.get_host_properties
+        report_items = host.get_report_items
+        del host_properties['name']
+        self.assertRaises(Exception, NessusHost, host_properties, report_items)
 
     def test_name(self):
         """check the name of hosts"""
@@ -72,7 +82,7 @@ class TestHost(TestNessus):
                 err_msg = "In file %s expected : %s value : %s " % (sample['file'],
                                                                     expected,
                                                                     value)
-                self.assertEqual(value.get_summary_total_cves(), expected, err_msg)
+                self.assertEqual(value.get_summary_total_cves, expected, err_msg)
                 i = i + 1
 
     def test_get_host_properties(self):
@@ -85,13 +95,26 @@ class TestHost(TestNessus):
                                                                     expected,
                                                                     value)
 
-                self.assertNotEqual(len(value.get_host_properties()), 0, err_msg)
-                self.assertNotEqual(len(value.get_host_properties()), 1, err_msg)
-                self.assertNotEqual(len(value.get_host_properties()), 2, err_msg)
-                self.assertNotEqual(len(value.get_host_properties()), 3, err_msg)
+                self.assertNotEqual(len(value.get_host_properties), 0, err_msg)
+                self.assertNotEqual(len(value.get_host_properties), 1, err_msg)
+                self.assertNotEqual(len(value.get_host_properties), 2, err_msg)
+                self.assertNotEqual(len(value.get_host_properties), 3, err_msg)
 
     def test_get_host_property(self):
-        """"""
+        """Check getHostproperty with a key as param + None value"""
+        rep = self.flist[0]
+        hosts = rep['report'].hosts
+        value = hosts[0]
+        expected = "localhost"
+
+        err_msg = "Expected : %s value : %s " % (
+                                                            expected,
+                                                            value)
+        self.assertEqual(value.get_host_property("name"), expected, err_msg)
+        err_msg = "Expected : %s value : %s " % (
+                                                            "None",
+                                                            value)
+        self.assertEqual(value.get_host_property("kjskljdsfjname"), None, err_msg)
 
     def test_get_total_vuln(self):
         """Test the total number of ReportItem in a host"""
@@ -102,7 +125,6 @@ class TestHost(TestNessus):
                 expected = sample['totalVulnPerHost'][i]
                 err_msg = "In file %s expected : %s value : %s " % (sample['file'],
                                                                     expected,
-                                                                    value.get_total_vuln())
-                self.assertEqual(value.get_total_vuln(), expected, err_msg)
+                                                                    value.get_total_vuln)
+                self.assertEqual(value.get_total_vuln, expected, err_msg)
                 i = i + 1
-
