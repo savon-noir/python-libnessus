@@ -1,0 +1,3129 @@
+<?xml version="1.0" ?>
+<NessusClientData_v2>
+<Policy><policyName>pci</policyName>
+<policyComments>pcieeeee</policyComments>
+<Preferences><ServerPreferences><preference><name>max_simult_tcp_sessions</name>
+<value>unlimited</value>
+</preference>
+<preference><name>plugin_set</name>
+</preference>
+<preference><name>TARGET</name>
+<value>127.0.0.1</value>
+</preference>
+<preference><name>throttle_scan</name>
+<value>yes</value>
+</preference>
+<preference><name>listen_address</name>
+<value>0.0.0.0</value>
+</preference>
+<preference><name>slice_network_addresses</name>
+<value>no</value>
+</preference>
+<preference><name>non_simult_ports</name>
+<value>139, 445, 3389</value>
+</preference>
+<preference><name>max_checks</name>
+<value>4</value>
+</preference>
+<preference><name>stop_scan_on_disconnect</name>
+<value>no</value>
+</preference>
+<preference><name>report_crashes</name>
+<value>yes</value>
+</preference>
+<preference><name>host.max_simult_tcp_sessions</name>
+<value>unlimited</value>
+</preference>
+<preference><name>xmlrpc_listen_port</name>
+<value>8834</value>
+</preference>
+<preference><name>name</name>
+<value>pci</value>
+</preference>
+<preference><name>whoami</name>
+<value>admin</value>
+</preference>
+<preference><name>optimize_test</name>
+<value>yes</value>
+</preference>
+<preference><name>log_whole_attack</name>
+<value>no</value>
+</preference>
+<preference><name>ssl_cipher_list</name>
+<value>strong</value>
+</preference>
+<preference><name>cgi_path</name>
+<value>/cgi-bin:/scripts</value>
+</preference>
+<preference><name>use_kernel_congestion_detection</name>
+<value>yes</value>
+</preference>
+<preference><name>listen_port</name>
+<value>1241</value>
+</preference>
+<preference><name>auto_update</name>
+<value>yes</value>
+</preference>
+<preference><name>checks_read_timeout</name>
+<value>15</value>
+</preference>
+<preference><name>plugins_timeout</name>
+<value>320</value>
+</preference>
+<preference><name>auto_enable_dependencies</name>
+<value>yes</value>
+</preference>
+<preference><name>safe_checks</name>
+<value>yes</value>
+</preference>
+<preference><name>report_task_id</name>
+<value>628941f2-9bbf-e0b1-3e90-2f7f25a11496be703eca51ded53e</value>
+</preference>
+<preference><name>stop_scan_on_hang</name>
+<value>no</value>
+</preference>
+<preference><name>allow_post_scan_editing</name>
+<value>yes</value>
+</preference>
+<preference><name>visibility</name>
+<value>shared</value>
+</preference>
+<preference><name>wizard_uuid</name>
+<value>e460ea7c-7916-d001-51dc-e43ef3168e6e20f1d97bdebf4a49</value>
+</preference>
+<preference><name>max_hosts</name>
+<value>20</value>
+</preference>
+<preference><name>plugin_upload</name>
+<value>yes</value>
+</preference>
+<preference><name>reduce_connections_on_congestion</name>
+<value>yes</value>
+</preference>
+<preference><name>feed_type</name>
+<value>HomeFeed</value>
+</preference>
+<preference><name>silent_dependencies</name>
+<value>yes</value>
+</preference>
+<preference><name>port_range</name>
+<value>1-65535</value>
+</preference>
+</ServerPreferences>
+<PluginsPreferences><item><pluginName>IBM iSeries Credentials</pluginName>
+<pluginId>57861</pluginId>
+<fullName>IBM iSeries Credentials[entry]:Login :</fullName>
+<preferenceName>Login :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>IBM iSeries Credentials</pluginName>
+<pluginId>57861</pluginId>
+<fullName>IBM iSeries Credentials[password]:Password :</fullName>
+<preferenceName>Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Wake-on-LAN</pluginName>
+<pluginId>52616</pluginId>
+<fullName>Wake-on-LAN[file]:List of MAC addresses for Wake-on-LAN:</fullName>
+<preferenceName>List of MAC addresses for Wake-on-LAN:</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Wake-on-LAN</pluginName>
+<pluginId>52616</pluginId>
+<fullName>Wake-on-LAN[entry]:Time to wait (in minutes) for the systems to boot:</fullName>
+<preferenceName>Time to wait (in minutes) for the systems to boot:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>5</preferenceValues>
+<selectedValue>5</selectedValue>
+</item>
+<item><pluginName>Do not scan fragile devices</pluginName>
+<pluginId>22481</pluginId>
+<fullName>Do not scan fragile devices[checkbox]:Scan Network Printers</fullName>
+<preferenceName>Scan Network Printers</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Do not scan fragile devices</pluginName>
+<pluginId>22481</pluginId>
+<fullName>Do not scan fragile devices[checkbox]:Scan Novell Netware hosts</fullName>
+<preferenceName>Scan Novell Netware hosts</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Port scanners settings</pluginName>
+<pluginId>33812</pluginId>
+<fullName>Port scanners settings[checkbox]:Check open TCP ports found by local port enumerators</fullName>
+<preferenceName>Check open TCP ports found by local port enumerators</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Port scanners settings</pluginName>
+<pluginId>33812</pluginId>
+<fullName>Port scanners settings[checkbox]:Only run network port scanners if local port enumeration failed</fullName>
+<preferenceName>Only run network port scanners if local port enumeration failed</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[entry]:Login :</fullName>
+<preferenceName>Login :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[password]:Password :</fullName>
+<preferenceName>Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[radio]:DB Type :</fullName>
+<preferenceName>DB Type :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Oracle;SQL Server;MySQL;DB2;Informix/DRDA;PostgreSQL</preferenceValues>
+<selectedValue>Oracle;SQL Server;MySQL;DB2;Informix/DRDA;PostgreSQL</selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[entry]:Database SID :</fullName>
+<preferenceName>Database SID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[entry]:Database port to use :</fullName>
+<preferenceName>Database port to use :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[radio]:Oracle auth type:</fullName>
+<preferenceName>Oracle auth type:</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>NORMAL;SYSOPER;SYSDBA</preferenceValues>
+<selectedValue>NORMAL;SYSOPER;SYSDBA</selectedValue>
+</item>
+<item><pluginName>Database settings</pluginName>
+<pluginId>33815</pluginId>
+<fullName>Database settings[radio]:SQL Server auth type:</fullName>
+<preferenceName>SQL Server auth type:</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Windows;SQL</preferenceValues>
+<selectedValue>Windows;SQL</selectedValue>
+</item>
+<item><pluginName>Cleartext protocols settings</pluginName>
+<pluginId>21744</pluginId>
+<fullName>Cleartext protocols settings[entry]:User name :</fullName>
+<preferenceName>User name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Cleartext protocols settings</pluginName>
+<pluginId>21744</pluginId>
+<fullName>Cleartext protocols settings[password]:Password (unsafe!) :</fullName>
+<preferenceName>Password (unsafe!) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Cleartext protocols settings</pluginName>
+<pluginId>21744</pluginId>
+<fullName>Cleartext protocols settings[checkbox]:Try to perform patch level checks over telnet</fullName>
+<preferenceName>Try to perform patch level checks over telnet</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Cleartext protocols settings</pluginName>
+<pluginId>21744</pluginId>
+<fullName>Cleartext protocols settings[checkbox]:Try to perform patch level checks over rsh</fullName>
+<preferenceName>Try to perform patch level checks over rsh</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Cleartext protocols settings</pluginName>
+<pluginId>21744</pluginId>
+<fullName>Cleartext protocols settings[checkbox]:Try to perform patch level checks over rexec</fullName>
+<preferenceName>Try to perform patch level checks over rexec</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[entry]:TCP ping destination port(s) :</fullName>
+<preferenceName>TCP ping destination port(s) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>built-in</preferenceValues>
+<selectedValue>built-in</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Do an ARP ping</fullName>
+<preferenceName>Do an ARP ping</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Do a TCP ping</fullName>
+<preferenceName>Do a TCP ping</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Do an ICMP ping</fullName>
+<preferenceName>Do an ICMP ping</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[entry]:Number of retries (ICMP) :</fullName>
+<preferenceName>Number of retries (ICMP) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>2</preferenceValues>
+<selectedValue>2</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Do an applicative UDP ping (DNS,RPC...)</fullName>
+<preferenceName>Do an applicative UDP ping (DNS,RPC...)</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Make the dead hosts appear in the report</fullName>
+<preferenceName>Make the dead hosts appear in the report</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Log live hosts in the report</fullName>
+<preferenceName>Log live hosts in the report</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Test the local Nessus host</fullName>
+<preferenceName>Test the local Nessus host</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Ping the remote host</pluginName>
+<pluginId>10180</pluginId>
+<fullName>Ping the remote host[checkbox]:Fast network discovery</fullName>
+<preferenceName>Fast network discovery</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Server :</fullName>
+<preferenceName>Web Reports Server :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Port :</fullName>
+<preferenceName>Web Reports Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Username :</fullName>
+<preferenceName>Web Reports Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[password]:Web Reports Password :</fullName>
+<preferenceName>Web Reports Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[checkbox]:SSL :</fullName>
+<preferenceName>SSL :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: IBM Tivoli Endpoint Manager Server Settings</pluginName>
+<pluginId>62558</pluginId>
+<fullName>Patch Management: IBM Tivoli Endpoint Manager Server Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: Red Hat Satellite Server Settings</pluginName>
+<pluginId>57063</pluginId>
+<fullName>Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite server(s) [separated w/ semicolons] :</fullName>
+<preferenceName>Red Hat Satellite server(s) [separated w/ semicolons] :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: Red Hat Satellite Server Settings</pluginName>
+<pluginId>57063</pluginId>
+<fullName>Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite port(s) :</fullName>
+<preferenceName>Red Hat Satellite port(s) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>443</preferenceValues>
+<selectedValue>443</selectedValue>
+</item>
+<item><pluginName>Patch Management: Red Hat Satellite Server Settings</pluginName>
+<pluginId>57063</pluginId>
+<fullName>Patch Management: Red Hat Satellite Server Settings[checkbox]:Verify SSL certificates :</fullName>
+<preferenceName>Verify SSL certificates :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: Red Hat Satellite Server Settings</pluginName>
+<pluginId>57063</pluginId>
+<fullName>Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite username(s) :</fullName>
+<preferenceName>Red Hat Satellite username(s) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: Red Hat Satellite Server Settings</pluginName>
+<pluginId>57063</pluginId>
+<fullName>Patch Management: Red Hat Satellite Server Settings[password]:Red Hat Satellite password(s) :</fullName>
+<preferenceName>Red Hat Satellite password(s) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[file]:SCAP File (zip) #1 :</fullName>
+<preferenceName>SCAP File (zip) #1 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:SCAP Version #1 :</fullName>
+<preferenceName>SCAP Version #1 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #1 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #1 :</fullName>
+<preferenceName>SCAP Benchmark ID #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Profile ID #1 :</fullName>
+<preferenceName>SCAP Profile ID #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:OVAL Result Type #1 :</fullName>
+<preferenceName>OVAL Result Type #1 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[file]:SCAP File (zip) #2 :</fullName>
+<preferenceName>SCAP File (zip) #2 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:SCAP Version #2 :</fullName>
+<preferenceName>SCAP Version #2 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #2 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #2 :</fullName>
+<preferenceName>SCAP Benchmark ID #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Profile ID #2 :</fullName>
+<preferenceName>SCAP Profile ID #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:OVAL Result Type #2 :</fullName>
+<preferenceName>OVAL Result Type #2 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[file]:SCAP File (zip) #3 :</fullName>
+<preferenceName>SCAP File (zip) #3 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:SCAP Version #3 :</fullName>
+<preferenceName>SCAP Version #3 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #3 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #3 :</fullName>
+<preferenceName>SCAP Benchmark ID #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Profile ID #3 :</fullName>
+<preferenceName>SCAP Profile ID #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:OVAL Result Type #3 :</fullName>
+<preferenceName>OVAL Result Type #3 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[file]:SCAP File (zip) #4 :</fullName>
+<preferenceName>SCAP File (zip) #4 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:SCAP Version #4 :</fullName>
+<preferenceName>SCAP Version #4 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #4 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #4 :</fullName>
+<preferenceName>SCAP Benchmark ID #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Profile ID #4 :</fullName>
+<preferenceName>SCAP Profile ID #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:OVAL Result Type #4 :</fullName>
+<preferenceName>OVAL Result Type #4 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[file]:SCAP File (zip) #5 :</fullName>
+<preferenceName>SCAP File (zip) #5 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:SCAP Version #5 :</fullName>
+<preferenceName>SCAP Version #5 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #5 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #5 :</fullName>
+<preferenceName>SCAP Benchmark ID #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[entry]:SCAP Profile ID #5 :</fullName>
+<preferenceName>SCAP Profile ID #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Linux Compliance Checks</pluginName>
+<pluginId>66757</pluginId>
+<fullName>SCAP Linux Compliance Checks[radio]:OVAL Result Type #5 :</fullName>
+<preferenceName>OVAL Result Type #5 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[checkbox]:Probe services on every port</fullName>
+<preferenceName>Probe services on every port</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[checkbox]:Do not log in with user accounts not specified in the policy</fullName>
+<preferenceName>Do not log in with user accounts not specified in the policy</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[checkbox]:Enable CGI scanning</fullName>
+<preferenceName>Enable CGI scanning</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[radio]:Network type</fullName>
+<preferenceName>Network type</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Mixed (use RFC 1918);Private LAN;Public WAN (Internet)</preferenceValues>
+<selectedValue>Mixed (use RFC 1918);Private LAN;Public WAN (Internet)</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[checkbox]:Enable experimental scripts</fullName>
+<preferenceName>Enable experimental scripts</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[checkbox]:Thorough tests (slow)</fullName>
+<preferenceName>Thorough tests (slow)</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[radio]:Report verbosity</fullName>
+<preferenceName>Report verbosity</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Normal;Quiet;Verbose</preferenceValues>
+<selectedValue>Normal;Quiet;Verbose</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[radio]:Report paranoia</fullName>
+<preferenceName>Report paranoia</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Normal;Avoid false alarms;Paranoid (more false alarms)</preferenceValues>
+<selectedValue>Paranoid (more false alarms)</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[entry]:HTTP User-Agent</fullName>
+<preferenceName>HTTP User-Agent</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)</preferenceValues>
+<selectedValue>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)</selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[file]:SSL certificate to use :</fullName>
+<preferenceName>SSL certificate to use :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[file]:SSL CA to trust :</fullName>
+<preferenceName>SSL CA to trust :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[file]:SSL key to use :</fullName>
+<preferenceName>SSL key to use :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Global variable settings</pluginName>
+<pluginId>12288</pluginId>
+<fullName>Global variable settings[password]:SSL password for SSL key :</fullName>
+<preferenceName>SSL password for SSL key :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[file]:SCAP File (zip) #1 :</fullName>
+<preferenceName>SCAP File (zip) #1 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:SCAP Version #1 :</fullName>
+<preferenceName>SCAP Version #1 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #1 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #1 :</fullName>
+<preferenceName>SCAP Benchmark ID #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Profile ID #1 :</fullName>
+<preferenceName>SCAP Profile ID #1 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:OVAL Result Type #1 :</fullName>
+<preferenceName>OVAL Result Type #1 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[file]:SCAP File (zip) #2 :</fullName>
+<preferenceName>SCAP File (zip) #2 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:SCAP Version #2 :</fullName>
+<preferenceName>SCAP Version #2 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #2 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #2 :</fullName>
+<preferenceName>SCAP Benchmark ID #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Profile ID #2 :</fullName>
+<preferenceName>SCAP Profile ID #2 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:OVAL Result Type #2 :</fullName>
+<preferenceName>OVAL Result Type #2 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[file]:SCAP File (zip) #3 :</fullName>
+<preferenceName>SCAP File (zip) #3 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:SCAP Version #3 :</fullName>
+<preferenceName>SCAP Version #3 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #3 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #3 :</fullName>
+<preferenceName>SCAP Benchmark ID #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Profile ID #3 :</fullName>
+<preferenceName>SCAP Profile ID #3 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:OVAL Result Type #3 :</fullName>
+<preferenceName>OVAL Result Type #3 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[file]:SCAP File (zip) #4 :</fullName>
+<preferenceName>SCAP File (zip) #4 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:SCAP Version #4 :</fullName>
+<preferenceName>SCAP Version #4 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #4 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #4 :</fullName>
+<preferenceName>SCAP Benchmark ID #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Profile ID #4 :</fullName>
+<preferenceName>SCAP Profile ID #4 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:OVAL Result Type #4 :</fullName>
+<preferenceName>OVAL Result Type #4 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[file]:SCAP File (zip) #5 :</fullName>
+<preferenceName>SCAP File (zip) #5 :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:SCAP Version #5 :</fullName>
+<preferenceName>SCAP Version #5 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>1.2;1.1;1.0</preferenceValues>
+<selectedValue>1.2;1.1;1.0</selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #5 :</fullName>
+<preferenceName>SCAP Data Stream ID (1.2 only) #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #5 :</fullName>
+<preferenceName>SCAP Benchmark ID #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[entry]:SCAP Profile ID #5 :</fullName>
+<preferenceName>SCAP Profile ID #5 :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SCAP Windows Compliance Checks</pluginName>
+<pluginId>66756</pluginId>
+<fullName>SCAP Windows Compliance Checks[radio]:OVAL Result Type #5 :</fullName>
+<preferenceName>OVAL Result Type #5 :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</preferenceValues>
+<selectedValue>Full results w/ system characteristics;Full results w/o system characteristics;Thin results</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[checkbox]:Enable web applications tests</fullName>
+<preferenceName>Enable web applications tests</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[entry]:Maximum run time (min) :</fullName>
+<preferenceName>Maximum run time (min) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>60</preferenceValues>
+<selectedValue>10</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[checkbox]:Try all HTTP methods</fullName>
+<preferenceName>Try all HTTP methods</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[radio]:Combinations of arguments values</fullName>
+<preferenceName>Combinations of arguments values</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>one value;some pairs;all pairs (slower but efficient);some combinations;all combinations (extremely slow)</preferenceValues>
+<selectedValue>one value;some pairs;all pairs (slower but efficient);some combinations;all combinations (extremely slow)</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[checkbox]:HTTP Parameter Pollution</fullName>
+<preferenceName>HTTP Parameter Pollution</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[radio]:Stop at first flaw</fullName>
+<preferenceName>Stop at first flaw</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>per CGI;per port (quicker);per parameter (slow);look for all flaws (slower)</preferenceValues>
+<selectedValue>per parameter (slow)</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[checkbox]:Test embedded web servers</fullName>
+<preferenceName>Test embedded web servers</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Web Application Tests Settings</pluginName>
+<pluginId>39471</pluginId>
+<fullName>Web Application Tests Settings[entry]:URL for Remote File Inclusion :</fullName>
+<preferenceName>URL for Remote File Inclusion :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>http://rfi.nessus.org/rfi.txt</preferenceValues>
+<selectedValue>http://rfi.nessus.org/rfi.txt</selectedValue>
+</item>
+<item><pluginName>Oracle Settings</pluginName>
+<pluginId>22076</pluginId>
+<fullName>Oracle Settings[entry]:Oracle SID :</fullName>
+<preferenceName>Oracle SID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Oracle Settings</pluginName>
+<pluginId>22076</pluginId>
+<fullName>Oracle Settings[checkbox]:Test default accounts (slow)</fullName>
+<preferenceName>Test default accounts (slow)</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Service Detection</pluginName>
+<pluginId>22964</pluginId>
+<fullName>Service Detection[radio]:Test SSL based services</fullName>
+<preferenceName>Test SSL based services</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Known SSL ports;All;None</preferenceValues>
+<selectedValue>All</selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Host :</fullName>
+<preferenceName>Host :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>services.shavlik.com</preferenceValues>
+<selectedValue>services.shavlik.com</selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Port :</fullName>
+<preferenceName>Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>443</preferenceValues>
+<selectedValue>443</selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Username :</fullName>
+<preferenceName>Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[password]:Password :</fullName>
+<preferenceName>Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Domain :</fullName>
+<preferenceName>Domain :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:API path :</fullName>
+<preferenceName>API path :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/api/authenticationbroker/account/httpIssue.svc/</preferenceValues>
+<selectedValue>/api/authenticationbroker/account/httpIssue.svc/</selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Authentication realm :</fullName>
+<preferenceName>Authentication realm :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>https://services.shavlik.com/api/dataservices/v1r1/default.aspx</preferenceValues>
+<selectedValue>https://services.shavlik.com/api/dataservices/v1r1/default.aspx</selectedValue>
+</item>
+<item><pluginName>Patch Management: VMware Go Server Settings</pluginName>
+<pluginId>57026</pluginId>
+<fullName>Patch Management: VMware Go Server Settings[entry]:Service path :</fullName>
+<preferenceName>Service path :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/api/dataservices/v1r1/OData.svc/</preferenceValues>
+<selectedValue>/api/dataservices/v1r1/OData.svc/</selectedValue>
+</item>
+<item><pluginName>Patch Report</pluginName>
+<pluginId>66334</pluginId>
+<fullName>Patch Report[checkbox]:Display the superseded patches in the report</fullName>
+<preferenceName>Display the superseded patches in the report</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>HTTP cookies import</pluginName>
+<pluginId>42893</pluginId>
+<fullName>HTTP cookies import[file]:Cookies file :</fullName>
+<preferenceName>Cookies file :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[entry]:Apple Profile Manager server :</fullName>
+<preferenceName>Apple Profile Manager server :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[entry]:Apple Profile Manager port :</fullName>
+<preferenceName>Apple Profile Manager port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>443</preferenceValues>
+<selectedValue>443</selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[entry]:Apple Profile Manager username :</fullName>
+<preferenceName>Apple Profile Manager username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[password]:Apple Profile Manager password :</fullName>
+<preferenceName>Apple Profile Manager password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[checkbox]:SSL :</fullName>
+<preferenceName>SSL :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[checkbox]:Force Device Updates :</fullName>
+<preferenceName>Force Device Updates :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Apple Profile Manager API Settings</pluginName>
+<pluginId>60032</pluginId>
+<fullName>Apple Profile Manager API Settings[entry]:Device Update Timeout (Minutes) :</fullName>
+<preferenceName>Device Update Timeout (Minutes) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>5</preferenceValues>
+<selectedValue>5</selectedValue>
+</item>
+<item><pluginName>Palo Alto Networks PAN-OS Settings</pluginName>
+<pluginId>64286</pluginId>
+<fullName>Palo Alto Networks PAN-OS Settings[entry]:Palo Alto Username :</fullName>
+<preferenceName>Palo Alto Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Palo Alto Networks PAN-OS Settings</pluginName>
+<pluginId>64286</pluginId>
+<fullName>Palo Alto Networks PAN-OS Settings[password]:Palo Alto Password :</fullName>
+<preferenceName>Palo Alto Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Palo Alto Networks PAN-OS Settings</pluginName>
+<pluginId>64286</pluginId>
+<fullName>Palo Alto Networks PAN-OS Settings[entry]:Palo Alto Port :</fullName>
+<preferenceName>Palo Alto Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>443</preferenceValues>
+<selectedValue>443</selectedValue>
+</item>
+<item><pluginName>Palo Alto Networks PAN-OS Settings</pluginName>
+<pluginId>64286</pluginId>
+<fullName>Palo Alto Networks PAN-OS Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:SSH user name :</fullName>
+<preferenceName>SSH user name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>root</preferenceValues>
+<selectedValue>root</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:SSH password (unsafe!) :</fullName>
+<preferenceName>SSH password (unsafe!) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[file]:SSH public key to use :</fullName>
+<preferenceName>SSH public key to use :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[file]:SSH private key to use :</fullName>
+<preferenceName>SSH private key to use :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Passphrase for SSH key :</fullName>
+<preferenceName>Passphrase for SSH key :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[radio]:Elevate privileges with :</fullName>
+<preferenceName>Elevate privileges with :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Nothing;sudo;su;su+sudo;dzdo;pbrun;Cisco &apos;enable&apos;</preferenceValues>
+<selectedValue>Nothing;sudo;su;su+sudo;dzdo;pbrun;Cisco &apos;enable&apos;</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Privilege elevation binary path (directory) :</fullName>
+<preferenceName>Privilege elevation binary path (directory) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:su login :</fullName>
+<preferenceName>su login :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Escalation account :</fullName>
+<preferenceName>Escalation account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>root</preferenceValues>
+<selectedValue>root</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Escalation password :</fullName>
+<preferenceName>Escalation password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[file]:SSH known_hosts file :</fullName>
+<preferenceName>SSH known_hosts file :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Preferred SSH port :</fullName>
+<preferenceName>Preferred SSH port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>22</preferenceValues>
+<selectedValue>22</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Client version :</fullName>
+<preferenceName>Client version :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>OpenSSH_5.0</preferenceValues>
+<selectedValue>OpenSSH_5.0</selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Additional SSH user name (1) :</fullName>
+<preferenceName>Additional SSH user name (1) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Additional SSH password (1) :</fullName>
+<preferenceName>Additional SSH password (1) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Additional SSH user name (2) :</fullName>
+<preferenceName>Additional SSH user name (2) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Additional SSH password (2) :</fullName>
+<preferenceName>Additional SSH password (2) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Additional SSH user name (3) :</fullName>
+<preferenceName>Additional SSH user name (3) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Additional SSH password (3) :</fullName>
+<preferenceName>Additional SSH password (3) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Additional SSH user name (4) :</fullName>
+<preferenceName>Additional SSH user name (4) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Additional SSH password (4) :</fullName>
+<preferenceName>Additional SSH password (4) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[entry]:Additional SSH user name (5) :</fullName>
+<preferenceName>Additional SSH user name (5) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SSH settings</pluginName>
+<pluginId>14273</pluginId>
+<fullName>SSH settings[password]:Additional SSH password (5) :</fullName>
+<preferenceName>Additional SSH password (5) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Antivirus Software Check</pluginName>
+<pluginId>16193</pluginId>
+<fullName>Antivirus Software Check[entry]:Delay (in days, between 0 and 7) :</fullName>
+<preferenceName>Delay (in days, between 0 and 7) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>0</preferenceValues>
+<selectedValue>0</selectedValue>
+</item>
+<item><pluginName>SMTP settings</pluginName>
+<pluginId>11038</pluginId>
+<fullName>SMTP settings[entry]:Third party domain :</fullName>
+<preferenceName>Third party domain :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>example.com</preferenceValues>
+<selectedValue>example.com</selectedValue>
+</item>
+<item><pluginName>SMTP settings</pluginName>
+<pluginId>11038</pluginId>
+<fullName>SMTP settings[entry]:From address :</fullName>
+<preferenceName>From address :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>nobody@example.com</preferenceValues>
+<selectedValue>nobody@example.com</selectedValue>
+</item>
+<item><pluginName>SMTP settings</pluginName>
+<pluginId>11038</pluginId>
+<fullName>SMTP settings[entry]:To address :</fullName>
+<preferenceName>To address :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>postmaster@[AUTO_REPLACED_IP]</preferenceValues>
+<selectedValue>postmaster@[AUTO_REPLACED_IP]</selectedValue>
+</item>
+<item><pluginName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration</pluginName>
+<pluginId>58038</pluginId>
+<fullName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration[entry]:LDAP user :</fullName>
+<preferenceName>LDAP user :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration</pluginName>
+<pluginId>58038</pluginId>
+<fullName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration[password]:LDAP password :</fullName>
+<preferenceName>LDAP password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration</pluginName>
+<pluginId>58038</pluginId>
+<fullName>LDAP &apos;Domain Admins&apos; Group Membership Enumeration[entry]:Max results :</fullName>
+<preferenceName>Max results :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1000</preferenceValues>
+<selectedValue>1000</selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[entry]:WSUS Server :</fullName>
+<preferenceName>WSUS Server :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[entry]:WSUS Port :</fullName>
+<preferenceName>WSUS Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[entry]:WSUS Username :</fullName>
+<preferenceName>WSUS Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[password]:WSUS Password :</fullName>
+<preferenceName>WSUS Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[checkbox]:SSL :</fullName>
+<preferenceName>SSL :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: WSUS Server Settings</pluginName>
+<pluginId>57031</pluginId>
+<fullName>Patch Management: WSUS Server Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Login page :</fullName>
+<preferenceName>Login page :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/</preferenceValues>
+<selectedValue>/</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Login form :</fullName>
+<preferenceName>Login form :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Login form fields :</fullName>
+<preferenceName>Login form fields :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>user=%USER%&amp;pass=%PASS%</preferenceValues>
+<selectedValue>user=%USER%&amp;pass=%PASS%</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[radio]:Login form method :</fullName>
+<preferenceName>Login form method :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>POST;GET</preferenceValues>
+<selectedValue>POST;GET</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[checkbox]:Automated login page search</fullName>
+<preferenceName>Automated login page search</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Re-authenticate delay (seconds) :</fullName>
+<preferenceName>Re-authenticate delay (seconds) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Check authentication on page :</fullName>
+<preferenceName>Check authentication on page :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Follow 30x redirections (# of levels) :</fullName>
+<preferenceName>Follow 30x redirections (# of levels) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>2</preferenceValues>
+<selectedValue>2</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[entry]:Authenticated regex :</fullName>
+<preferenceName>Authenticated regex :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[checkbox]:Invert test (disconnected if regex matches)</fullName>
+<preferenceName>Invert test (disconnected if regex matches)</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[checkbox]:Match regex on HTTP headers</fullName>
+<preferenceName>Match regex on HTTP headers</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[checkbox]:Case insensitive regex</fullName>
+<preferenceName>Case insensitive regex</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>HTTP login page</pluginName>
+<pluginId>11149</pluginId>
+<fullName>HTTP login page[checkbox]:Abort web application tests if login fails</fullName>
+<preferenceName>Abort web application tests if login fails</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Patch Management: SCCM Server Settings</pluginName>
+<pluginId>57029</pluginId>
+<fullName>Patch Management: SCCM Server Settings[entry]:SCCM Server :</fullName>
+<preferenceName>SCCM Server :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: SCCM Server Settings</pluginName>
+<pluginId>57029</pluginId>
+<fullName>Patch Management: SCCM Server Settings[entry]:SCCM Domain :</fullName>
+<preferenceName>SCCM Domain :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: SCCM Server Settings</pluginName>
+<pluginId>57029</pluginId>
+<fullName>Patch Management: SCCM Server Settings[entry]:SCCM Username :</fullName>
+<preferenceName>SCCM Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Patch Management: SCCM Server Settings</pluginName>
+<pluginId>57029</pluginId>
+<fullName>Patch Management: SCCM Server Settings[password]:SCCM Password :</fullName>
+<preferenceName>SCCM Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Malicious Process Detection</pluginName>
+<pluginId>59275</pluginId>
+<fullName>Malicious Process Detection[file]:Additional MD5 hashes (optional) :</fullName>
+<preferenceName>Additional MD5 hashes (optional) :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Malicious Process Detection</pluginName>
+<pluginId>59275</pluginId>
+<fullName>Malicious Process Detection[file]:Known good MD5 hashes (optional) :</fullName>
+<preferenceName>Known good MD5 hashes (optional) :</preferenceName>
+<preferenceType>file</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SMB Use Domain SID to Enumerate Users</pluginName>
+<pluginId>10399</pluginId>
+<fullName>SMB Use Domain SID to Enumerate Users[entry]:Start UID :</fullName>
+<preferenceName>Start UID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1000</preferenceValues>
+<selectedValue>1000</selectedValue>
+</item>
+<item><pluginName>SMB Use Domain SID to Enumerate Users</pluginName>
+<pluginId>10399</pluginId>
+<fullName>SMB Use Domain SID to Enumerate Users[entry]:End UID :</fullName>
+<preferenceName>End UID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1200</preferenceValues>
+<selectedValue>1200</selectedValue>
+</item>
+<item><pluginName>SMB Scope</pluginName>
+<pluginId>10917</pluginId>
+<fullName>SMB Scope[checkbox]:Request information about the domain</fullName>
+<preferenceName>Request information about the domain</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>SMB Use Host SID to Enumerate Local Users</pluginName>
+<pluginId>10860</pluginId>
+<fullName>SMB Use Host SID to Enumerate Local Users[entry]:Start UID :</fullName>
+<preferenceName>Start UID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1000</preferenceValues>
+<selectedValue>1000</selectedValue>
+</item>
+<item><pluginName>SMB Use Host SID to Enumerate Local Users</pluginName>
+<pluginId>10860</pluginId>
+<fullName>SMB Use Host SID to Enumerate Local Users[entry]:End UID :</fullName>
+<preferenceName>End UID :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1200</preferenceValues>
+<selectedValue>1200</selectedValue>
+</item>
+<item><pluginName>VMware SOAP API Settings</pluginName>
+<pluginId>57395</pluginId>
+<fullName>VMware SOAP API Settings[entry]:VMware user name :</fullName>
+<preferenceName>VMware user name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware SOAP API Settings</pluginName>
+<pluginId>57395</pluginId>
+<fullName>VMware SOAP API Settings[password]:VMware password :</fullName>
+<preferenceName>VMware password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware SOAP API Settings</pluginName>
+<pluginId>57395</pluginId>
+<fullName>VMware SOAP API Settings[checkbox]:Ignore SSL Certificate :</fullName>
+<preferenceName>Ignore SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[entry]:GMC Server :</fullName>
+<preferenceName>GMC Server :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[entry]:Port :</fullName>
+<preferenceName>Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[entry]:Domain :</fullName>
+<preferenceName>Domain :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[entry]:Username :</fullName>
+<preferenceName>Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[password]:Password :</fullName>
+<preferenceName>Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[checkbox]:SSL :</fullName>
+<preferenceName>SSL :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Good MDM Settings</pluginName>
+<pluginId>66963</pluginId>
+<fullName>Good MDM Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:Community name :</fullName>
+<preferenceName>Community name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>public</preferenceValues>
+<selectedValue>public</selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:Community name (1) :</fullName>
+<preferenceName>Community name (1) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:Community name (2) :</fullName>
+<preferenceName>Community name (2) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:Community name (3) :</fullName>
+<preferenceName>Community name (3) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:UDP port :</fullName>
+<preferenceName>UDP port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>161</preferenceValues>
+<selectedValue>161</selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[entry]:SNMPv3 user name :</fullName>
+<preferenceName>SNMPv3 user name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[password]:SNMPv3 authentication password :</fullName>
+<preferenceName>SNMPv3 authentication password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[radio]:SNMPv3 authentication algorithm :</fullName>
+<preferenceName>SNMPv3 authentication algorithm :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>MD5;SHA1</preferenceValues>
+<selectedValue>MD5;SHA1</selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[password]:SNMPv3 privacy password :</fullName>
+<preferenceName>SNMPv3 privacy password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>SNMP settings</pluginName>
+<pluginId>19762</pluginId>
+<fullName>SNMP settings[radio]:SNMPv3 privacy algorithm :</fullName>
+<preferenceName>SNMPv3 privacy algorithm :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>AES;DES</preferenceValues>
+<selectedValue>AES;DES</selectedValue>
+</item>
+<item><pluginName>Web mirroring</pluginName>
+<pluginId>10662</pluginId>
+<fullName>Web mirroring[entry]:Number of pages to mirror :</fullName>
+<preferenceName>Number of pages to mirror :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>1000</preferenceValues>
+<selectedValue>2000</selectedValue>
+</item>
+<item><pluginName>Web mirroring</pluginName>
+<pluginId>10662</pluginId>
+<fullName>Web mirroring[entry]:Maximum depth :</fullName>
+<preferenceName>Maximum depth :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>6</preferenceValues>
+<selectedValue>8</selectedValue>
+</item>
+<item><pluginName>Web mirroring</pluginName>
+<pluginId>10662</pluginId>
+<fullName>Web mirroring[entry]:Start page :</fullName>
+<preferenceName>Start page :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/</preferenceValues>
+<selectedValue>/:/recipe/includes:/recipe/recipe_images:/manager:/manager/images:/xampp</selectedValue>
+</item>
+<item><pluginName>Web mirroring</pluginName>
+<pluginId>10662</pluginId>
+<fullName>Web mirroring[entry]:Excluded items regex :</fullName>
+<preferenceName>Excluded items regex :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/server_privileges\.php|logout</preferenceValues>
+<selectedValue>/server_privileges\.php|logout</selectedValue>
+</item>
+<item><pluginName>Web mirroring</pluginName>
+<pluginId>10662</pluginId>
+<fullName>Web mirroring[checkbox]:Follow dynamic pages :</fullName>
+<preferenceName>Follow dynamic pages :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>SMB Registry : Start the Registry Service during the scan</pluginName>
+<pluginId>35703</pluginId>
+<fullName>SMB Registry : Start the Registry Service during the scan[checkbox]:Start the registry service during the scan</fullName>
+<preferenceName>Start the registry service during the scan</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>SMB Registry : Start the Registry Service during the scan</pluginName>
+<pluginId>35703</pluginId>
+<fullName>SMB Registry : Start the Registry Service during the scan[checkbox]:Enable administrative shares during the scan</fullName>
+<preferenceName>Enable administrative shares during the scan</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Kerberos configuration</pluginName>
+<pluginId>17351</pluginId>
+<fullName>Kerberos configuration[entry]:Kerberos Key Distribution Center (KDC) :</fullName>
+<preferenceName>Kerberos Key Distribution Center (KDC) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Kerberos configuration</pluginName>
+<pluginId>17351</pluginId>
+<fullName>Kerberos configuration[entry]:Kerberos KDC Port :</fullName>
+<preferenceName>Kerberos KDC Port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>88</preferenceValues>
+<selectedValue>88</selectedValue>
+</item>
+<item><pluginName>Kerberos configuration</pluginName>
+<pluginId>17351</pluginId>
+<fullName>Kerberos configuration[radio]:Kerberos KDC Transport :</fullName>
+<preferenceName>Kerberos KDC Transport :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>tcp;udp</preferenceValues>
+<selectedValue>tcp;udp</selectedValue>
+</item>
+<item><pluginName>Kerberos configuration</pluginName>
+<pluginId>17351</pluginId>
+<fullName>Kerberos configuration[entry]:Kerberos Realm (SSH only) :</fullName>
+<preferenceName>Kerberos Realm (SSH only) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[entry]:VMware vCenter host :</fullName>
+<preferenceName>VMware vCenter host :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[entry]:VMware vCenter port :</fullName>
+<preferenceName>VMware vCenter port :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>443</preferenceValues>
+<selectedValue>443</selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[entry]:VMware vCenter user name :</fullName>
+<preferenceName>VMware vCenter user name :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[password]:VMware vCenter password :</fullName>
+<preferenceName>VMware vCenter password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[checkbox]:SSL :</fullName>
+<preferenceName>SSL :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>VMware vCenter SOAP API Settings</pluginName>
+<pluginId>63060</pluginId>
+<fullName>VMware vCenter SOAP API Settings[checkbox]:Verify SSL Certificate :</fullName>
+<preferenceName>Verify SSL Certificate :</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:HTTP account :</fullName>
+<preferenceName>HTTP account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:HTTP password (sent in clear) :</fullName>
+<preferenceName>HTTP password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:NNTP account :</fullName>
+<preferenceName>NNTP account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:NNTP password (sent in clear) :</fullName>
+<preferenceName>NNTP password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:FTP account :</fullName>
+<preferenceName>FTP account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>anonymous</preferenceValues>
+<selectedValue>anonymous</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:FTP password (sent in clear) :</fullName>
+<preferenceName>FTP password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues>nessus@nessus.org</preferenceValues>
+<selectedValue>*********</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:FTP writeable directory :</fullName>
+<preferenceName>FTP writeable directory :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues>/incoming</preferenceValues>
+<selectedValue>/incoming</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:POP2 account :</fullName>
+<preferenceName>POP2 account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:POP2 password (sent in clear) :</fullName>
+<preferenceName>POP2 password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:POP3 account :</fullName>
+<preferenceName>POP3 account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:POP3 password (sent in clear) :</fullName>
+<preferenceName>POP3 password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:IMAP account :</fullName>
+<preferenceName>IMAP account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:IMAP password (sent in clear) :</fullName>
+<preferenceName>IMAP password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:IPMI account :</fullName>
+<preferenceName>IPMI account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:IPMI password (sent in clear) :</fullName>
+<preferenceName>IPMI password (sent in clear) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:SMB account :</fullName>
+<preferenceName>SMB account :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:SMB password :</fullName>
+<preferenceName>SMB password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:SMB domain (optional) :</fullName>
+<preferenceName>SMB domain (optional) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[radio]:SMB password type :</fullName>
+<preferenceName>SMB password type :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Password;LM Hash;NTLM Hash</preferenceValues>
+<selectedValue>Password;LM Hash;NTLM Hash</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB account (1) :</fullName>
+<preferenceName>Additional SMB account (1) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:Additional SMB password (1) :</fullName>
+<preferenceName>Additional SMB password (1) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB domain (optional) (1) :</fullName>
+<preferenceName>Additional SMB domain (optional) (1) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB account (2) :</fullName>
+<preferenceName>Additional SMB account (2) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:Additional SMB password (2) :</fullName>
+<preferenceName>Additional SMB password (2) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB domain (optional) (2) :</fullName>
+<preferenceName>Additional SMB domain (optional) (2) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB account (3) :</fullName>
+<preferenceName>Additional SMB account (3) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[password]:Additional SMB password (3) :</fullName>
+<preferenceName>Additional SMB password (3) :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[entry]:Additional SMB domain (optional) (3) :</fullName>
+<preferenceName>Additional SMB domain (optional) (3) :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[checkbox]:Never send SMB credentials in clear text</fullName>
+<preferenceName>Never send SMB credentials in clear text</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>yes</preferenceValues>
+<selectedValue>yes</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[checkbox]:Only use NTLMv2</fullName>
+<preferenceName>Only use NTLMv2</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Login configurations</pluginName>
+<pluginId>10870</pluginId>
+<fullName>Login configurations[checkbox]:Only use Kerberos authentication for SMB</fullName>
+<preferenceName>Only use Kerberos authentication for SMB</preferenceName>
+<preferenceType>checkbox</preferenceType>
+<preferenceValues>no</preferenceValues>
+<selectedValue>no</selectedValue>
+</item>
+<item><pluginName>Nessus SYN scanner</pluginName>
+<pluginId>11219</pluginId>
+<fullName>Nessus SYN scanner[radio]:Firewall detection :</fullName>
+<preferenceName>Firewall detection :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)</preferenceValues>
+<selectedValue>Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)</selectedValue>
+</item>
+<item><pluginName>Nessus TCP scanner</pluginName>
+<pluginId>10335</pluginId>
+<fullName>Nessus TCP scanner[radio]:Firewall detection :</fullName>
+<preferenceName>Firewall detection :</preferenceName>
+<preferenceType>radio</preferenceType>
+<preferenceValues>Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)</preferenceValues>
+<selectedValue>Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)</selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Controller :</fullName>
+<preferenceName>Domain Controller :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain :</fullName>
+<preferenceName>Domain :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Username :</fullName>
+<preferenceName>Domain Username :</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[password]:Domain Password :</fullName>
+<preferenceName>Domain Password :</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Controller 2:</fullName>
+<preferenceName>Domain Controller 2:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain 2:</fullName>
+<preferenceName>Domain 2:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Username 2:</fullName>
+<preferenceName>Domain Username 2:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[password]:Domain Password 2:</fullName>
+<preferenceName>Domain Password 2:</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Controller 3:</fullName>
+<preferenceName>Domain Controller 3:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain 3:</fullName>
+<preferenceName>Domain 3:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Username 3:</fullName>
+<preferenceName>Domain Username 3:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[password]:Domain Password 3:</fullName>
+<preferenceName>Domain Password 3:</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Controller 4:</fullName>
+<preferenceName>Domain Controller 4:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain 4:</fullName>
+<preferenceName>Domain 4:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Username 4:</fullName>
+<preferenceName>Domain Username 4:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[password]:Domain Password 4:</fullName>
+<preferenceName>Domain Password 4:</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Controller 5:</fullName>
+<preferenceName>Domain Controller 5:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain 5:</fullName>
+<preferenceName>Domain 5:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[entry]:Domain Username 5:</fullName>
+<preferenceName>Domain Username 5:</preferenceName>
+<preferenceType>entry</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+<item><pluginName>ADSI Settings</pluginName>
+<pluginId>60024</pluginId>
+<fullName>ADSI Settings[password]:Domain Password 5:</fullName>
+<preferenceName>Domain Password 5:</preferenceName>
+<preferenceType>password</preferenceType>
+<preferenceValues></preferenceValues>
+<selectedValue></selectedValue>
+</item>
+</PluginsPreferences>
+</Preferences>
+<FamilySelection><FamilyItem><FamilyName>MacOS X Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>DNS</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Gain a shell remotely</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Solaris Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Port scanners</FamilyName>
+<Status>mixed</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Web Servers</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>SMTP problems</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Service detection</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>CGI abuses : XSS</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Mandriva Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Databases</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Debian Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Denial of Service</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Default Unix Accounts</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Settings</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>HP-UX Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Backdoors</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>VMware ESX Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>SCADA</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>General</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Oracle Linux Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Red Hat Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>FreeBSD Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>CGI abuses</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Windows : User management</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Netware</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Amazon Linux Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Peer-To-Peer File Sharing</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Slackware Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>SNMP</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Fedora Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Gentoo Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Ubuntu Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Misc.</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>FTP</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Firewalls</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Windows : Microsoft Bulletins</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Junos Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Mobile Devices</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Windows</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Policy Compliance</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>SuSE Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>RPC</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>CentOS Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>CISCO</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>Scientific Linux Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+<FamilyItem><FamilyName>AIX Local Security Checks</FamilyName>
+<Status>enabled</Status>
+</FamilyItem>
+</FamilySelection>
+<IndividualPluginSelection><PluginItem><PluginId>14274</PluginId>
+<PluginName>Nessus SNMP Scanner</PluginName>
+<Family>Port scanners</Family>
+<Status>enabled</Status>
+</PluginItem>
+<PluginItem><PluginId>10180</PluginId>
+<PluginName>Ping the remote host</PluginName>
+<Family>Port scanners</Family>
+<Status>enabled</Status>
+</PluginItem>
+<PluginItem><PluginId>11219</PluginId>
+<PluginName>Nessus SYN scanner</PluginName>
+<Family>Port scanners</Family>
+<Status>enabled</Status>
+</PluginItem>
+</IndividualPluginSelection>
+</Policy>
+<Report name="localpci" xmlns:cm="http://www.nessus.org/cm">
+<ReportHost name="127.0.0.1"><HostProperties>
+<tag name="HOST_END">Tue Jan  7 08:19:25 2014</tag>
+<tag name="patch-summary-total-cves">156</tag>
+<tag name="patch-summary-cves-d4aa0629917f87196e572a319d654106">CVE-2013-6425</tag>
+<tag name="patch-summary-cve-num-d4aa0629917f87196e572a319d654106">1</tag>
+<tag name="patch-summary-txt-d4aa0629917f87196e572a319d654106">CentOS 5 / 6 : pixman (CESA-2013:1869): Update the affected pixman packages.</tag>
+<tag name="patch-summary-cves-f737e0137df31ea0b4d59e3a5bfb6ce2">CVE-2013-5607, CVE-2013-5606, CVE-2013-5605, CVE-2013-1741, CVE-2013-1739, CVE-2013-1620, CVE-2013-0791, CVE-2012-0441</tag>
+<tag name="patch-summary-cve-num-f737e0137df31ea0b4d59e3a5bfb6ce2">8</tag>
+<tag name="patch-summary-txt-f737e0137df31ea0b4d59e3a5bfb6ce2">CentOS 6 : nspr / nss / nss-util (CESA-2013:1829): Update the affected nspr, nss and / or nss-util packages.</tag>
+<tag name="patch-summary-cves-65881d4f3b3dca218eb8bfc1847a2854">CVE-2013-6630, CVE-2013-6629</tag>
+<tag name="patch-summary-cve-num-65881d4f3b3dca218eb8bfc1847a2854">2</tag>
+<tag name="patch-summary-txt-65881d4f3b3dca218eb8bfc1847a2854">CentOS 6 : libjpeg-turbo (CESA-2013:1803): Update the affected libjpeg-turbo packages.</tag>
+<tag name="patch-summary-cves-b90c1667d3980fa63ff49bf6d42c9d94">CVE-2012-5627, CVE-2005-2572, CVE-2004-1532, CVE-2002-1809</tag>
+<tag name="patch-summary-cve-num-b90c1667d3980fa63ff49bf6d42c9d94">4</tag>
+<tag name="patch-summary-txt-b90c1667d3980fa63ff49bf6d42c9d94">MySQL Server COM_CHANGE_USER Command Security Bypass: There is no solution at this time.</tag>
+<tag name="patch-summary-cves-a30d94ed642ba99628c22b5ba0592025">CVE-2013-4402, CVE-2013-4351, CVE-2012-6085</tag>
+<tag name="patch-summary-cve-num-a30d94ed642ba99628c22b5ba0592025">3</tag>
+<tag name="patch-summary-txt-a30d94ed642ba99628c22b5ba0592025">CentOS 5 / 6 : gnupg2 (CESA-2013:1459): Update the affected gnupg2 packages.</tag>
+<tag name="patch-summary-cves-fee123cf77ae79e40f0d28b4173e6499">CVE-2013-4242</tag>
+<tag name="patch-summary-cve-num-fee123cf77ae79e40f0d28b4173e6499">1</tag>
+<tag name="patch-summary-txt-fee123cf77ae79e40f0d28b4173e6499">CentOS 5 / 6 : libgcrypt (CESA-2013:1457): Update the affected libgcrypt packages.</tag>
+<tag name="patch-summary-cves-c29304edeeb7adedcb4fcfaed972b9d4">CVE-2013-4287, CVE-2012-2126, CVE-2012-2125</tag>
+<tag name="patch-summary-cve-num-c29304edeeb7adedcb4fcfaed972b9d4">3</tag>
+<tag name="patch-summary-txt-c29304edeeb7adedcb4fcfaed972b9d4">CentOS 6 : rubygems (CESA-2013:1441): Update the affected rubygems package.</tag>
+<tag name="patch-summary-cves-0c6c34469ac5c3b1003173485b41ab6a">CVE-2013-6368, CVE-2013-6367, CVE-2013-4470, CVE-2013-4299, CVE-2013-4162, CVE-2013-3301, CVE-2013-3225, CVE-2013-3224, CVE-2013-3222, CVE-2013-2852, CVE-2013-2635, CVE-2013-2634, CVE-2013-2237, CVE-2013-2232, CVE-2013-2224, CVE-2013-2206, CVE-2013-2146, CVE-2013-2141, CVE-2013-2128, CVE-2013-2094, CVE-2013-2017, CVE-2013-1943, CVE-2013-1935, CVE-2013-1848, CVE-2013-1827, CVE-2013-1826, CVE-2013-1798, CVE-2013-1797, CVE-2013-1796, CVE-2013-1792, CVE-2013-1774, CVE-2013-1773, CVE-2013-1767, CVE-2013-0914, CVE-2013-0913, CVE-2013-0871, CVE-2013-0349, CVE-2013-0311, CVE-2013-0310, CVE-2013-0309, CVE-2013-0268, CVE-2013-0228, CVE-2013-0190, CVE-2012-6548, CVE-2012-6547, CVE-2012-6546, CVE-2012-6544, CVE-2012-6538, CVE-2012-6537, CVE-2012-5517, CVE-2012-4565, CVE-2012-4542, CVE-2012-4530, CVE-2012-4508, CVE-2012-4461, CVE-2012-4444, CVE-2012-4398, CVE-2012-3552, CVE-2012-3511, CVE-2012-3430, CVE-2012-3412, CVE-2012-3400, CVE-2012-2745, CVE-2012-2744, CVE-2012-2390, CVE-2012-2384, CVE-2012-2383, CVE-2012-2375, CVE-2012-2313, CVE-2012-2133, CVE-2012-2100, CVE-2012-1568, CVE-2011-4131, CVE-2011-1078, CVE-2009-4307</tag>
+<tag name="patch-summary-cve-num-0c6c34469ac5c3b1003173485b41ab6a">75</tag>
+<tag name="patch-summary-txt-0c6c34469ac5c3b1003173485b41ab6a">CentOS 6 : kernel (CESA-2013:1436): Update the affected kernel packages.</tag>
+<tag name="patch-summary-cves-4970abc727ef4571e959854417027c3b">CVE-2013-3839, CVE-2013-3804, CVE-2013-3802, CVE-2013-1861, CVE-2012-4414, CVE-2012-2750</tag>
+<tag name="patch-summary-cve-num-4970abc727ef4571e959854417027c3b">6</tag>
+<tag name="patch-summary-txt-4970abc727ef4571e959854417027c3b">MySQL 5.1 &lt; 5.1.71 Server Optimizer Denial of Service: Upgrade to MySQL version 5.1.71 or later.</tag>
+<tag name="patch-summary-cves-d4c8e9883b6d0b05e6e8b3f070620643">CVE-2013-4073, CVE-2013-1821, CVE-2012-4481</tag>
+<tag name="patch-summary-cve-num-d4c8e9883b6d0b05e6e8b3f070620643">3</tag>
+<tag name="patch-summary-txt-d4c8e9883b6d0b05e6e8b3f070620643">CentOS 5 / 6 : ruby (CESA-2013:1090): Update the affected ruby packages.</tag>
+<tag name="patch-summary-cves-a326e296f9afc51a5a487a0cdae69d36">CVE-2013-4650, CVE-2013-3969</tag>
+<tag name="patch-summary-cve-num-a326e296f9afc51a5a487a0cdae69d36">2</tag>
+<tag name="patch-summary-txt-a326e296f9afc51a5a487a0cdae69d36">MongoDB &lt; 2.4.5 / 2.5.1 Multiple Vulnerabilities: Upgrade to MongoDB 2.4.5 / 2.5.1 or later.</tag>
+<tag name="patch-summary-cves-f0fe9e6dd474edfa4e3eae625e530df1">CVE-2012-0814, CVE-2011-5000, CVE-2010-5107, CVE-2010-4755, CVE-2010-4478, CVE-2007-2768, CVE-2007-2243, CVE-2004-1653</tag>
+<tag name="patch-summary-cve-num-f0fe9e6dd474edfa4e3eae625e530df1">8</tag>
+<tag name="patch-summary-txt-f0fe9e6dd474edfa4e3eae625e530df1">OpenSSH LoginGraceTime / MaxStartups DoS: Upgrade to OpenSSH 6.2 and review the associated server configuration settings.</tag>
+<tag name="patch-summary-cves-a612e4ee25ca5c64d6e4c517a7a8cfd3">CVE-2013-1416, CVE-2013-1415, CVE-2012-1016, CVE-2012-1015, CVE-2012-1013, CVE-2002-2443</tag>
+<tag name="patch-summary-cve-num-a612e4ee25ca5c64d6e4c517a7a8cfd3">6</tag>
+<tag name="patch-summary-txt-a612e4ee25ca5c64d6e4c517a7a8cfd3">CentOS 6 : krb5 (CESA-2012:1131): Update the affected krb5 packages.</tag>
+<tag name="patch-summary-cves-11bd909b4bbee7f5ee85071049b52e0c">CVE-2013-2174, CVE-2013-1944</tag>
+<tag name="patch-summary-cve-num-11bd909b4bbee7f5ee85071049b52e0c">2</tag>
+<tag name="patch-summary-txt-11bd909b4bbee7f5ee85071049b52e0c">CentOS 5 / 6 : curl (CESA-2013:0983): Update the affected curl packages.</tag>
+<tag name="patch-summary-cves-79ed019e4b6ec5267fd968e511eccdb2">CVE-2013-1950</tag>
+<tag name="patch-summary-cve-num-79ed019e4b6ec5267fd968e511eccdb2">1</tag>
+<tag name="patch-summary-txt-79ed019e4b6ec5267fd968e511eccdb2">CentOS 6 : libtirpc (CESA-2013:0884): Update the affected libtirpc packages.</tag>
+<tag name="patch-summary-cves-0502df2eca6daaa7b8e818723f3d27ca">CVE-2013-1667, CVE-2012-6329, CVE-2012-5526, CVE-2012-5195</tag>
+<tag name="patch-summary-cve-num-0502df2eca6daaa7b8e818723f3d27ca">4</tag>
+<tag name="patch-summary-txt-0502df2eca6daaa7b8e818723f3d27ca">CentOS 5 / 6 : perl (CESA-2013:0685): Update the affected perl packages.</tag>
+<tag name="patch-summary-cves-5365066baa485b98e258631b28ae22c5">CVE-2011-3149, CVE-2011-3148</tag>
+<tag name="patch-summary-cve-num-5365066baa485b98e258631b28ae22c5">2</tag>
+<tag name="patch-summary-txt-5365066baa485b98e258631b28ae22c5">CentOS 6 : pam (CESA-2013:0521): Update the affected pam packages.</tag>
+<tag name="patch-summary-cves-e2be955cb4479f07f23310d4b6aae1b0">CVE-2012-5536</tag>
+<tag name="patch-summary-cve-num-e2be955cb4479f07f23310d4b6aae1b0">1</tag>
+<tag name="patch-summary-txt-e2be955cb4479f07f23310d4b6aae1b0">CentOS 6 : openssh (CESA-2013:0519): Update the affected openssh packages.</tag>
+<tag name="patch-summary-cves-454ecf97bdb581515b29b3fa4c644ae9">CVE-2013-0157</tag>
+<tag name="patch-summary-cve-num-454ecf97bdb581515b29b3fa4c644ae9">1</tag>
+<tag name="patch-summary-txt-454ecf97bdb581515b29b3fa4c644ae9">CentOS 6 : util-linux-ng (CESA-2013:0517): Update the affected util-linux-ng packages.</tag>
+<tag name="patch-summary-cves-ff6fedae6008f4675022ae8c74c0edfa">CVE-2012-3955, CVE-2012-3954, CVE-2012-3571</tag>
+<tag name="patch-summary-cve-num-ff6fedae6008f4675022ae8c74c0edfa">3</tag>
+<tag name="patch-summary-txt-ff6fedae6008f4675022ae8c74c0edfa">CentOS 6 : dhcp (CESA-2013:0504): Update the affected dhcp packages.</tag>
+<tag name="patch-summary-cves-3e95cc9e7d92757d0ea0e58dc17f2d45">CVE-2013-0169, CVE-2013-0166, CVE-2012-4929</tag>
+<tag name="patch-summary-cve-num-3e95cc9e7d92757d0ea0e58dc17f2d45">3</tag>
+<tag name="patch-summary-txt-3e95cc9e7d92757d0ea0e58dc17f2d45">CentOS 5 / 6 : openssl (CESA-2013:0587): Update the affected openssl packages.</tag>
+<tag name="patch-summary-cves-0e035f345830042eddf992cda94fbf08">CVE-2013-0338, CVE-2012-5134, CVE-2012-2807, CVE-2011-3102</tag>
+<tag name="patch-summary-cve-num-0e035f345830042eddf992cda94fbf08">4</tag>
+<tag name="patch-summary-txt-0e035f345830042eddf992cda94fbf08">CentOS 5 / 6 : libxml2 (CESA-2013:0581): Update the affected libxml2 packages.</tag>
+<tag name="patch-summary-cves-224886a43d2db224e676139cbf48224a">CVE-2013-0292</tag>
+<tag name="patch-summary-cve-num-224886a43d2db224e676139cbf48224a">1</tag>
+<tag name="patch-summary-txt-224886a43d2db224e676139cbf48224a">CentOS 5 / 6 : dbus-glib (CESA-2013:0568): Update the affected dbus-glib packages.</tag>
+<tag name="patch-summary-cves-4358fd093ccae550a25282997604f653">CVE-2012-3524</tag>
+<tag name="patch-summary-cve-num-4358fd093ccae550a25282997604f653">1</tag>
+<tag name="patch-summary-txt-4358fd093ccae550a25282997604f653">CentOS 6 : dbus (CESA-2012:1261): Update the affected dbus packages.</tag>
+<tag name="patch-summary-cves-b2ba815c79f42599f4793b4eeaf5e67a">CVE-2012-3480, CVE-2012-3406, CVE-2012-3405, CVE-2012-3404</tag>
+<tag name="patch-summary-cve-num-b2ba815c79f42599f4793b4eeaf5e67a">4</tag>
+<tag name="patch-summary-txt-b2ba815c79f42599f4793b4eeaf5e67a">CentOS 6 : glibc (CESA-2012:1208): Update the affected glibc packages.</tag>
+<tag name="patch-summary-cves-32c557ea75596a0b82a7d3ee7583f3c3">CVE-2012-2668</tag>
+<tag name="patch-summary-cve-num-32c557ea75596a0b82a7d3ee7583f3c3">1</tag>
+<tag name="patch-summary-txt-32c557ea75596a0b82a7d3ee7583f3c3">CentOS 6 : openldap (CESA-2012:1151): Update the affected openldap packages.</tag>
+<tag name="patch-summary-cves-c7cf6d6fa6af4fe3bc57c5ef60b0a14b">CVE-2012-2337</tag>
+<tag name="patch-summary-cve-num-c7cf6d6fa6af4fe3bc57c5ef60b0a14b">1</tag>
+<tag name="patch-summary-txt-c7cf6d6fa6af4fe3bc57c5ef60b0a14b">CentOS 5 / 6 : sudo (CESA-2012:1081): Update the affected sudo package.</tag>
+<tag name="patch-summary-cves-963ca911e9bb4f0bb382f196ba68e9de">CVE-2011-3192</tag>
+<tag name="patch-summary-cve-num-963ca911e9bb4f0bb382f196ba68e9de">1</tag>
+<tag name="patch-summary-txt-963ca911e9bb4f0bb382f196ba68e9de">Apache HTTP Server Byte Range DoS: Upgrade to Apache httpd 2.2.21 or later, or use one of the workarounds in Apache&apos;s advisories for CVE-2011-3192.  Version 2.2.20 fixed the issue, but also introduced a regression.
+
+If the host is running a web server based on Apache httpd, contact the vendor for a fix.</tag>
+<tag name="system-type">general-purpose</tag>
+<tag name="operating-system">Linux Kernel 2.6.32-279.el6.x86_64 on CentOS release 6.3 (Final)</tag>
+<tag name="bios-uuid">94FA1F19-73FB-449E-8E12-7A9BC8AEE4D3</tag>
+<tag name="host-fqdn">python-dev</tag>
+<tag name="mac-address">08:00:27:41:f0:43
+</tag>
+<tag name="local-checks-proto">local</tag>
+<tag name="host-ip">127.0.0.1</tag>
+<tag name="HOST_START">Tue Jan  7 08:19:20 2014</tag>
+</HostProperties>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+<description>This script displays, for each tested host, information about the scan itself :
+
+ - The version of the plugin set
+ - The type of scanner (Nessus or Nessus Home)
+ - The version of the Nessus Engine
+ - The port scanner(s) used
+ - The port range scanned
+ - Whether credentialed or third-party patch management    checks are possible
+ - The date of the scan
+ - The duration of the scan
+ - The number of hosts scanned in parallel
+ - The number of checks done in parallel</description>
+<fname>scan_info.nasl</fname>
+<plugin_modification_date>2013/11/21</plugin_modification_date>
+<plugin_name>Nessus Scan Information</plugin_name>
+<plugin_publication_date>2005/08/26</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.64 $</script_version>
+<solution>n/a</solution>
+<synopsis>Information about the Nessus scan.</synopsis>
+<plugin_output>Information about this scan : 
+
+Nessus version : 5.2.4
+Plugin feed version : 201401061716
+Scanner edition used : Nessus Home
+Scan policy used : pci
+Scanner IP : 127.0.0.1
+Port scanner(s) : nessus_tcp_scanner 
+Port range : 1-65535
+Thorough tests : no
+Experimental tests : no
+Paranoia level : 2
+Report Verbosity : 1
+Safe checks : yes
+Optimize the test : yes
+Credentialed checks : yes
+Patch management checks : None
+CGI scanning : enabled
+Web application tests : enabled
+Web app tests -  Test mode : single
+Web app tests -  Try all HTTP methods : yes
+Web app tests -  Maximum run time : 10 minutes.
+Web app tests -  Stop at first flaw : param
+Max hosts : 20
+Max checks : 4
+Recv timeout : 15
+Backports : None
+Allow post-scan editing: Yes
+Scan Start Date : 2014/1/7 0:21
+Scan duration : 28683 sec
+</plugin_output>
+</ReportItem>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="66334" pluginName="Patch Report" pluginFamily="General">
+<description>The remote host is missing one or several security patches.
+This plugin lists the newest version of each patch to install to make sure the remote host is up-to-date.</description>
+<fname>patches_summary.nbin</fname>
+<plugin_modification_date>2013/12/18</plugin_modification_date>
+<plugin_name>Patch Report</plugin_name>
+<plugin_publication_date>2013/05/07</plugin_publication_date>
+<plugin_type>local</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.21</script_version>
+<solution>Install the patches listed below</solution>
+<synopsis>The remote host is missing several patches</synopsis>
+<plugin_output>
+
+. You need to take the following 28 actions:
+
+[ Apache HTTP Server Byte Range DoS (55976) ]
+
++ Action to take: Upgrade to Apache httpd 2.2.21 or later, or use one of the workarounds in Apache&apos;s advisories for CVE-2011-3192.  Version 2.2.20 fixed the issue, but also introduced a regression.
+
+If the host is running a web server based on Apache httpd, contact the vendor for a fix.
+
+
+[ CentOS 5 / 6 : sudo (CESA-2012:1081) (59981) ]
+
++ Action to take: Update the affected sudo package.
+
+
+[ CentOS 6 : openldap (CESA-2012:1151) (61464) ]
+
++ Action to take: Update the affected openldap packages.
+
+
+[ CentOS 6 : glibc (CESA-2012:1208) (61720) ]
+
++ Action to take: Update the affected glibc packages.
+
++ Impact: Taking this action will resolve 4 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : dbus (CESA-2012:1261) (62082) ]
+
++ Action to take: Update the affected dbus packages.
+
+
+[ CentOS 5 / 6 : dbus-glib (CESA-2013:0568) (64939) ]
+
++ Action to take: Update the affected dbus-glib packages.
+
+
+[ CentOS 5 / 6 : libxml2 (CESA-2013:0581) (64971) ]
+
++ Action to take: Update the affected libxml2 packages.
+
++ Impact: Taking this action will resolve 4 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 5 / 6 : openssl (CESA-2013:0587) (65061) ]
+
++ Action to take: Update the affected openssl packages.
+
++ Impact: Taking this action will resolve 3 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : dhcp (CESA-2013:0504) (65139) ]
+
++ Action to take: Update the affected dhcp packages.
+
++ Impact: Taking this action will resolve 3 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : util-linux-ng (CESA-2013:0517) (65149) ]
+
++ Action to take: Update the affected util-linux-ng packages.
+
+
+[ CentOS 6 : openssh (CESA-2013:0519) (65150) ]
+
++ Action to take: Update the affected openssh packages.
+
+
+[ CentOS 6 : pam (CESA-2013:0521) (65152) ]
+
++ Action to take: Update the affected pam packages.
+
++ Impact: Taking this action will resolve 2 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 5 / 6 : perl (CESA-2013:0685) (65694) ]
+
++ Action to take: Update the affected perl packages.
+
++ Impact: Taking this action will resolve 4 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : libtirpc (CESA-2013:0884) (66702) ]
+
++ Action to take: Update the affected libtirpc packages.
+
+
+[ CentOS 5 / 6 : curl (CESA-2013:0983) (66998) ]
+
++ Action to take: Update the affected curl packages.
+
++ Impact: Taking this action will resolve 2 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : krb5 (CESA-2012:1131) (67093) ]
+
++ Action to take: Update the affected krb5 packages.
+
++ Impact: Taking this action will resolve 6 different vulnerabilities (CVEs).
+
+
+
+[ OpenSSH LoginGraceTime / MaxStartups DoS (67140) ]
+
++ Action to take: Upgrade to OpenSSH 6.2 and review the associated server configuration settings.
+
++ Impact: Taking this action will resolve 8 different vulnerabilities (CVEs).
+
+
+
+[ MongoDB &lt; 2.4.5 / 2.5.1 Multiple Vulnerabilities (67243) ]
+
++ Action to take: Upgrade to MongoDB 2.4.5 / 2.5.1 or later.
+
++ Impact: Taking this action will resolve 2 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 5 / 6 : ruby (CESA-2013:1090) (68941) ]
+
++ Action to take: Update the affected ruby packages.
+
++ Impact: Taking this action will resolve 3 different vulnerabilities (CVEs).
+
+
+
+[ MySQL 5.1 &lt; 5.1.71 Server Optimizer Denial of Service (70461) ]
+
++ Action to take: Upgrade to MySQL version 5.1.71 or later.
+
++ Impact: Taking this action will resolve 6 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : kernel (CESA-2013:1436) (70483) ]
+
++ Action to take: Update the affected kernel packages.
+
++ Impact: Taking this action will resolve 75 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : rubygems (CESA-2013:1441) (70501) ]
+
++ Action to take: Update the affected rubygems package.
+
++ Impact: Taking this action will resolve 3 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 5 / 6 : libgcrypt (CESA-2013:1457) (70633) ]
+
++ Action to take: Update the affected libgcrypt packages.
+
+
+[ CentOS 5 / 6 : gnupg2 (CESA-2013:1459) (70635) ]
+
++ Action to take: Update the affected gnupg2 packages.
+
++ Impact: Taking this action will resolve 3 different vulnerabilities (CVEs).
+
+
+
+[ MySQL Server COM_CHANGE_USER Command Security Bypass (71116) ]
+
++ Action to take: There is no solution at this time.
+
++ Impact: Taking this action will resolve 4 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : libjpeg-turbo (CESA-2013:1803) (71271) ]
+
++ Action to take: Update the affected libjpeg-turbo packages.
+
++ Impact: Taking this action will resolve 2 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 6 : nspr / nss / nss-util (CESA-2013:1829) (71380) ]
+
++ Action to take: Update the affected nspr, nss and / or nss-util packages.
+
++ Impact: Taking this action will resolve 8 different vulnerabilities (CVEs).
+
+
+
+[ CentOS 5 / 6 : pixman (CESA-2013:1869) (71584) ]
+
++ Action to take: Update the affected pixman packages.
+
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="60020" pluginName="PCI DSS Compliance : Handling False Positives" pluginFamily="Policy Compliance">
+<description>Note that per PCI Security Standards Council (PCI SSC) standards, if the version of the remote software is known to contain flaws, a vulnerability scanner must report it as vulnerable. The scanner must still flag it as vulnerable, even in cases where a workaround or mitigating configuration option is in place. This will result in the scanner issuing false positives by PCI SSC design.
+
+It is recommended that any workarounds and mitigating configurations that are in place be documented including technical details, to be presented to a third-party PCI auditor during an audit.</description>
+<fname>pci_false_positive_exp.nasl</fname>
+<plugin_modification_date>2012/07/05</plugin_modification_date>
+<plugin_name>PCI DSS Compliance : Handling False Positives</plugin_name>
+<plugin_publication_date>2012/07/18</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.1</script_version>
+<solution>n/a</solution>
+<synopsis>Notes the proper handling of false positives in PCI DSS scans.</synopsis>
+</ReportItem>
+<ReportItem port="33489" svc_name="rpc-status" protocol="udp" severity="4" pluginID="10544" pluginName="Linux Multiple statd Packages Remote Format String" pluginFamily="RPC">
+<bid>1480</bid>
+<cve>CVE-2000-0666</cve>
+<cve>CVE-2000-0800</cve>
+<cvss_base_score>10.0</cvss_base_score>
+<cvss_temporal_score>8.3</cvss_temporal_score>
+<cvss_temporal_vector>CVSS2#E:F/RL:OF/RC:C</cvss_temporal_vector>
+<cvss_vector>CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C</cvss_vector>
+<description>The remote statd service could be brought down with a format string attack - it now needs to be restarted manually.
+
+This means that an attacker may execute arbitrary code thanks to a bug in this daemon.</description>
+<exploit_available>true</exploit_available>
+<exploitability_ease>Exploits are available</exploitability_ease>
+<fname>statd_format_string.nasl</fname>
+<osvdb>443</osvdb>
+<osvdb>57715</osvdb>
+<plugin_modification_date>2012/06/22</plugin_modification_date>
+<plugin_name>Linux Multiple statd Packages Remote Format String</plugin_name>
+<plugin_publication_date>2000/11/10</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Critical</risk_factor>
+<script_version>$Revision: 1.40 $</script_version>
+<see_also>http://archives.neohapsis.com/archives/bugtraq/2000-07/0206.html</see_also>
+<solution>Upgrade to the latest version of rpc.statd.</solution>
+<synopsis>The remote service is vulnerable to a buffer overflow.</synopsis>
+<vuln_publication_date>2000/07/16</vuln_publication_date>
+<xref>OSVDB:443</xref>
+<xref>OSVDB:57715</xref>
+<plugin_output>
+The remote statd service may be vulnerable to a format string attack.
+
+This means that an attacker may execute arbitrary code thanks to a bug in
+this daemon.
+
+Only older versions of statd under Linux are affected by this problem.
+
+*** Nessus reports this vulnerability using only information that was gathered.
+*** Use caution when testing without safe checks enabled.</plugin_output>
+</ReportItem>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="3" pluginID="64381" pluginName="CentOS 6 : nspr (CESA-2013:0213)" pluginFamily="CentOS Local Security Checks">
+<cpe>p-cpe:/a:centos:centos:nspr
+p-cpe:/a:centos:centos:nspr-devel
+p-cpe:/a:centos:centos:nss
+p-cpe:/a:centos:centos:nss-devel
+p-cpe:/a:centos:centos:nss-pkcs11-devel
+p-cpe:/a:centos:centos:nss-sysinit
+p-cpe:/a:centos:centos:nss-tools
+p-cpe:/a:centos:centos:nss-util
+p-cpe:/a:centos:centos:nss-util-devel
+cpe:/o:centos:centos:6</cpe>
+<description>Updated nss, nss-util, and nspr packages that fix one security issue, various bugs, and add enhancements are now available for Red Hat Enterprise Linux 6.
+
+The Red Hat Security Response Team has rated this update as having important security impact.
+
+Network Security Services (NSS) is a set of libraries designed to support the cross-platform development of security-enabled client and server applications. Netscape Portable Runtime (NSPR) provides platform independence for non-GUI operating system facilities.
+
+It was found that a Certificate Authority (CA) mis-issued two intermediate certificates to customers. These certificates could be used to launch man-in-the-middle attacks. This update renders those certificates as untrusted. This covers all uses of the certificates, including SSL, S/MIME, and code signing. (BZ#890605)
+
+Note: This fix only applies to applications using the NSS Builtin Object Token. It does not render the certificates untrusted for applications that use the NSS library, but do not use the NSS Builtin Object Token.
+
+In addition, the nss package has been upgraded to upstream version 3.13.6, the nss-util package has been upgraded to upstream version 3.13.6, and the nspr package has been upgraded to upstream version 4.9.2. These updates provide a number of bug fixes and enhancements over the previous versions. (BZ#891663, BZ#891670, BZ#891661)
+
+Users of NSS, NSPR, and nss-util are advised to upgrade to these updated packages, which fix these issues and add these enhancements.
+After installing this update, applications using NSS, NSPR, or nss-util must be restarted for this update to take effect.</description>
+<fname>centos_RHSA-2013-0213.nasl</fname>
+<patch_publication_date>2013/01/31</patch_publication_date>
+<plugin_modification_date>2013/06/29</plugin_modification_date>
+<plugin_name>CentOS 6 : nspr (CESA-2013:0213)</plugin_name>
+<plugin_publication_date>2013/02/01</plugin_publication_date>
+<plugin_type>local</plugin_type>
+<rhsa>2013:0213</rhsa>
+<risk_factor>High</risk_factor>
+<script_version>$Revision: 1.2 $</script_version>
+<see_also>http://www.nessus.org/u?8eb1f392</see_also>
+<solution>Update the affected nspr packages.</solution>
+<synopsis>The remote CentOS host is missing one or more security updates.</synopsis>
+<xref>RHSA:2013:0213</xref>
+<plugin_output>
+Remote package installed : nspr-4.9-1.el6
+Should be : nspr-4.9.2-0.el6_3.1
+
+Remote package installed : nss-3.13.3-6.el6
+Should be : nss-3.13.6-2.el6_3
+
+Remote package installed : nss-sysinit-3.13.3-6.el6
+Should be : nss-sysinit-3.13.6-2.el6_3
+
+Remote package installed : nss-tools-3.13.3-6.el6
+Should be : nss-tools-3.13.6-2.el6_3
+
+Remote package installed : nss-util-3.13.3-2.el6
+Should be : nss-util-3.13.6-1.el6_3
+
+</plugin_output>
+</ReportItem>
+</ReportHost>
+</Report>
+</NessusClientData_v2>

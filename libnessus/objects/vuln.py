@@ -2,7 +2,11 @@
 
 
 class NessusVuln(object):
+    """This class represent a ReportItem in the nessus xml"""
     def __init__(self, vuln_info={}):
+        """Constructor of Vulnerability
+           :param vuln_info: dict of vulnerabities
+        """
         _minimal_attr = set(['port', 'svc_name', 'protocol', 'severity'])
 
         _vuln_info_attr = set(vuln_info.keys())
@@ -17,6 +21,10 @@ class NessusVuln(object):
 
     @property
     def port(self):
+        """
+        Get the port where the vuln is detected, 0 if not network detected
+        :return str
+        """
         return self.__vuln_info['port']
 
     @property

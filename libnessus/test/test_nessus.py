@@ -71,3 +71,86 @@ class TestNessus(unittest.TestCase):
             {'file': "%s/%s" % (self.fdir, 'files/xxxxxxxx.nessus'),
              'hosts': 0},
             ]
+        #special report for Vuln Testing one host many vuln
+        self.expected_vuln = [
+            {
+                'port': "0",
+                'svc_name': "general",
+                'protocol': "tcp",
+                'severity': "0",
+                'pluginID': "19506",
+                'pluginName': "Nessus Scan Information",
+                'pluginFamily': "Settings",
+                'plugin_modification_date': "2013/11/21",
+                'plugin_publication_date': '2005/08/26',
+                'risk_factor': "None",
+                'solution': 'n/a',
+                'synopsis': 'Information about the Nessus scan.',
+            },
+            {
+                'port': '0',
+                'protocol': 'tcp',
+                'severity': '0',
+                'solution': 'Install the patches listed below',
+                'svc_name': 'general',
+                'synopsis': 'The remote host is missing several patches',
+                'risk_factor': 'None',
+                'plugin_family': 'General',
+                'pluginID': '66334',
+                'plugin_modification_date': '2013/12/18',
+                'plugin_name': 'Patch Report',
+                'plugin_publication_date': '2013/05/07',
+                'plugin_type': 'local',
+            },
+            {
+                'port': '0',
+                'protocol': 'tcp',
+                'risk_factor': 'None',
+                'severity': '0',
+                'solution': 'n/a',
+                'svc_name': 'general',
+                'synopsis': 'Notes the proper handling of false positives in PCI DSS scans.',
+                'plugin_family': 'Policy Compliance',
+                'plugin_id': '60020',
+                'plugin_modification_date': '2012/07/05',
+                'plugin_name': 'PCI DSS Compliance : Handling False Positives',
+                'plugin_publication_date': '2012/07/18',
+                'plugin_type': 'summary',
+            },
+            {
+                'severity': '4',
+                'solution': 'Upgrade to the latest version of rpc.statd.',
+                'svc_name': 'rpc-status',
+                'synopsis': 'The remote service is vulnerable to a buffer overflow.',
+                'port': '33489',
+                'protocol': 'udp',
+                'risk_factor': 'Critical',
+                'plugin_id': '10544',
+                'plugin_modification_date': '2012/06/22',
+                'plugin_name': 'Linux Multiple statd Packages Remote Format String',
+                'plugin_family': 'RPC',
+                'plugin_publication_date': '2000/11/10',
+                'plugin_type': 'remote',
+            },
+            {
+                'severity': '3',
+                'solution': 'Update the affected nspr packages.',
+                'svc_name': 'general',
+                'synopsis': 'The remote CentOS host is missing one or more security updates.',
+                'port': '0',
+                'protocol': 'tcp',
+                'risk_factor': 'High',
+                'plugin_family': 'CentOS Local Security Checks',
+                'plugin_id': '64381',
+                'plugin_modification_date': '2013/06/29',
+                'plugin_name': 'CentOS 6 : nspr (CESA-2013:0213)',
+                'plugin_publication_date': '2013/02/01',
+                'plugin_type': 'local',
+            }
+            ]
+
+        fd = open("%s/%s" % (self.fdir, 'files/nessus_forgedReport_ReportItem.nessus'))
+        s = fd.read()
+        fd.close()
+        nrp = NessusParser.parse(s)
+        self.VulnList = nrp.hosts[0].get_report_items

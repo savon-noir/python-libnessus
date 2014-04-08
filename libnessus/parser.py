@@ -86,7 +86,7 @@ class NessusParser(object):
             'protocol': root.attrib.get('protocol'),
             'severity': root.attrib.get('severity'),
             'plugin': {
-                'plugin_id': root.attrib.get('pluginId'),
+                'plugin_id': root.attrib.get('pluginID'),
                 'plugin_name': root.attrib.get('pluginName'),
                 'plugin_family': root.attrib.get('pluginFamily'),
             },

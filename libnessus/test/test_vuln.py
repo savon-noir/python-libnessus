@@ -6,7 +6,14 @@ from test_nessus import TestNessus
 class TestVuln(TestNessus):
     """Unit test of vuln object"""
     def test_port(self):
-        """"""
+        """test the port return"""
+        i = 0
+        for vuln in self.VulnList:
+            value = vuln.port
+            expected = self.expected_vuln[i]['port']
+            self.assertEqual(value, expected)
+            i = i + 1
+
     def test_service(self):
         """"""
     def test_protocol(self):
