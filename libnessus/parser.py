@@ -87,10 +87,10 @@ class NessusParser(object):
         if an element can be represented more than once it will become a list
         """
         _vuln_data = {}
-        #add all attrib in the dict
+        # add all attrib in the dict
         _vuln_data.update(root.attrib)
-        #parse each elem and add it to the dict
-        #+ create a list as value if needed
+        # parse each elem and add it to the dict
+        # + create a list as value if needed
         for elt in root:
             if elt.tag in ['cve', 'bid', 'osvdb', 'iava', 'iavb', 'xref']:
                 try:
@@ -120,7 +120,7 @@ class NessusParser(object):
         return rval
 # I comment the following method
 # not used up until now
-#we'll see if really needed
+# we'll see if really needed
 #    @classmethod
 #    def parse_fromdict(cls, rdict):
 #        nreport = {}

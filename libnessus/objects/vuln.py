@@ -101,14 +101,13 @@ class NessusReportItem(object):
     def get_vuln_risk(self):
         """
         Get a dict of the risk
-        TODO REWRITE CODE AS risk_score do not exist anymore
         should return a dict with key of the internal dict that match patterns:
         'risk_factor' or 'cvss_*'
         :return dict
         """
-        #syntax allowed from 2.7>= or 3 damnit!
-        #risk = {k: v for (k,v) in __vuln_info.items() if k.startswith("cvss_")
-        #or k.startswith("risk_factor")}
+        # syntax allowed from 2.7>= or 3 damnit!
+        # risk = {k:v for (k,v) in __vuln_info.items() if k.startswith("cvss_")
+        # or k.startswith("risk_factor")}
         risk = dict(
             (k, v) for (k, v) in self.__vuln_info.items()
             if k.startswith("cvss_") or k.startswith("risk_factor")
@@ -119,7 +118,6 @@ class NessusReportItem(object):
     def get_vuln_plugin(self):
         """
         Get a dict of plugin
-        TODO REWRITE CODE AS plugin_*/'script_version' are not sub dict anymore
         :return dict
         """
         plugindetail = dict(
@@ -132,7 +130,6 @@ class NessusReportItem(object):
     def get_vuln_xref(self):
         """
         Get a dict of xref
-        TODO REWRITE CODE AS all external ref are not inside a sub dict anymore
         expected :
         { 'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
           'iava': [], 'iavb': [], 'cert': [], 'xref': []
