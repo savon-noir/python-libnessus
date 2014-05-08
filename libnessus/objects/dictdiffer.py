@@ -1,4 +1,3 @@
-#coding=utf-8
 """
 A dictionary difference calculator
 Originally posted as:
