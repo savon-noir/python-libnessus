@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from libnessus.objects.dictdiffer import DictDiffer
+
 
 class NessusReportItem(object):
     """This class represent a ReportItem in the nessus xml"""
@@ -28,6 +30,15 @@ class NessusReportItem(object):
 
     def __hash__(self):
         return(hash(self.plugin_id))
+
+    def __eq__(self, other):
+        diff = DictDiffer(self.__dict__, other.__dict__)
+        return (
+            isinstance(other, self.__class__)
+            and len(diff.added()) == 0
+            and len(diff.removed()) == 0
+            and len(diff.changed()) == 0
+            )
 
     @property
     def port(self):
@@ -117,7 +128,7 @@ class NessusReportItem(object):
     @property
     def get_vuln_plugin(self):
         """
-        Get a dict of plugin
+        Get a dict of plugin information
         :return dict
         """
         plugindetail = dict(

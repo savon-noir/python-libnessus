@@ -132,3 +132,14 @@ class TestVuln(TestNessus):
             expected = self.expected_vuln[i]['solution']
             self.assertEqual(value, expected)
             i = i + 1
+
+    def test_eq(self):
+        """test the equal method"""
+        """
+           compare all reportitem to themself to check equality
+        """
+        for vuln in self.VulnList:
+            value = vuln
+            expected = vuln
+            self.assertEqual(value, expected)
+
