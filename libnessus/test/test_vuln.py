@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 from test_nessus import TestNessus
+#from libnessus.objects.vuln import NessusReportItem
+from libnessus.objects.vuln import NessusReportItem
 
 
 class TestVuln(TestNessus):
@@ -139,7 +141,40 @@ class TestVuln(TestNessus):
            compare all reportitem to themself to check equality
         """
         for vuln in self.VulnList:
-            value = vuln
-            expected = vuln
+            value = NessusReportItem(vuln.get_vuln_info.copy()) 
+            expected = NessusReportItem(vuln.get_vuln_info.copy()) 
             self.assertEqual(value, expected)
 
+    def test_ne(self):
+        """test the not equal operator"""
+        for vuln in self.VulnList:
+            forgeditem = vuln.get_vuln_info.copy()
+            forgeditem['plugin_name'] = "FORGED"
+            value = NessusReportItem(forgeditem)
+            expected = NessusReportItem(vuln.get_vuln_info)
+            self.assertNotEqual(value, expected)
+
+    def test_iscomparable(self):
+        '''
+        Description: test to throw TypeError in case of uncompatible obj
+        '''
+        for vuln in self.VulnList:
+            value = vuln
+            dictvuln = {
+                'port': "23456",
+                'svc_name': "general",
+                'protocol': "tcp",
+                'severity': '3',
+                'pluginID': '999999',
+                'plugin_name': 'XXxxxXXXxXXxXxXxxX',
+                }
+            expected = NessusReportItem(dictvuln)
+            self.assertRaises(TypeError, value.iscomparable, expected)
+        # test different type
+        self.assertRaises(TypeError, value.iscomparable, 5)
+
+    def test_diff(self):
+        '''
+        Description:
+        '''
+        pass
