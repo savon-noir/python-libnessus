@@ -140,9 +140,11 @@ class TestVuln(TestNessus):
            compare all reportitem to themself to check equality
         """
         for vuln in self.VulnList:
-            value = NessusReportItem(vuln.get_vuln_info.copy()) 
-            expected = NessusReportItem(vuln.get_vuln_info.copy()) 
+            value = NessusReportItem(vuln.get_vuln_info.copy())
+            expected = NessusReportItem(vuln.get_vuln_info.copy())
             self.assertEqual(value, expected)
+        # test different type
+        self.assertRaises(TypeError, value.__eq__, 5)
 
     def test_ne(self):
         """test the not equal operator"""
@@ -151,7 +153,10 @@ class TestVuln(TestNessus):
             forgeditem['plugin_name'] = "FORGED"
             value = NessusReportItem(forgeditem)
             expected = NessusReportItem(vuln.get_vuln_info)
-            self.assertNotEqual(value, expected)
+            value = value != expected
+            self.assertEqual(value, True)
+        # test different type
+        self.assertRaises(TypeError, vuln.__ne__, 5)
 
     def test_iscomparable(self):
         '''
@@ -172,8 +177,26 @@ class TestVuln(TestNessus):
         # test different type
         self.assertRaises(TypeError, value.iscomparable, 5)
 
+    def test_init(self):
+        """test contructor exception when not all param are present"""
+        dictvuln = {
+            'port': "23456",
+            'svc_name': "general",
+            'protocol': "tcp",
+            'severity': '3',
+            }
+        self.assertRaises(Exception,NessusReportItem.__init__,dictvuln)
+
     def test_diff(self):
         '''
-        Description:
+         test the diff (should return dict of 4 keys)
         '''
-        pass
+        for vuln in self.VulnList:
+            value = vuln
+            self.assertRaises(TypeError, value.diff, 5)
+            value = isinstance(vuln.diff(vuln), dict)
+            expected = True
+            self.assertEqual(value, expected)
+            value = len(vuln.diff(vuln).keys())
+            expected = 4
+            self.assertEqual(value, expected)
