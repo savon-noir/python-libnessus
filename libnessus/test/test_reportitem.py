@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 from test_nessus import TestNessus
-#from libnessus.objects.vuln import NessusReportItem
-from libnessus.objects.vuln import NessusReportItem
+from libnessus.objects.reportitem import NessusReportItem
 
 
 class TestVuln(TestNessus):
