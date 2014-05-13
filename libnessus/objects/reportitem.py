@@ -31,7 +31,7 @@ class NessusReportItem(object):
         else:
             raise Exception("Not all the attributes to create a decent "
                             "NessusVuln object are available. "
-                            "Missing: ".format(" ".join(_missing_attr)))
+                            "Missing: ", _missing_attr)
 
     def __repr__(self):
         """String representation of the object NessusReportItem

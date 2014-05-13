@@ -185,7 +185,7 @@ class TestVuln(TestNessus):
             'protocol': "tcp",
             'severity': '3',
             }
-        self.assertRaises(Exception,NessusReportItem.__init__,dictvuln)
+        self.assertRaises(Exception, NessusReportItem, dictvuln)
 
     def test_diff(self):
         '''
