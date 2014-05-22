@@ -1,7 +1,17 @@
 #!/usr/bin/env python
+'''
+File: host.py
+Author: Me
+Description:
+'''
+
+from libnessus.objects.dictdiffer import DictDiffer
 
 
 class NessusHost(object):
+    '''
+    Description: This class represent an object ReportHost in a nessus xml
+    '''
     def __init__(self, host_properties={}, report_items=[]):
         self._minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
         self._hostprop_attr = set(host_properties.keys())
@@ -23,6 +33,68 @@ class NessusHost(object):
                                           self.get_host_properties,
                                           self.get_total_vuln)
         return retstr
+
+    def __hash__(self):
+        """:return: hash function to be able to add object to dict/set
+           :rtype: hash
+        """
+        return hash(self.address)
+
+    def iscomparable(self, other):
+        '''
+        Description: check if two obj are comparable
+        by checking the class name and adress value are equal
+        :param other: NessusHost
+        :type other: NessusHost
+        :raises: TypeError if not comparable
+        '''
+        if not isinstance(other, self.__class__):
+            raise TypeError(("Non sense incompatibe object : ", self, other))
+        if self.address != other.address:
+            raise TypeError(("Address need to be == : ", self, other))
+
+    def __eq__(self, other):
+        '''
+        Description: compare all properties and reportitem
+        :param other: the object to compare
+        :type other: NessusHost
+        :return: true if equal
+        :rtype: boolean
+        '''
+        try:
+            self.iscomparable(other)
+        except TypeError as etyperr:
+            raise etyperr
+        # compare properties of the host
+        diff = DictDiffer(self.get_host_properties, other.get_host_properties)
+        res_pro = (
+            len(diff.added()) == 0
+            and len(diff.removed()) == 0
+            and len(diff.changed()) == 0
+            )
+        # compare all ReportItem
+        # todo
+        return res_pro
+
+    def __ne__(self, other):
+        '''
+        Description:
+        :param other: the object to compare
+        :type other: NessusHost
+        :return: true if equal
+        :rtype: boolean
+        '''
+        pass
+
+    def diff(self, other):
+        '''
+        Description: compute a full diff dict
+        :param other: the object to compare
+        :type other: NessusHost
+        :return:
+        :rtype: dict
+        '''
+        pass
 
     @property
     def name(self):
