@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from libnessus.objects import NessusHost
+from libnessus.objects.reporthost import NessusReportHost
 from test_nessus import TestNessus
 
 
@@ -15,7 +15,7 @@ class TestHost(TestNessus):
         host_properties = host.get_host_properties
         report_items = host.get_report_items
         del host_properties['name']
-        self.assertRaises(Exception, NessusHost, host_properties, report_items)
+        self.assertRaises(Exception, NessusReportHost, host_properties, report_items)
 
     def test_name(self):
         """check the name of hosts"""

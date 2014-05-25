@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-File: host.py
+File: reporthost.py
 Author: Me
 Description:
 '''
@@ -8,9 +8,9 @@ Description:
 from libnessus.objects.dictdiffer import DictDiffer
 
 
-class NessusHost(object):
+class NessusReportHost(object):
     '''
-    Description: This class represent an object ReportHost in a nessus xml
+    Description: Represent an object NessusReportHost in a nessus xml
     '''
     def __init__(self, host_properties={}, report_items=[]):
         self._minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
@@ -21,7 +21,7 @@ class NessusHost(object):
             self.__host_properties = host_properties
         else:
             raise Exception("Not all the attributes to create a decent "
-                            "NessusHost are available. "
+                            "NessusReportHost are available. "
                             "Missing: ".format(" ".join(self._missing_attr)))
 
         self.__report_items = report_items
@@ -44,8 +44,8 @@ class NessusHost(object):
         '''
         Description: check if two obj are comparable
         by checking the class name and adress value are equal
-        :param other: NessusHost
-        :type other: NessusHost
+        :param other: NessusReportHost
+        :type other: NessusReportHost
         :raises: TypeError if not comparable
         '''
         if not isinstance(other, self.__class__):
@@ -57,7 +57,7 @@ class NessusHost(object):
         '''
         Description: compare all properties and reportitem
         :param other: the object to compare
-        :type other: NessusHost
+        :type other: NessusReportHost
         :return: true if equal
         :rtype: boolean
         '''
@@ -80,7 +80,7 @@ class NessusHost(object):
         '''
         Description:
         :param other: the object to compare
-        :type other: NessusHost
+        :type other: NessusReportHost
         :return: true if equal
         :rtype: boolean
         '''
@@ -90,7 +90,7 @@ class NessusHost(object):
         '''
         Description: compute a full diff dict
         :param other: the object to compare
-        :type other: NessusHost
+        :type other: NessusReportHost
         :return:
         :rtype: dict
         '''

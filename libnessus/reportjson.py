@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import json
-from libnessus.objects import NessusHost, NessusReportItem, NessusReport
+from libnessus.objects import NessusReportHost, NessusReportItem, NessusReport
 from libnessus.parser import NessusParser
 
 
 class ReportEncoder(json.JSONEncoder):
     def default(self, obj):
-        otype = {'NessusHost': NessusHost,
+        otype = {'NessusReportHost': NessusReportHost,
                  'NessusReportItem': NessusReportItem,
                  'NessusReport': NessusReport}
         if isinstance(obj, tuple(otype.values())):

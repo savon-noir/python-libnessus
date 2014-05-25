@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import xml.etree.ElementTree as ET
-from libnessus.objects import NessusHost, NessusReportItem, NessusReport
+from libnessus.objects import NessusReportHost, NessusReportItem, NessusReport
 
 
 class NessusParser(object):
@@ -76,7 +76,7 @@ class NessusParser(object):
             _new_item = cls.parse_reportitem(report_item)
             _vuln_list.append(_new_item)
 
-        return NessusHost(_dhp, _vuln_list)
+        return NessusReportHost(_dhp, _vuln_list)
 
     @classmethod
     def parse_reportitem(cls, root=None):
@@ -134,14 +134,14 @@ class NessusParser(object):
 #                hlist = []
 #                for _host in r['_NessusReport__hosts']:
 #                    _vlist = []
-#                    for _vulns in _host['__NessusHost__']['report_items']:
+#                    for _vulns in _host['__NessusReportHost']['report_items']:
 #                        _vdictdata =\
 #                            _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
 #                        _vlist.append(NessusVuln(_vdictdata))
 #
 #                    _dhp =\
 #                       _host['__NessusHost__']['_NessusHost__host_properties']
-#                    nh = NessusHost(_dhp, _vlist)
+#                    nh = NessusReportHost(_dhp, _vlist)
 #                    hlist.append(nh)
 #                nreport = NessusReport(name=rname, hosts=hlist)
 #        except KeyError:

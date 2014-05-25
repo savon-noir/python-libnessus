@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from libnessus.parser import NessusParser
-from libnessus.objects import NessusReport, NessusHost, NessusReportItem
+from libnessus.objects import NessusReport, NessusReportHost, NessusReportItem
 import xml.etree.ElementTree as ET
 
 from test_nessus import TestNessus
@@ -37,7 +37,7 @@ class TestParser(TestNessus):
         root = ET.fromstring(s)
         host = NessusParser.parse_host(root=root)
         self.assertEqual(
-                          isinstance(host, NessusHost), True)
+                          isinstance(host, NessusReportHost), True)
 
     def test_parse_reportitem(self):
         """test_parse_reportitem : check vuln parsing"""
