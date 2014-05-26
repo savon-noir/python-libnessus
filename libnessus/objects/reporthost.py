@@ -65,15 +65,12 @@ class NessusReportHost(object):
             self.iscomparable(other)
         except TypeError as etyperr:
             raise etyperr
-        # compare properties of the host
-        diff = DictDiffer(self.get_host_properties, other.get_host_properties)
+        rdict = self.diff(other)
         res_pro = (
-            len(diff.added()) == 0
-            and len(diff.removed()) == 0
-            and len(diff.changed()) == 0
+            len(rdict["added"]) == 0
+            and len(rdict["removed"]) == 0
+            and len(rdict["changed"]) == 0
             )
-        # compare all ReportItem
-        # todo
         return res_pro
 
     def __ne__(self, other):
@@ -84,17 +81,43 @@ class NessusReportHost(object):
         :return: true if equal
         :rtype: boolean
         '''
-        pass
+        rdict = self.diff(other)
+        res_pro = (len(rdict['unchanged']) != len(self.__get_dict()))
+        return res_pro
+
+    def __get_dict(self):
+        '''
+        Description: get a dict representation of the object
+        Needed because the object has 2 main component :
+        a dict and a table of ReportItem
+        :return: dict representation of the object
+        :rtype: dict
+        '''
+        rdict = self.get_host_properties.copy()
+        # add reportitem in the dict in the form
+        # key = {'NessusReportItem::10544': NessusReportItem,}
+        reportitem = dict(
+            [("%s::%s" % (s.__class__.__name__, str(s.plugin_id)), s)
+                for s in self.__report_items]
+            )
+        rdict.update(reportitem)
+        return rdict
 
     def diff(self, other):
         '''
-        Description: compute a full diff dict
+        Description: compute a diff dict obj
         :param other: the object to compare
         :type other: NessusReportHost
         :return:
         :rtype: dict
         '''
-        pass
+        diff = DictDiffer(self.__get_dict(), other.__get_dict())
+        rdict = {}
+        rdict["removed"] = diff.removed()
+        rdict["changed"] = diff.changed()
+        rdict["added"] = diff.added()
+        rdict["unchanged"] = diff.unchanged()
+        return rdict
 
     @property
     def name(self):
