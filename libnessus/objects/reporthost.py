@@ -81,6 +81,10 @@ class NessusReportHost(object):
         :return: true if equal
         :rtype: boolean
         '''
+        try:
+            self.iscomparable(other)
+        except TypeError as etyperr:
+            raise etyperr
         rdict = self.diff(other)
         res_pro = (len(rdict['unchanged']) != len(self.__get_dict()))
         return res_pro

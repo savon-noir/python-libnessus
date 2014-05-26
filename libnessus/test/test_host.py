@@ -2,6 +2,7 @@
 
 from libnessus.objects.reporthost import NessusReportHost
 from test_nessus import TestNessus
+import copy
 
 
 class TestHost(TestNessus):
@@ -44,7 +45,7 @@ class TestHost(TestNessus):
                 i = i + 1
 
     def test_address(self):
-        """test_started :useless already tested in test_ip"""
+        """test_address :useless already tested in test_ip"""
 
     def test_started(self):
         """Check scan start time"""
@@ -128,3 +129,76 @@ class TestHost(TestNessus):
                                                                     value.get_total_vuln)
                 self.assertEqual(value.get_total_vuln, expected, err_msg)
                 i = i + 1
+
+    def test_get_hostprop_attr(self):
+        """test return a set of key properties"""
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            for value in list_hosts:
+                expected = True
+                value = value.get_hostprop_attr
+                value = isinstance(value, set)
+                self.assertEqual(value, expected)
+
+    def test_hash(self):
+        """check hash function"""
+        expected = 1
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            i = 0
+            for value in list_hosts:
+                a = set()
+                a.add(value)
+                a.add(value)
+                self.assertEqual(len(a), expected)
+                i = i + 1
+
+    def test_iscomparable(self):
+        '''
+        test_host: test to throw TypeError in case of uncompatible obj
+        '''
+        dictHost = {
+            'host-ip': "255.255.255.255",
+            'name': "wakawakawaka",
+            'HOST_START': "hh:mm",
+            'HOST_END': "HH:MM",
+            }
+        forged = NessusReportHost(dictHost)
+        for sample in self.flist:
+            list_hosts = sample['report'].hosts
+            for value in list_hosts:
+                self.assertRaises(TypeError, value.iscomparable, forged)
+        # test different type
+        self.assertRaises(TypeError, value.iscomparable, 5)
+
+    def test_eq(self):
+        '''
+        test_host : test equality
+        retrieve self.forgedHost and play with it
+        no need to test with other ip since allready tested in iscomparable
+        '''
+        h1 = self.forgedHost
+        h2 = copy.deepcopy(h1)
+        # after copy should be equal
+        self.assertEqual((h1 == h2), True)
+        # force another name should return false
+        h2.__dict__['_NessusReportHost__host_properties']['name'] = 'wakawaka'
+        self.assertEqual((h1 == h2), False)
+        # check the exception from iscomparable is reraised
+        self.assertRaises(TypeError, h1.__eq__, 5)
+
+    def test_ne(self):
+        '''
+        test_host : test not equal
+        retrieve self.forgedHost and play with it
+        no need to test with other ip since already tested in iscomparable
+        '''
+        h1 = self.forgedHost
+        h2 = copy.deepcopy(h1)
+        # after copy should be equal
+        self.assertEqual((h1 != h2), False)
+        # force another name should return True
+        h2.__dict__['_NessusReportHost__host_properties']['name'] = 'wakawaka'
+        self.assertEqual((h1 != h2), True)
+        # check the exception from iscomparable is reraised
+        self.assertRaises(TypeError, h1.__ne__, 5)

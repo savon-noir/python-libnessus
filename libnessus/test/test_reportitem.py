@@ -160,19 +160,19 @@ class TestVuln(TestNessus):
 
     def test_iscomparable(self):
         '''
-        Description: test to throw TypeError in case of uncompatible obj
+        test_reportitem: test to throw TypeError in case of uncompatible obj
         '''
+        dictvuln = {
+            'port': "23456",
+            'svc_name': "general",
+            'protocol': "tcp",
+            'severity': '3',
+            'pluginID': '999999',
+            'plugin_name': 'XXxxxXXXxXXxXxXxxX',
+            }
+        expected = NessusReportItem(dictvuln)
         for vuln in self.VulnList:
             value = vuln
-            dictvuln = {
-                'port': "23456",
-                'svc_name': "general",
-                'protocol': "tcp",
-                'severity': '3',
-                'pluginID': '999999',
-                'plugin_name': 'XXxxxXXXxXXxXxXxxX',
-                }
-            expected = NessusReportItem(dictvuln)
             self.assertRaises(TypeError, value.iscomparable, expected)
         # test different type
         self.assertRaises(TypeError, value.iscomparable, 5)
@@ -200,3 +200,12 @@ class TestVuln(TestNessus):
             value = len(vuln.diff(vuln).keys())
             expected = 4
             self.assertEqual(value, expected)
+
+    def test_hash(self):
+        expected = 1
+        for vuln in self.VulnList:
+            object = NessusReportItem(vuln.get_vuln_info.copy())
+            a = set()
+            a.add(object)
+            a.add(object)
+            self.assertEqual(len(a), expected)
