@@ -153,6 +153,7 @@ class TestNessus(unittest.TestCase):
         s = fd.read()
         fd.close()
         nrp = NessusParser.parse(s)
+        self.forgedreport = nrp
         # save the forged host for fast retrieve in test
         self.forgedHost = nrp.hosts[0]
         # save the forged reportItem for fast retrieve in test

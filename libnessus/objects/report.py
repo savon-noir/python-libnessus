@@ -2,6 +2,8 @@
 
 from datetime import datetime
 
+from libnessus.objects.dictdiffer import DictDiffer
+
 
 class NessusReport(object):
     """
@@ -9,11 +11,29 @@ class NessusReport(object):
         in a easy way the content, and present some metadata
     """
     def __init__(self, name, hosts):
-        """Constructor get a name and an array of hosts"""
+        '''
+        Description: Constructor of NessusReport
+        :param name: name of the report
+        :type name: str
+        :param hosts: list of NessusReportHost
+        :type hosts: list
+        :return: NessusReport
+        :rtype: NessusReport
+        '''
         self.name = name
         self.__hosts = hosts
         self.__start = self.__compute_started(self.__hosts)
         self.__end = self.__compute_ended(self.__hosts)
+
+    def __repr__(self):
+        '''
+        Description: compute a string of the obj
+        :return: description de la valeur de retour
+        :rtype: str
+        '''
+        return "{name} {total} {elapsed}".format(self.name,
+                                                 self.hosts_total,
+                                                 self.elapsed)
 
     @property
     def hosts(self):
@@ -23,10 +43,93 @@ class NessusReport(object):
         return self.__hosts
 
     def save(self, backend):
+        '''
+        Description: allow to persist to a backend
+        :param arg1: description
+        :type arg1: type
+        :return: description de la valeur de retour
+        :rtype: type    de la valeur de retour
+        '''
         raise NotImplementedError
 
+    def iscomparable(self, other):
+        '''
+        description: check if two obj are comparable
+        by checking the class name
+        :param other: nessusreport
+        :type other: nessusreport
+        :raises: typeerror if not comparable
+        '''
+        if not isinstance(other, self.__class__):
+            raise TypeError(("non sense incompatibe object : ", self, other))
+
+    def __eq__(self, other):
+        '''
+        Description: compare obj as equal
+        :param other: another report
+        :type other: NessusReport
+        :return: boolean
+        :rtype: boolean
+        '''
+        try:
+            self.iscomparable(other)
+        except TypeError as etyperr:
+            raise etyperr
+        rdict = self.diff(other)
+        res_pro = (
+            len(rdict["added"]) == 0
+            and len(rdict["removed"]) == 0
+            and len(rdict["changed"]) == 0
+            )
+        return res_pro
+
+    def __ne__(self, other):
+        '''
+        Description: compare obj as !=
+        :param other: another report
+        :type other: NessusReport
+        :return: boolean
+        :rtype: boolean
+        '''
+        try:
+            self.iscomparable(other)
+        except TypeError as etyperr:
+            raise etyperr
+        rdict = self.diff(other)
+        res_pro = (len(rdict['unchanged']) != len(self.__get_dict()))
+        return res_pro
+
+    def __get_dict(self):
+        '''
+        Description: get a dict representation of the object
+        Needed to transform the obj in a dict representation to use dictdiffer
+        :return: dict representation of the object
+        :rtype: dict
+        '''
+        rdict = {}
+        rdict['name'] = self.name
+        hostitem = dict(
+            [("%s::%s" % (s.__class__.__name__, str(s)), s)
+                for s in self.hosts]
+            )
+        rdict.update(hostitem)
+        return rdict
+
     def diff(self, other):
-        raise NotImplementedError
+        '''
+        Description: diff object and provide the differences
+        :param other: obj to compare to
+        :type other: NessusReport
+        :return: a dict of all the differences
+        :rtype: dict
+        '''
+        diff = DictDiffer(self.__get_dict(), other.__get_dict())
+        rdict = {}
+        rdict["removed"] = diff.removed()
+        rdict["changed"] = diff.changed()
+        rdict["added"] = diff.added()
+        rdict["unchanged"] = diff.unchanged()
+        return rdict
 
     @property
     def started(self):

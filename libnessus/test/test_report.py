@@ -24,6 +24,15 @@ class TestNessusReport(TestNessus):
 
     def test_save(self):
         """"""
+
+    def test_iscomparable(self):
+        '''
+        test_iscomparable test to throm typeError if not the same type
+        '''
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.iscomparable, 5)
+
     def test_diff(self):
         """"""
     def test_started(self):
