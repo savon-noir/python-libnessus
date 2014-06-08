@@ -3,7 +3,7 @@
 from libnessus.objects.reporthost import NessusReportHost
 from test_nessus import TestNessus
 from datetime import datetime
-
+import copy
 
 class TestNessusReport(TestNessus):
     """Test Report object"""
@@ -33,8 +33,22 @@ class TestNessusReport(TestNessus):
         # test different type
         self.assertRaises(TypeError, value.iscomparable, 5)
 
-    def test_diff(self):
+    def test_eq(self):
         """"""
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.__eq__, 5)
+        value2 = copy.deepcopy(value)
+        self.assertEqual((value == value2), True)
+
+    def test_ne(self):
+        """"""
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.__eq__, "5")
+        value2 = copy.deepcopy(value)
+        self.assertEqual((value != value2), False)
+
     def test_started(self):
         """Test the startime of the scan"""
         for testfile in self.flist:
