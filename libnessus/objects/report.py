@@ -31,9 +31,9 @@ class NessusReport(object):
         :return: description de la valeur de retour
         :rtype: str
         '''
-        return "{name} {total} {elapsed}".format(self.name,
-                                                 self.hosts_total,
-                                                 self.elapsed)
+        return "{name} {total} {elapsed}".format(name=self.name,
+                                                 total=self.hosts_total,
+                                                 elapsed=self.elapsed)
 
     @property
     def hosts(self):
@@ -73,15 +73,15 @@ class NessusReport(object):
         '''
         try:
             self.iscomparable(other)
+            rdict = self.diff(other)
+            res_pro = (
+                len(rdict["added"]) == 0
+                and len(rdict["removed"]) == 0
+                and len(rdict["changed"]) == 0
+                )
+            return res_pro
         except TypeError as etyperr:
             raise etyperr
-        rdict = self.diff(other)
-        res_pro = (
-            len(rdict["added"]) == 0
-            and len(rdict["removed"]) == 0
-            and len(rdict["changed"]) == 0
-            )
-        return res_pro
 
     def __ne__(self, other):
         '''
@@ -93,11 +93,11 @@ class NessusReport(object):
         '''
         try:
             self.iscomparable(other)
+            rdict = self.diff(other)
+            res_pro = (len(rdict['unchanged']) != len(self.__get_dict()))
+            return res_pro
         except TypeError as etyperr:
             raise etyperr
-        rdict = self.diff(other)
-        res_pro = (len(rdict['unchanged']) != len(self.__get_dict()))
-        return res_pro
 
     def __get_dict(self):
         '''
@@ -109,7 +109,7 @@ class NessusReport(object):
         rdict = {}
         rdict['name'] = self.name
         hostitem = dict(
-            [("%s::%s" % (s.__class__.__name__, str(s)), s)
+            [("%s::%s" % (s.__class__.__name__, s.name), hash(s))
                 for s in self.hosts]
             )
         rdict.update(hostitem)
