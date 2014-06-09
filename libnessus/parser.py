@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import xml.etree.ElementTree as ET
-from libnessus.objects import NessusHost, NessusVuln, NessusReport
+from libnessus.objects import NessusReportHost, NessusReportItem, NessusReport
 
 
 class NessusParser(object):
@@ -73,40 +73,35 @@ class NessusParser(object):
 
         _vuln_list = []
         for report_item in root.findall("ReportItem"):
-            _new_item = cls.parse_vulnerability(report_item)
+            _new_item = cls.parse_reportitem(report_item)
             _vuln_list.append(_new_item)
 
-        return NessusHost(_dhp, _vuln_list)
+        return NessusReportHost(_dhp, _vuln_list)
 
     @classmethod
-    def parse_vulnerability(cls, root=None):
-        _vuln_data = {
-            'port': root.attrib.get('port'),
-            'svc_name': root.attrib.get('svc_name'),
-            'protocol': root.attrib.get('protocol'),
-            'severity': root.attrib.get('severity'),
-            'plugin': {
-                'plugin_id': root.attrib.get('pluginId'),
-                'plugin_name': root.attrib.get('pluginName'),
-                'plugin_family': root.attrib.get('pluginFamily'),
-            },
-            'risk_score': {},
-            'vuln_ref': {'cve': [], 'cwe': [], 'bid': [], 'osvdb': [],
-                         'iava': [], 'iavb': [], 'cert': [], 'xref': []
-                         }
-        }
-
+    def parse_reportitem(cls, root=None):
+        """
+        This function parse the xml and return an object ReportItem
+        This object stick as much as possible to the xml
+        see http://static.tenable.com/documentation/nessus_v2_file_format.pdf
+        if an element can be represented more than once it will become a list
+        """
+        _vuln_data = {}
+        # add all attrib in the dict
+        _vuln_data.update(root.attrib)
+        # parse each elem and add it to the dict
+        # + create a list as value if needed
         for elt in root:
-            if 'plugin_' in elt.tag or 'script_version' in elt.tag:
-                _vuln_data['plugin'].update({elt.tag: elt.text})
-            elif elt.tag == 'risk_factor' or 'cvss_' in elt.tag:
-                _vuln_data['risk_score'].update({elt.tag: elt.text})
-            elif elt.tag in ['cve', 'bid', 'osvdb', 'iava', 'iavb', 'xref']:
-                _vuln_data['vuln_ref'][elt.tag].append(elt.text)
+            if elt.tag in ['cve', 'bid', 'osvdb', 'iava', 'iavb', 'xref']:
+                try:
+                    _vuln_data[elt.tag].append(elt.text)
+                except:
+                    _vuln_data[elt.tag] = []
+                    _vuln_data[elt.tag].append(elt.text)
             else:
-                _vuln_data.update({elt.tag: elt.text})
+                    _vuln_data.update({elt.tag: elt.text})
 
-        return NessusVuln(_vuln_data)
+        return NessusReportItem(_vuln_data)
 
     @classmethod
     def parse_fromstring(cls, nessus_data, data_type="XML"):
@@ -123,30 +118,32 @@ class NessusParser(object):
         except IOError:
             raise
         return rval
-
-    @classmethod
-    def parse_fromdict(cls, rdict):
-        nreport = {}
-
-        rdict = rdict.pop()
-        try:
-            if rdict.keys()[0] == '__NessusReport__':
-                r = rdict['__NessusReport__']
-                rname = r['name']
-
-                hlist = []
-                for _host in r['_NessusReport__hosts']:
-                    _vlist = []
-                    for _vulns in _host['__NessusHost__']['report_items']:
-                        _vdictdata =\
-                            _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
-                        _vlist.append(NessusVuln(_vdictdata))
-
-                    _dhp =\
-                        _host['__NessusHost__']['_NessusHost__host_properties']
-                    nh = NessusHost(_dhp, _vlist)
-                    hlist.append(nh)
-                nreport = NessusReport(name=rname, hosts=hlist)
-        except KeyError:
-            raise
-        return nreport
+# I comment the following method
+# not used up until now
+# we'll see if really needed
+#    @classmethod
+#    def parse_fromdict(cls, rdict):
+#        nreport = {}
+#
+#        rdict = rdict.pop()
+#        try:
+#            if rdict.keys()[0] == '__NessusReport__':
+#                r = rdict['__NessusReport__']
+#                rname = r['name']
+#
+#                hlist = []
+#                for _host in r['_NessusReport__hosts']:
+#                    _vlist = []
+#                    for _vulns in _host['__NessusReportHost']['report_items']:
+#                        _vdictdata =\
+#                            _vulns['__NessusVuln__']['_NessusVuln__vuln_info']
+#                        _vlist.append(NessusVuln(_vdictdata))
+#
+#                    _dhp =\
+#                       _host['__NessusHost__']['_NessusHost__host_properties']
+#                    nh = NessusReportHost(_dhp, _vlist)
+#                    hlist.append(nh)
+#                nreport = NessusReport(name=rname, hosts=hlist)
+#        except KeyError:
+#            raise
+#        return nreport
