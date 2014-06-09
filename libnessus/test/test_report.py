@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
-from libnessus.objects import NessusHost
+from libnessus.objects.reporthost import NessusReportHost
 from test_nessus import TestNessus
 from datetime import datetime
-
+import copy
 
 class TestNessusReport(TestNessus):
     """Test Report object"""
 
     def test_hosts(self):
-        """ Check that all obj in this array are NessusHost
+        """ Check that all obj in this array are NessusReportHost
             Check the number of host in a report
             Check the attribute is an array
         """
@@ -20,12 +20,35 @@ class TestNessusReport(TestNessus):
                     list, tuple)), True)
             for host in testfile['report'].hosts:
                 self.assertEqual(
-                    isinstance(host, NessusHost), True)
+                    isinstance(host, NessusReportHost), True)
 
     def test_save(self):
         """"""
-    def test_diff(self):
+
+    def test_iscomparable(self):
+        '''
+        test_iscomparable test to throm typeError if not the same type
+        '''
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.iscomparable, 5)
+
+    def test_eq(self):
         """"""
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.__eq__, 5)
+        value2 = copy.deepcopy(value)
+        self.assertEqual((value == value2), True)
+
+    def test_ne(self):
+        """"""
+        value = self.forgedreport
+        # test different type
+        self.assertRaises(TypeError, value.__eq__, "5")
+        value2 = copy.deepcopy(value)
+        self.assertEqual((value != value2), False)
+
     def test_started(self):
         """Test the startime of the scan"""
         for testfile in self.flist:
@@ -34,14 +57,6 @@ class TestNessusReport(TestNessus):
                                             '%a %b %d %H:%M:%S %Y')
             self.assertEqual(rep_start, datefromrep)
 
-#    def test_commandline(self):
-#        """"""
-#    def test_version(self):
-#        """"""
-#    def test_scan_type(self):
-#        """"""
-#    def test_get_host_byid(self):
-#        """"""
     def test_endtime(self):
         """Test the endtime of the scan"""
         for testfile in self.flist:
@@ -67,11 +82,6 @@ class TestNessusReport(TestNessus):
                                                                 value)
             self.assertEqual(value, expected, err_msg)
 
-#Remove the following -->Useless
-#    def test_hosts_up(self):
-#        """"""
-#    def test_hosts_down(self):
-#        """"""
     def test_hosts_total(self):
         """Return the number of host in the report"""
         for testfile in self.flist:
@@ -81,6 +91,3 @@ class TestNessusReport(TestNessus):
                                                                 expected,
                                                                 value)
             self.assertEqual(value, expected, err_msg)
-
-#    def test_get_raw_data(self):
-#        """"""
