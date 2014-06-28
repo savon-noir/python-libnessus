@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-import json
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import jsonpickle
+import datetime
 from libnessus.plugins.backendplugin import NessusBackendPlugin
 
 
@@ -28,11 +28,18 @@ class NessusMongodbPlugin(NessusBackendPlugin):
         """
             create a json object from an NessusReport instance
             :param NessusReport: obj to insert
+            we also add some value in the document to allow search filter
             :return: str id
         """
         j = jsonpickle.encode(report)
+        docu = {"hash": hash(report),
+                "json": j,
+                "date": datetime.datetime.utcnow(),
+                "name": report.name,
+                "endtime": report.endtime,
+                "ips": [host.address for host in report.hosts]}
         try:
-            oid = self.collection.insert(json.loads(j))
+            oid = self.collection.insert(docu)
         except:
             print "MONGODB cannot insert"
             raise
@@ -56,19 +63,25 @@ class NessusMongodbPlugin(NessusBackendPlugin):
                 record = resultset[0]
                 # remove mongo's id to recreate the NessusReport Obj
                 del record['_id']
-                nessusreport = jsonpickle.decode(record)
+                nessusreport = jsonpickle.decode(record['json'])
         return nessusreport
 
-    def getall(self, dict_filter=None):
-        """return a list of tuple (id,NessusReport) saved in the backend
-           TODO : add a filter capability
+    def getall(self, dict_filter={}, limit=30):
+        """
+            return a list of tuple (id,NessusReport) saved in the backend
+            :param dict_filter: dict representing a filter see pyMongo doc
+            for details keys that can be used for filter are :
+                date(insert) name endtime(scan) ips
+            :type dict_filter: dict
+            :param limit: max number of result allowed
+            :type limit: int
         """
         nessusreportlist = []
-        resultset = self.collection.find()
+        resultset = self.collection.find(dict_filter).limit(limit)
         for report in resultset:
             oid = report['_id']
             del report['_id']
-            nessusreport = jsonpickle.decode(report)
+            nessusreport = jsonpickle.decode(report['json'])
             nessusreportlist.append((oid, nessusreport))
         return nessusreportlist
 

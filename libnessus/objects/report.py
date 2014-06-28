@@ -50,7 +50,6 @@ class NessusReport(object):
         :return: The primary key of the stored object is returned.
         :rtype: str
         '''
-        raise NotImplementedError
         if backend is not None:
             _id = backend.insert(self)
         else:
