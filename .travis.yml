@@ -8,7 +8,8 @@ python:
 install:
   - "pip install pep8 --use-mirrors"
   - "pip install pyflakes --use-mirrors"
-  -  "pip install coveralls"
+  - "pip install coveralls"
+  - "pip install jsonpickle"
   - "python setup.py install"
 before_script:
   - "pep8 . --exclude test,docs,examples"
