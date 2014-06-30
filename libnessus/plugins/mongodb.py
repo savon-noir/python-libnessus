@@ -37,7 +37,7 @@ class NessusMongodbPlugin(NessusBackendPlugin):
                 "date": datetime.datetime.utcnow(),
                 "name": report.name,
                 "endtime": report.endtime,
-                "ips": [host.address for host in report.hosts]}
+                "ipaddress": [host.address for host in report.hosts]}
         try:
             oid = self.collection.insert(docu)
         except:
