@@ -8,7 +8,7 @@ setup(
     version='0.0.1',
     author='Ronald Bister',
     author_email='mini.pelle@gmail.com',
-    packages=['libnessus', 'libnessus.objects','libnessus.plugins'],
+    packages=['libnessus', 'libnessus.objects', 'libnessus.plugins'],
     url='http://pypi.python.org/pypi/python-libnessus/',
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
