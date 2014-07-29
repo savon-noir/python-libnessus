@@ -5,6 +5,9 @@ python:
 #  - "3.2" Not ready yet
 # command to install dependencies
 
+services:
+  - elasticsearch
+  - mongodb
 install:
   - "pip install pep8 --use-mirrors"
   - "pip install pyflakes --use-mirrors"
