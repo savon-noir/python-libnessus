@@ -6,7 +6,7 @@ import base64
 from libnessus.plugins.backendplugin import NessusBackendPlugin
 
 
-class NessusESBackendPlugin(NessusBackendPlugin):
+class NessusEsPlugin(NessusBackendPlugin):
     """
       This class handle the persistence of NessusReport object in ElasticSearc
       Implementation is made using ElasticSearch python module
@@ -38,7 +38,8 @@ class NessusESBackendPlugin(NessusBackendPlugin):
         """
         j = jsonpickle.encode(report, unpicklable=False)
         j2 = jsonpickle.encode(report)
-        docu = {"hash": hash(report),
+        docid = hash(report)
+        docu = {"hash": docid,
                 "json": j,
                 "json_base64": base64.b64encode(j2),
                 "date": datetime.datetime.utcnow(),
@@ -46,13 +47,13 @@ class NessusESBackendPlugin(NessusBackendPlugin):
                 "endtime": report.endtime,
                 "ipaddress": [host.address for host in report.hosts]}
         try:
-            rc = self.es.index(
+            self.es.index(
                 index=self.index,
                 doc_type=self.store,
                 body=docu,
-                id=hash(report)
+                id=docid
                 )
-            return rc
+            return docid
         except:
             raise
 

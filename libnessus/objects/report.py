@@ -50,11 +50,11 @@ class NessusReport(object):
         :return: The primary key of the stored object is returned.
         :rtype: str
         '''
-        if backend is not None:
+        try:
             _id = backend.insert(self)
-        else:
-            raise RuntimeError
-        return _id
+            return _id
+        except:
+            print "cannot insert in backend"
 
     def iscomparable(self, other):
         '''

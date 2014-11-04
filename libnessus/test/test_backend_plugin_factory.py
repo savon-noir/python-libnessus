@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import time
 from test_nessus import TestNessus
 
 #from libnessus.parser import NessusParser
@@ -29,8 +30,7 @@ class TestNessusBackendPlugin(TestNessus):
 
         self.urls = [{'plugin_name': "mongodb"},
                      #{'plugin_name':'sql','url':'sqlite://','echo':'debug'},
-#                     {'plugin_name': 'es',
-#                     },
+                     {'plugin_name': 'es',},
                   ]
 
     def test_backend_factory(self):
@@ -41,7 +41,13 @@ class TestNessusBackendPlugin(TestNessus):
             backend = BackendPluginFactory.create(**url)
             self.assertEqual(isinstance(backend, NessusBackendPlugin), True)
             className = "Nessus%sPlugin" % url['plugin_name'].title()
+            print "DEBUUUUUUUUG",className, backend.__class__.__name__
             self.assertEqual(backend.__class__.__name__, className, True)
+
+    def test_backend_factory_Exception(self):
+        """ Invoke the factory with dummy value and test the Exception
+        """
+        self.assertRaises(Exception, BackendPluginFactory.create, plugin_name="dummy")
 
     def test_backend_insert(self):
         """ test_insert
@@ -68,10 +74,10 @@ class TestNessusBackendPlugin(TestNessus):
             backend = BackendPluginFactory.create(**url)
             for nrp in self.reportList:
                 id_list.append(nrp.save(backend))
+            #ES may have 1 second delay between put&get
+            time.sleep(1)
             for rep_id in id_list:
                 result_list.append(backend.get(rep_id))
-            #print result_list[0]
-            #print self.reportList[0]
             self.assertEqual(len(result_list), len(self.reportList))
             self.assertEqual((result_list), (self.reportList))
             id_list = []

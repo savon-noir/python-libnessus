@@ -18,15 +18,16 @@ class BackendPluginFactory(object):
            :param plugin_name: str : name of the py file without .py
            :return: NessusBackend (abstract class on top of all plugin)
         """
-        backendplugin = None
-        plugin_path = "libnessus.plugins.%s" % (plugin_name)
-        __import__(plugin_path)
-        pluginobj = sys.modules[plugin_path]
-        pluginclasses = inspect.getmembers(pluginobj, inspect.isclass)
-        for classname, classobj in pluginclasses:
-            if inspect.getmodule(classobj).__name__.find(plugin_path) == 0:
-                try:
+        try:
+            backendplugin = None
+            plugin_path = "libnessus.plugins.%s" % (plugin_name)
+            __import__(plugin_path)
+            pluginobj = sys.modules[plugin_path]
+            pluginclasses = inspect.getmembers(pluginobj, inspect.isclass)
+            for classname, classobj in pluginclasses:
+                if inspect.getmodule(classobj).__name__.find(plugin_path) == 0:
                     backendplugin = classobj(**kwargs)
-                except Exception as error:
-                    print "Cannot create Backend: %s" % (error)
+        except Exception as error:
+            print "Cannot create Backend: %s" % (error)
+            raise error
         return backendplugin
