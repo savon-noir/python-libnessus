@@ -23,7 +23,9 @@ class TestNessusReport(TestNessus):
                     isinstance(host, NessusReportHost), True)
 
     def test_save(self):
-        """"""
+        """Test the save method...
+           This is done in the plugin test
+        """
 
     def test_iscomparable(self):
         '''

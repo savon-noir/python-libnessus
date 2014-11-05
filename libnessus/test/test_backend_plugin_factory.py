@@ -29,6 +29,7 @@ class TestNessusBackendPlugin(TestNessus):
         self.reportList.append(self.forgedreport)
 
         self.urls = [{'plugin_name': "mongodb"},
+                     {'plugin_name': "mongodb", 'dbname': "yoyo", 'store': "patin"},
                      #{'plugin_name':'sql','url':'sqlite://','echo':'debug'},
                      {'plugin_name': 'es',},
                   ]
@@ -47,11 +48,19 @@ class TestNessusBackendPlugin(TestNessus):
     def test_backend_factory_Exception(self):
         """ Invoke the factory with dummy value and test the Exception
         """
-        self.assertRaises(Exception, BackendPluginFactory.create, plugin_name="dummy")
+        self.assertRaises(ImportError, BackendPluginFactory.create, plugin_name="dummy")
+        url = {'plugin_name': 'dummy'}
+        self.assertRaises(ImportError, BackendPluginFactory.create, **url)
+        url = {'plugin_name': 'es', 'host': '192.168.10.10', 'timeout': 2.0}
+        self.assertRaises(Exception, BackendPluginFactory.create, **url)
+#        url = {'plugin_name': 'es',}
+#        self.assertRaises(Exception, BackendPluginFactory.create, **url)
 
     def test_backend_insert(self):
         """ test_insert
             best way to insert is to call save() of nmapreport :P
+            should add some code to test the output as save will catch exception raise by insert
+            I dunno how to do that...
         """
         for nrp in self.reportList:
             for url in self.urls:
@@ -84,7 +93,23 @@ class TestNessusBackendPlugin(TestNessus):
             result_list = []
 
     def test_backend_getall(self):
-        pass
+        """test_backend_getall
+           silly test to be review
+        """
+        id_list = []
+        result_list = []
+        for url in self.urls:
+            backend = BackendPluginFactory.create(**url)
+            for nrp in self.reportList:
+                id_list.append(nrp.save(backend))
+            #ES may have 1 second delay between put&get
+            time.sleep(1)
+            result_list = backend.getall()
+            print (len(result_list))
+            print len(self.reportList)
+            self.assertTrue((len(result_list) > 0 ))
+            id_list = []
+            result_list = []
 
     def test_backend_delete(self):
         """ test_backend_delete
