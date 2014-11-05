@@ -9,6 +9,9 @@ setup(
     author='Ronald Bister and Mike Boutillier',
     author_email='mini.pelle@gmail.com/michael.boutillier@gmail.com',
     packages=['libnessus', 'libnessus.objects', 'libnessus.plugins'],
+    install_requires=[
+            'jsonpickle',
+        ],
     url='http://pypi.python.org/pypi/python-libnessus/',
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
