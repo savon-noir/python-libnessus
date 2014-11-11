@@ -17,7 +17,7 @@ install:
   - "python setup.py install"
 before_script:
   - "pep8 . --exclude test,docs,examples"
-  - "pyflakes ."
+  - "pyflakes libnessus/*.py"
 script: 
   nosetests --with-coverage --cover-package=libnessus
 after_success:
