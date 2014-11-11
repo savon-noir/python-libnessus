@@ -6,12 +6,23 @@
 Welcome to libnessus's documentation!
 =====================================
 
+.. include:: ../README.rst
+
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
+.. automodule:: libnessus.objects
 
+.. autoclass:: NessusReport
+    :members:
+
+.. autoclass:: NessusReportHost
+    :members:
+
+.. autoclass:: NessusReportItem
+    :members:
 
 Indices and tables
 ==================
