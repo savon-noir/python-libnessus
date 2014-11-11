@@ -40,7 +40,7 @@ Model
 -----
 NessusReport:
 
-.. code-block:: pycon
+.. code-block:: pyton
 
   In [32]: report = NessusParser.parse_fromfile('/home/vagrant/python-libnessus/libnessus/test/files/nessus_forgedReport_ReportItem.nessus')
   In [33]: report?
@@ -61,7 +61,7 @@ NessusReport:
 
 NessusReportHost:
 
-.. code-block:: pycon
+.. code-block:: pyton
 
   In [34]: host = report.hosts[0]
   In [35]: host?
@@ -72,7 +72,7 @@ NessusReportHost:
 
 NessusReportItem:
 
-.. code-block:: pycon
+.. code-block:: pyton
 
   In [36]: reportitem = host.get_report_items[3]
   In [37]: reportitem?
@@ -90,7 +90,7 @@ Examples
 --------
 Here's a basic example:
 
-.. code-block:: pycon
+.. code-block:: pyton
 
   # Parse a nessus report from xml and save it in Elastic search
   In [1]: from libnessus.parser import NessusParser
