@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 with open("README.rst") as rfile:
     long_description = rfile.read()
@@ -8,7 +8,7 @@ setup(
     version='1.0.0.0',
     author='Ronald Bister and Mike Boutillier',
     author_email='mini.pelle@gmail.com/michael.boutillier@gmail.com',
-    packages=['libnessus', 'libnessus.objects', 'libnessus.plugins'],
+    packages=find_packages(),
     install_requires=[
             'jsonpickle',
         ],
