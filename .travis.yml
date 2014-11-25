@@ -1,24 +1,27 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-#  - "3.2" Not ready yet
-# command to install dependencies
-
+- '2.6'
+- '2.7'
 services:
-  - elasticsearch
-  - mongodb
+- elasticsearch
+- mongodb
 install:
-  - "pip install pep8 --use-mirrors"
-  - "pip install pyflakes --use-mirrors"
-  - "pip install coveralls"
-  - "pip install jsonpickle"
-  - "pip install pymongo elasticsearch"
-  - "python setup.py install"
+- pip install pep8 --use-mirrors
+- pip install pyflakes --use-mirrors
+- pip install coveralls
+- pip install jsonpickle
+- pip install pymongo elasticsearch
+- python setup.py install
 before_script:
-  - "pep8 . --exclude test,docs,examples"
-  - "pyflakes libnessus/*.py"
-script: 
-  nosetests --with-coverage --cover-package=libnessus
-after_success:
-  coveralls
+- pep8 . --exclude test,docs,examples
+- pyflakes libnessus/*.py
+script: nosetests --with-coverage --cover-package=libnessus
+after_success: coveralls
+deploy:
+  provider: pypi
+  user: Michael.Boutillier
+  password:
+    secure: HqRFlOIZPM4GwfqetCHRIwFCorYqKN5qhk/Gfk6s17oEUz2xvuKUJ3W+TQMJzyGe57idc0U1ZQfmI2g2lcCEAvYx/CPEo9pFC1XOVfXZWbkvmnNYDUgtcDYnLNTOQ4d8JR14WK/muTjVgU2y8Pyo/+/5t7DqiLopFLikyKcNab8=
+  on:
+    tags: true
+    repo: bmx0r/python-libnessus
