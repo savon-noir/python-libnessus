@@ -12,7 +12,8 @@ setup(
     install_requires=[
             'jsonpickle',
         ],
-    url='http://pypi.python.org/pypi/python-libnessus/',
+    url='https://github.com/bmx0r/python-libnessus',
+    download_url='https://github.com/bmx0r/python-libnessus/tarball/1.0.0.0',
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
     long_description=long_description,
