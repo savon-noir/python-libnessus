@@ -13,16 +13,16 @@ class NessusReportHost(object):
     Description: Represent an object NessusReportHost in a nessus xml
     '''
     def __init__(self, host_properties={}, report_items=[]):
-        self._minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
+        _minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
         self._hostprop_attr = set(host_properties.keys())
-        self._missing_attr = self._minimal_attr.difference(self._hostprop_attr)
+        _missing_attr = _minimal_attr.difference(self._hostprop_attr)
 
-        if len(self._missing_attr) == 0:
+        if len(_missing_attr) == 0:
             self.__host_properties = host_properties
         else:
             raise Exception("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
-                            "Missing: ".format(" ".join(self._missing_attr)))
+                            "Missing: ".format(" ".join(_missing_attr)))
 
         self.__report_items = report_items
 

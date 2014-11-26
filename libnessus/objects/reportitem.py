@@ -17,7 +17,6 @@ class NessusReportItem(object):
         """
         _minimal_attr = set([
             'pluginID',
-            'plugin_name',
             'port',
             'svc_name',
             'protocol',
@@ -165,10 +164,15 @@ class NessusReportItem(object):
     @property
     def plugin_name(self):
         """
-        Get the plugin Name
+        Get the plugin Name lack of doc of nessus force us to try plugin_name
+        if the key do not exist, fall back on pluginName
         :return str
         """
-        return self.__vuln_info['plugin_name']
+        try:
+            plugin_name = self.__vuln_info['plugin_name']
+        except:
+            plugin_name = self.__vuln_info['pluginName']
+        return plugin_name
 
     @property
     def plugin_family(self):

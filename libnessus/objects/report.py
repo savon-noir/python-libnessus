@@ -45,12 +45,16 @@ class NessusReport(object):
     def save(self, backend):
         '''
         Description: allow to persist to a backend
-        :param arg1: description
-        :type arg1: type
-        :return: description de la valeur de retour
-        :rtype: type    de la valeur de retour
+        :param backend: libnessus.plugins.PluginBackend object.
+        :type arg1: PluginBackend
+        :return: The primary key of the stored object is returned.
+        :rtype: str
         '''
-        raise NotImplementedError
+        try:
+            _id = backend.insert(self)
+            return _id
+        except:
+            print "cannot insert in backend"
 
     def iscomparable(self, other):
         '''
