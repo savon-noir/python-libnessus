@@ -11,11 +11,23 @@ from libnessus.plugins.backendpluginFactory import BackendPluginFactory
 
 
 import glob
+import argparse
+
 from datetime import datetime
+
+# parse args
+parser = argparse.ArgumentParser(
+    description='This script will load nessusV2 report in an ES datastore')
+parser.add_argument('--filename',
+                    default="../libnessus/test/files/nessus*",
+                    help="path or pattern to a nessusV2 xml")
+args = parser.parse_args()
 
 url = {'plugin_name': "es"}
 backend = BackendPluginFactory.create(**url)
-listfiles = "../libnessus/test/files/nessus*"
+
+listfiles = args.filename
+print listfiles
 files = glob.glob(listfiles)
 
 idate = datetime.now().strftime('%Y.%m.%d')
@@ -25,7 +37,9 @@ print iindex
 for file in files:
     try:
         nessus_obj_list = NessusParser.parse_fromfile(file)
+        print "file imported successfully : %s" % file
     except:
+        print "file cannot be imported : %s" % file
         continue
     for i in nessus_obj_list.hosts:
         docu = {}
