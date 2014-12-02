@@ -12,6 +12,7 @@ from libnessus.plugins.backendpluginFactory import BackendPluginFactory
 
 import glob
 import argparse
+import logging
 
 from datetime import datetime
 
@@ -21,6 +22,9 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--filename',
                     default="../libnessus/test/files/nessus*",
                     help="path or pattern to a nessusV2 xml")
+parser.add_argument('--es_trace',
+                    default="/dev/null",
+                    help="elasticsearch tracefile location")
 args = parser.parse_args()
 
 url = {'plugin_name': "es"}
@@ -86,6 +90,11 @@ index_settings = {u'mappings': {u'vulnerability': {u'properties': {u'host-fqdn':
        u'type': u'date'},
       u'xref': {u'type': u'string'}}}}}}} 
 
+# get trace logger and set level
+tracer = logging.getLogger('elasticsearch.trace')
+tracer.setLevel(logging.ERROR)
+tracer.addHandler(logging.FileHandler(args.es_trace))
+
 listfiles = args.filename
 print listfiles
 files = glob.glob(listfiles)
@@ -93,14 +102,14 @@ files = glob.glob(listfiles)
 idate = datetime.now().strftime('%Y.%m.%d')
 iindex = "nessus-{date}".format(date=idate)
 backend.es.indices.create(index=iindex,
-                  body=index_settings
+                  body=index_settings,
+                  ignore=400
                   )
 print iindex
 
 for file in files:
     try:
         nessus_obj_list = NessusParser.parse_fromfile(file)
-        print "file imported successfully : %s" % file
     except:
         print "file cannot be imported : %s" % file
         continue
@@ -115,3 +124,4 @@ for file in files:
         for v in i.get_report_items:
             docu['vulninfo'] = v.get_vuln_info
             backend.es.index(index=iindex, doc_type="vulnerability", body=docu)
+    print "file imported successfully : %s" % file
