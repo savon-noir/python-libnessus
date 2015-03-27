@@ -169,7 +169,7 @@ class NessusReport(object):
                 host.ended, '%a %b %d %H:%M:%S %Y')
             list_date.append(date_object)
         list_date.sort()
-        return list_date[len(list_date)-1]
+        return list_date[len(list_date) - 1]
 
     @property
     def summary(self):
