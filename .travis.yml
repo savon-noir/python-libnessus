@@ -11,9 +11,10 @@ install:
 - pip install coveralls
 - pip install jsonpickle
 - pip install pymongo elasticsearch
+- pip freeze
 - python setup.py install
 before_script:
-- pep8 . --exclude test,docs,examples
+- pep8 . --exclude test,docs,examples,build
 - pyflakes libnessus/*.py
 script: nosetests --with-coverage --cover-package=libnessus
 after_success: coveralls
