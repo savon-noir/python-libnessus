@@ -96,7 +96,7 @@ tracer.setLevel(logging.ERROR)
 tracer.addHandler(logging.FileHandler(args.es_trace))
 
 listfiles = args.filename
-print listfiles
+print(listfiles)
 files = glob.glob(listfiles)
 
 idate = datetime.now().strftime('%Y.%m.%d')
@@ -105,13 +105,13 @@ backend.es.indices.create(index=iindex,
                   body=index_settings,
                   ignore=400
                   )
-print iindex
+print(iindex)
 
 for file in files:
     try:
         nessus_obj_list = NessusParser.parse_fromfile(file)
     except:
-        print "file cannot be imported : %s" % file
+        print("file cannot be imported : %s" % file)
         continue
     for i in nessus_obj_list.hosts:
         docu = {}
@@ -124,4 +124,4 @@ for file in files:
         for v in i.get_report_items:
             docu['vulninfo'] = v.get_vuln_info
             backend.es.index(index=iindex, doc_type="vulnerability", body=docu)
-    print "file imported successfully : %s" % file
+    print("file imported successfully : %s" % file)

@@ -41,7 +41,7 @@ class NessusMongodbPlugin(NessusBackendPlugin):
         try:
             oid = self.collection.insert(docu)
         except:
-            print "MONGODB cannot insert"
+            print("MONGODB cannot insert")
             raise
         return str(oid)
 
