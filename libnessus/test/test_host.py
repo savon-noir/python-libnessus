@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from libnessus.objects.reporthost import NessusReportHost
-from test_nessus import TestNessus
+from .test_nessus import TestNessus
 import copy
 
 

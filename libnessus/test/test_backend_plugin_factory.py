@@ -3,7 +3,7 @@
 
 import unittest
 import time
-from test_nessus import TestNessus
+from .test_nessus import TestNessus
 
 #from libnessus.parser import NessusParser
 from libnessus.plugins.backendplugin import NessusBackendPlugin

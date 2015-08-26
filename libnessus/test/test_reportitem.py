@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from test_nessus import TestNessus
+from .test_nessus import TestNessus
 from libnessus.objects.reportitem import NessusReportItem
 
 

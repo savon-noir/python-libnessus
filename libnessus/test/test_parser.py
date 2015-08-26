@@ -4,7 +4,7 @@ from libnessus.parser import NessusParser
 from libnessus.objects import NessusReport, NessusReportHost, NessusReportItem
 import xml.etree.ElementTree as ET
 
-from test_nessus import TestNessus
+from .test_nessus import TestNessus
 
 class TestParser(TestNessus):
     """Unit test of parser"""
