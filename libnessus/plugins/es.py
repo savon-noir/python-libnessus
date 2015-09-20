@@ -37,11 +37,12 @@ class NessusEsPlugin(NessusBackendPlugin):
             or None
         """
         j = jsonpickle.encode(report, unpicklable=False)
-        j2 = jsonpickle.encode(report)
-        docid = hash(report)
+        j2 = jsonpickle.encode(report).encode('utf-8')
+        b64 = base64.b64encode(j2).decode(encoding='UTF-8')
+        docid = hash(report.name)
         docu = {"hash": docid,
                 "json": j,
-                "json_base64": base64.b64encode(j2),
+                "json_base64": b64,
                 "date": datetime.datetime.utcnow(),
                 "name": report.name,
                 "endtime": report.endtime,
@@ -57,7 +58,7 @@ class NessusEsPlugin(NessusBackendPlugin):
         except:
             raise
 
-    def delete(self, id):
+    def delete(self, myid):
         """
             delete NessusReport if the backend
             :param id: str
@@ -66,7 +67,7 @@ class NessusEsPlugin(NessusBackendPlugin):
         rc = self.es.delete(
             index=self.index,
             doc_type=self.store,
-            id=id)
+            id=myid)
         return rc['found']
 
     def get(self, id):
@@ -105,7 +106,9 @@ class NessusEsPlugin(NessusBackendPlugin):
             for hit in rsearch['hits']['hits']:
                 srcdict = hit['_source']
                 b64 = srcdict['json_base64']
+                b64 = b64.encode('utf-8')
+                pickle = base64.b64decode(b64).decode('utf-8')
                 id = hit['_id']
-                nessusreport = jsonpickle.decode(base64.b64decode(b64))
+                nessusreport = jsonpickle.decode(pickle)
                 nessusreportlist.append((id, nessusreport))
         return nessusreportlist

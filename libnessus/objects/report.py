@@ -55,6 +55,7 @@ class NessusReport(object):
             return _id
         except:
             print("cannot insert in backend")
+            raise
 
     def iscomparable(self, other):
         '''

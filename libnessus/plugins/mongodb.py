@@ -32,7 +32,7 @@ class NessusMongodbPlugin(NessusBackendPlugin):
             :return: str id
         """
         j = jsonpickle.encode(report)
-        docu = {"hash": hash(report),
+        docu = {"hash": hash(report.name),
                 "json": j,
                 "date": datetime.datetime.utcnow(),
                 "name": report.name,
