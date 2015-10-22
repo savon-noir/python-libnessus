@@ -22,7 +22,7 @@ class NessusReportHost(object):
         else:
             raise Exception("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
-                            "Missing: ".format(" ".join(_missing_attr)))
+                            "Missing: {}".format(" ".join(_missing_attr)))
 
         self.__report_items = report_items
 
