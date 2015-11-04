@@ -2,8 +2,12 @@ from elasticsearch import Elasticsearch
 import jsonpickle
 import datetime
 import base64
+import sys
 
 from libnessus.plugins.backendplugin import NessusBackendPlugin
+
+# returns python version (3, 2 or 1)
+python_version = sys.version_info[0]
 
 
 class NessusEsPlugin(NessusBackendPlugin):
@@ -37,8 +41,14 @@ class NessusEsPlugin(NessusBackendPlugin):
             or None
         """
         j = jsonpickle.encode(report, unpicklable=False)
-        j2 = jsonpickle.encode(report).encode('utf-8')
-        b64 = base64.b64encode(j2).decode(encoding='UTF-8')
+        if python_version == 3:
+            # python3
+            j2 = jsonpickle.encode(report).encode('utf-8')
+            b64 = base64.b64encode(j2).decode(encoding='UTF-8')
+        else:
+            # python 2
+            j2 = jsonpickle.encode(report)
+            b64 = base64.b64encode(j2)
         docid = hash(report.name)
         docu = {"hash": docid,
                 "json": j,

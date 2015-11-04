@@ -67,9 +67,9 @@ class NessusReportHost(object):
             raise etyperr
         rdict = self.diff(other)
         res_pro = (
-            len(rdict["added"]) == 0
-            and len(rdict["removed"]) == 0
-            and len(rdict["changed"]) == 0
+            len(rdict["added"]) == 0 and
+            len(rdict["removed"]) == 0 and
+            len(rdict["changed"]) == 0
             )
         return res_pro
 

@@ -73,9 +73,9 @@ class NessusReportItem(object):
             raise etyperr
         diff = DictDiffer(self.get_vuln_info, other.get_vuln_info)
         return (
-            len(diff.added()) == 0
-            and len(diff.removed()) == 0
-            and len(diff.changed()) == 0
+            len(diff.added()) == 0 and
+            len(diff.removed()) == 0 and
+            len(diff.changed()) == 0
             )
 
     def __ne__(self, other):
