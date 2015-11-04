@@ -5,7 +5,7 @@ with open("README.rst") as rfile:
 
 setup(
     name='python-libnessus',
-    version='1.0.0.2',
+    version='1.0.0.3',
     author='Ronald Bister and Mike Boutillier',
     author_email='mini.pelle@gmail.com/michael.boutillier@gmail.com',
     packages=find_packages(exclude=["*.test"]),
