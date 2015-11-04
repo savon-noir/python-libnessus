@@ -2,7 +2,6 @@ language: python
 python:
 - '2.6'
 - '2.7'
-- '3.2'
 - '3.3'
 - '3.4'
 services:
@@ -19,7 +18,10 @@ install:
 before_script:
 - pep8 . --exclude test,docs,examples,build --ignore=W503,E123
 - pyflakes libnessus/*.py
+- sleep 10
 script: nosetests --with-coverage --cover-package=libnessus
+after_script:
+- curl -XDELETE localhost:9200/nessus_reports
 after_success: coveralls
 deploy:
   provider: pypi
