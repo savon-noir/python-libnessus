@@ -22,7 +22,7 @@ class NessusReportHost(object):
         else:
             raise Exception("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
-                            "Missing: ".format(" ".join(_missing_attr)))
+                            "Missing: {}".format(" ".join(_missing_attr)))
 
         self.__report_items = report_items
 
@@ -67,9 +67,9 @@ class NessusReportHost(object):
             raise etyperr
         rdict = self.diff(other)
         res_pro = (
-            len(rdict["added"]) == 0
-            and len(rdict["removed"]) == 0
-            and len(rdict["changed"]) == 0
+            len(rdict["added"]) == 0 and
+            len(rdict["removed"]) == 0 and
+            len(rdict["changed"]) == 0
             )
         return res_pro
 

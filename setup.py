@@ -5,7 +5,7 @@ with open("README.rst") as rfile:
 
 setup(
     name='python-libnessus',
-    version='1.0.0.0',
+    version='1.0.0.3',
     author='Ronald Bister and Mike Boutillier',
     author_email='mini.pelle@gmail.com/michael.boutillier@gmail.com',
     packages=find_packages(exclude=["*.test"]),
@@ -13,7 +13,7 @@ setup(
             'jsonpickle',
         ],
     url='https://github.com/bmx0r/python-libnessus',
-    download_url='https://github.com/bmx0r/python-libnessus/tarball/1.0.0.0',
+    download_url='https://github.com/bmx0r/python-libnessus/tarball/1.0.0.2',
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
     long_description=long_description,
@@ -21,5 +21,6 @@ setup(
                  "Environment :: Console",
                  "Programming Language :: Python :: 2.6",
                  "Programming Language :: Python :: 2.7",
+                 "Programming Language :: Python :: 3.3",
                  "Topic :: System :: Networking"]
 )

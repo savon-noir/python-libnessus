@@ -2,6 +2,8 @@ language: python
 python:
 - '2.6'
 - '2.7'
+- '3.3'
+- '3.4'
 services:
 - elasticsearch
 - mongodb
@@ -11,11 +13,15 @@ install:
 - pip install coveralls
 - pip install jsonpickle
 - pip install pymongo elasticsearch
+- pip freeze
 - python setup.py install
 before_script:
-- pep8 . --exclude test,docs,examples
+- pep8 . --exclude test,docs,examples,build --ignore=W503,E123
 - pyflakes libnessus/*.py
+- sleep 10
 script: nosetests --with-coverage --cover-package=libnessus
+after_script:
+- curl -XDELETE localhost:9200/nessus_reports
 after_success: coveralls
 deploy:
   provider: pypi

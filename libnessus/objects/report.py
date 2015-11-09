@@ -54,7 +54,8 @@ class NessusReport(object):
             _id = backend.insert(self)
             return _id
         except:
-            print "cannot insert in backend"
+            print("cannot insert in backend")
+            raise
 
     def iscomparable(self, other):
         '''
@@ -79,9 +80,9 @@ class NessusReport(object):
             self.iscomparable(other)
             rdict = self.diff(other)
             res_pro = (
-                len(rdict["added"]) == 0
-                and len(rdict["removed"]) == 0
-                and len(rdict["changed"]) == 0
+                len(rdict["added"]) == 0 and
+                len(rdict["removed"]) == 0 and
+                len(rdict["changed"]) == 0
                 )
             return res_pro
         except TypeError as etyperr:
@@ -169,7 +170,7 @@ class NessusReport(object):
                 host.ended, '%a %b %d %H:%M:%S %Y')
             list_date.append(date_object)
         list_date.sort()
-        return list_date[len(list_date)-1]
+        return list_date[len(list_date) - 1]
 
     @property
     def summary(self):

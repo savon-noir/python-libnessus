@@ -3,7 +3,7 @@ python-libnessus
 
 Code status
 -----------
-|Build Status| |Coverage Status|
+|Build Status| |Coverage Status| |Landscape Status|
 
 Still in dev...
 
@@ -117,5 +117,10 @@ Here's a basic example:
 
 .. |Coverage Status| image:: https://coveralls.io/repos/bmx0r/python-libnessus/badge.png?branch=master 
    :target: https://coveralls.io/r/bmx0r/python-libnessus?branch=master
+   
+.. |Landscape Status| image:: https://landscape.io/github/bmx0r/python-libnessus/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/bmx0r/python-libnessus/master
+   :alt: Code Health
+   
 
 

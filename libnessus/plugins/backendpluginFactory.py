@@ -28,6 +28,6 @@ class BackendPluginFactory(object):
                 if inspect.getmodule(classobj).__name__.find(plugin_path) == 0:
                     backendplugin = classobj(**kwargs)
         except Exception as error:
-            print "Cannot create Backend: %s" % (error)
+            print("Cannot create Backend: %s" % (error))
             raise error
         return backendplugin

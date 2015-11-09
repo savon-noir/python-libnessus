@@ -3,7 +3,7 @@
 
 import unittest
 import time
-from test_nessus import TestNessus
+from .test_nessus import TestNessus
 
 #from libnessus.parser import NessusParser
 from libnessus.plugins.backendplugin import NessusBackendPlugin
@@ -42,7 +42,7 @@ class TestNessusBackendPlugin(TestNessus):
             backend = BackendPluginFactory.create(**url)
             self.assertEqual(isinstance(backend, NessusBackendPlugin), True)
             className = "Nessus%sPlugin" % url['plugin_name'].title()
-            print "DEBUUUUUUUUG",className, backend.__class__.__name__
+            print("DEBUUUUUUUUG",className, backend.__class__.__name__)
             self.assertEqual(backend.__class__.__name__, className, True)
 
     def test_backend_factory_Exception(self):
@@ -105,8 +105,8 @@ class TestNessusBackendPlugin(TestNessus):
             #ES may have 1 second delay between put&get
             time.sleep(1)
             result_list = backend.getall()
-            print (len(result_list))
-            print len(self.reportList)
+            print(len(result_list))
+            print(len(self.reportList))
             self.assertTrue((len(result_list) > 0 ))
             id_list = []
             result_list = []

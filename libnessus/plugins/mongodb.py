@@ -32,7 +32,7 @@ class NessusMongodbPlugin(NessusBackendPlugin):
             :return: str id
         """
         j = jsonpickle.encode(report)
-        docu = {"hash": hash(report),
+        docu = {"hash": hash(report.name),
                 "json": j,
                 "date": datetime.datetime.utcnow(),
                 "name": report.name,
@@ -41,7 +41,7 @@ class NessusMongodbPlugin(NessusBackendPlugin):
         try:
             oid = self.collection.insert(docu)
         except:
-            print "MONGODB cannot insert"
+            print("MONGODB cannot insert")
             raise
         return str(oid)
 
