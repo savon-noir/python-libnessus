@@ -5,12 +5,22 @@ Code status
 -----------
 |Build Status| |Coverage Status| |Landscape Status|
 
-Still in dev...
+IMPORTANT NOTICE
+================
+
+Since I'm a bit lacking of time to maintain this code, I handed over the developpement and code maintenance to @bmx0r; who was anyway maintaining and improving it since almost the beginning :p
+
+Consequently, ensure to check his repository (https://github.com/bmx0r/python-libnessus/) and pull requests or clone from it.
+
+https://github.com/bmx0r/python-libnessus
+
+Thanks @bmx0r!
+
 
 About
 -----
 
-libnessue is a python library to manipulate nessus process and data.
+libnessus is a python library to manipulate nessus process and data.
 
 libnessus is what you were looking for if you need to implement the following:
 - manipulate nessus scans results to do reporting
