@@ -28,7 +28,7 @@ You might need jsonpickle,elasticsearch,pymongo if you want to use the backend p
 
 You can install libnmap via pip::
 
-    pip install libnessus
+    pip install python-libnessus
 
 or via git::
 
