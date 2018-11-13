@@ -32,7 +32,7 @@ class NessusParser(object):
         elif root.tag == 'NessusClientData_v2':
             nessusobj = cls._parse_xmlv2(root)
         else:
-            raise Exception("Unpexpected data structure for XML root node")
+            raise Exception("Unexpected data structure for XML root node")
         return nessusobj
 
     @classmethod
@@ -43,7 +43,7 @@ class NessusParser(object):
     def _parse_xmlv2(cls, root=None):
         """
             This private method will return 0 or one report
-            (as describe in nessus's doc)
+            (as described in the nessus documentation)
             :param root: a string representing a part or a complete nessus scan
             :return: NessusReport or None
         """
@@ -81,14 +81,13 @@ class NessusParser(object):
     @classmethod
     def parse_reportitem(cls, root=None):
         """
-        This function parse the xml and return an object ReportItem
-        This object stick as much as possible to the xml
+        This function parses the xml and returns a ReportItem object
+        This object contains everything from the Nessus XML
         see http://static.tenable.com/documentation/nessus_v2_file_format.pdf
         if an element can be represented more than once it will become a list
         """
         _vuln_data = {}
-        # add all attrib in the dict
-        _vuln_data.update(root.attrib)
+        # add all attrib in the dicts        _vuln_data.update(root.attrib)
         # parse each elem and add it to the dict
         # + create a list as value if needed
         for elt in root:
