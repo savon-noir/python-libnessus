@@ -8,8 +8,8 @@ services:
 - elasticsearch
 - mongodb
 install:
-- pip install pep8 --use-mirrors
-- pip install pyflakes --use-mirrors
+- pip install pep8
+- pip install pyflakes
 - pip install coveralls
 - pip install jsonpickle
 - pip install pymongo elasticsearch

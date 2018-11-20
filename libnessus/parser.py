@@ -87,7 +87,8 @@ class NessusParser(object):
         if an element can be represented more than once it will become a list
         """
         _vuln_data = {}
-        # add all attrib in the dicts        _vuln_data.update(root.attrib)
+        # add all attrib in the dicts
+        _vuln_data.update(root.attrib)
         # parse each elem and add it to the dict
         # + create a list as value if needed
         for elt in root:
