@@ -159,9 +159,9 @@ class TestVuln(TestNessus):
         self.assertRaises(TypeError, vuln.__ne__, 5)
 
     def test_iscomparable(self):
-        '''
+        """
         test_reportitem: test to throw TypeError in case of uncompatible obj
-        '''
+        """
         dictvuln = {
             'port': "23456",
             'svc_name': "general",
@@ -188,9 +188,9 @@ class TestVuln(TestNessus):
         self.assertRaises(Exception, NessusReportItem, dictvuln)
 
     def test_diff(self):
-        '''
+        """
          test the diff (should return dict of 4 keys)
-        '''
+        """
         for vuln in self.VulnList:
             value = vuln
             self.assertRaises(TypeError, value.diff, 5)

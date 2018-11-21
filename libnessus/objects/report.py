@@ -11,7 +11,7 @@ class NessusReport(object):
         in a easy way the content, and present some metadata
     """
     def __init__(self, name, hosts):
-        '''
+        """
         Description: Constructor of NessusReport
         :param name: name of the report
         :type name: str
@@ -19,18 +19,18 @@ class NessusReport(object):
         :type hosts: list
         :return: NessusReport
         :rtype: NessusReport
-        '''
+        """
         self.name = name
         self.__hosts = hosts
         self.__start = self.__compute_started(self.__hosts)
         self.__end = self.__compute_ended(self.__hosts)
 
     def __repr__(self):
-        '''
+        """
         Description: compute a string of the obj
         :return: description de la valeur de retour
         :rtype: str
-        '''
+        """
         return "{name} {total} {elapsed}".format(name=self.name,
                                                  total=self.hosts_total,
                                                  elapsed=self.elapsed)
@@ -43,13 +43,13 @@ class NessusReport(object):
         return self.__hosts
 
     def save(self, backend):
-        '''
+        """
         Description: allow to persist to a backend
         :param backend: libnessus.plugins.PluginBackend object.
         :type arg1: PluginBackend
         :return: The primary key of the stored object is returned.
         :rtype: str
-        '''
+        """
         try:
             _id = backend.insert(self)
             return _id
@@ -58,24 +58,24 @@ class NessusReport(object):
             raise
 
     def iscomparable(self, other):
-        '''
+        """
         description: check if two obj are comparable
         by checking the class name
         :param other: nessusreport
         :type other: nessusreport
         :raises: typeerror if not comparable
-        '''
+        """
         if not isinstance(other, self.__class__):
             raise TypeError(("non sense incompatibe object : ", self, other))
 
     def __eq__(self, other):
-        '''
+        """
         Description: compare obj as equal
         :param other: another report
         :type other: NessusReport
         :return: boolean
         :rtype: boolean
-        '''
+        """
         try:
             self.iscomparable(other)
             rdict = self.diff(other)
@@ -89,13 +89,13 @@ class NessusReport(object):
             raise etyperr
 
     def __ne__(self, other):
-        '''
+        """
         Description: compare obj as !=
         :param other: another report
         :type other: NessusReport
         :return: boolean
         :rtype: boolean
-        '''
+        """
         try:
             self.iscomparable(other)
             rdict = self.diff(other)
@@ -105,12 +105,12 @@ class NessusReport(object):
             raise etyperr
 
     def __get_dict(self):
-        '''
+        """
         Description: get a dict representation of the object
         Needed to transform the obj in a dict representation to use dictdiffer
         :return: dict representation of the object
         :rtype: dict
-        '''
+        """
         rdict = {}
         rdict['name'] = self.name
         hostitem = dict(
@@ -121,13 +121,13 @@ class NessusReport(object):
         return rdict
 
     def diff(self, other):
-        '''
+        """
         Description: diff object and provide the differences
         :param other: obj to compare to
         :type other: NessusReport
         :return: a dict of all the differences
         :rtype: dict
-        '''
+        """
         diff = DictDiffer(self.__get_dict(), other.__get_dict())
         rdict = {}
         rdict["removed"] = diff.removed()

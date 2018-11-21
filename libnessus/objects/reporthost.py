@@ -1,17 +1,19 @@
 #!/usr/bin/env python
-'''
+"""
 File: reporthost.py
 Author: Me
 Description:
-'''
+"""
 
 from libnessus.objects.dictdiffer import DictDiffer
+from libnessus.objects import reportlogger
 
+log = reportlogger.ReportLogger
 
 class NessusReportHost(object):
-    '''
+    """
     Description: Represent an object NessusReportHost in a nessus xml
-    '''
+    """
     def __init__(self, host_properties={}, report_items=[]):
         _minimal_attr = set(['HOST_START', 'HOST_END', 'host-ip', 'name'])
         self._hostprop_attr = set(host_properties.keys())
@@ -20,6 +22,8 @@ class NessusReportHost(object):
         if len(_missing_attr) == 0:
             self.__host_properties = host_properties
         else:
+            log.debug("Host Missing Attributes: ")
+            log.debug(host_properties)
             raise Exception("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
                             "Missing: {}".format(" ".join(_missing_attr)))
@@ -28,11 +32,7 @@ class NessusReportHost(object):
 
     def __repr__(self):
         """return a string representation of the obj nessusHost"""
-        retstr = "{0} {1} {2} {3}".format(self.name,
-                                          self.address,
-                                          self.get_host_properties,
-                                          self.get_total_vuln)
-        return retstr
+        return "{0} {1} {2} {3}".format(self.name, self.address, self.get_host_properties, self.get_total_vuln)
 
     def __hash__(self):
         """:return: hash function to be able to add object to dict/set
@@ -41,26 +41,26 @@ class NessusReportHost(object):
         return hash(self.address)
 
     def iscomparable(self, other):
-        '''
+        """
         Description: check if two obj are comparable
         by checking the class name and adress value are equal
         :param other: NessusReportHost
         :type other: NessusReportHost
         :raises: TypeError if not comparable
-        '''
+        """
         if not isinstance(other, self.__class__):
             raise TypeError(("Non sense incompatibe object : ", self, other))
         if self.address != other.address:
             raise TypeError(("Address need to be == : ", self, other))
 
     def __eq__(self, other):
-        '''
+        """
         Description: compare all properties and reportitem
         :param other: the object to compare
         :type other: NessusReportHost
         :return: true if equal
         :rtype: boolean
-        '''
+        """
         try:
             self.iscomparable(other)
         except TypeError as etyperr:
@@ -74,13 +74,13 @@ class NessusReportHost(object):
         return res_pro
 
     def __ne__(self, other):
-        '''
+        """
         Description:
         :param other: the object to compare
         :type other: NessusReportHost
         :return: true if equal
         :rtype: boolean
-        '''
+        """
         try:
             self.iscomparable(other)
         except TypeError as etyperr:
@@ -90,13 +90,13 @@ class NessusReportHost(object):
         return res_pro
 
     def __get_dict(self):
-        '''
+        """
         Description: get a dict representation of the object
         Needed because the object has 2 main component :
         a dict and a table of ReportItem
         :return: dict representation of the object
         :rtype: dict
-        '''
+        """
         rdict = self.get_host_properties.copy()
         # add reportitem in the dict in the form
         # key = {'NessusReportItem::10544': NessusReportItem,}
@@ -108,13 +108,13 @@ class NessusReportHost(object):
         return rdict
 
     def diff(self, other):
-        '''
+        """
         Description: compute a diff dict obj
         :param other: the object to compare
         :type other: NessusReportHost
         :return:
         :rtype: dict
-        '''
+        """
         diff = DictDiffer(self.__get_dict(), other.__get_dict())
         rdict = {}
         rdict["removed"] = diff.removed()
@@ -152,7 +152,7 @@ class NessusReportHost(object):
 
     @property
     def get_hostprop_attr(self):
-        """Return a set of keys reprsenting all properties' key
+        """Return a set of keys representing all properties' key
            :return: set
         """
         return self._hostprop_attr

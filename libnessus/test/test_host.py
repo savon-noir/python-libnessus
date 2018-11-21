@@ -154,9 +154,9 @@ class TestHost(TestNessus):
                 i = i + 1
 
     def test_iscomparable(self):
-        '''
+        """
         test_host: test to throw TypeError in case of uncompatible obj
-        '''
+        """
         dictHost = {
             'host-ip': "255.255.255.255",
             'name': "wakawakawaka",
@@ -172,11 +172,11 @@ class TestHost(TestNessus):
         self.assertRaises(TypeError, value.iscomparable, 5)
 
     def test_eq(self):
-        '''
+        """
         test_host : test equality
         retrieve self.forgedHost and play with it
         no need to test with other ip since allready tested in iscomparable
-        '''
+        """
         h1 = self.forgedHost
         h2 = copy.deepcopy(h1)
         # after copy should be equal
@@ -188,11 +188,11 @@ class TestHost(TestNessus):
         self.assertRaises(TypeError, h1.__eq__, 5)
 
     def test_ne(self):
-        '''
+        """
         test_host : test not equal
         retrieve self.forgedHost and play with it
         no need to test with other ip since already tested in iscomparable
-        '''
+        """
         h1 = self.forgedHost
         h2 = copy.deepcopy(h1)
         # after copy should be equal

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-'''
+"""
 File: vuln.py
 Description:
-'''
+"""
 from libnessus import exceptions
 from libnessus.objects.dictdiffer import DictDiffer
 
@@ -49,13 +49,13 @@ class NessusReportItem(object):
         return hash(self.plugin_id)
 
     def iscomparable(self, other):
-        '''
+        """
         Description: check if two obj are comparable
         by checking the class name and plugin_id value are equal
         :param other: NessusReportItem
         :type other: NessusReportItem
         :raises: TypeError if not comparable
-        '''
+        """
         if not isinstance(other, self.__class__):
             raise TypeError(("Non sense incompatibe object : ", self, other))
         if self.plugin_id != other.plugin_id:
@@ -95,7 +95,7 @@ class NessusReportItem(object):
             )
 
     def diff(self, other):
-        '''
+        """
         Description: Compare two NessusReportItem
         :param other: NessusReportItem
         :type other: NessusReportItem
@@ -104,7 +104,7 @@ class NessusReportItem(object):
         get_vuln_info property that have changed
         :rtype: dict
         :raises: TypeError
-        '''
+        """
         try:
             self.iscomparable(other)
         except TypeError as etyperr:
