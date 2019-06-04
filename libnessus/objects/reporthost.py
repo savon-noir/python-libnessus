@@ -7,6 +7,7 @@ Description:
 
 from libnessus.objects.dictdiffer import DictDiffer
 from libnessus.objects import reportlogger
+from libnessus import exceptions as NessusExceptions
 
 log = reportlogger.ReportLogger
 
@@ -24,7 +25,7 @@ class NessusReportHost(object):
         else:
             log.debug("Host Missing Attributes: ")
             log.debug(host_properties)
-            raise Exception("Not all the attributes to create a decent "
+            raise NessusExceptions.MissingAttribute("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
                             "Missing: {}".format(" ".join(_missing_attr)))
 

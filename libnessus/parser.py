@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import xml.etree.ElementTree as ET
-from libnessus.exceptions import *
+from libnessus import exceptions as NessusExceptions
 from libnessus.objects import NessusReportHost, NessusReportItem, NessusReport
 from libnessus.objects import reportlogger
 
@@ -85,7 +85,7 @@ class NessusParser(object):
         for report_item in root.findall("ReportItem"):
             try:
                 _new_item = cls.parse_reportitem(report_item)
-            except MissingAttribute:
+            except NessusExceptions.MissingAttribute:
                 if strict:
                     log.error("Strict parsing enforced: Invalid report item encountered!")
                     raise
