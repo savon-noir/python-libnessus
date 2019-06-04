@@ -16,7 +16,6 @@ install:
 - pip freeze
 - python setup.py install
 before_script:
-- pep8 . --exclude test,docs,examples,build --ignore=W503,E123
 - pyflakes libnessus/*.py
 - sleep 10
 script: nosetests --with-coverage --cover-package=libnessus
