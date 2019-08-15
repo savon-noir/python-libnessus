@@ -26,7 +26,7 @@ deploy:
   provider: pypi
   user: Michael.Boutillier
   password:
-    secure: JEF0cfTS2uJyN4RhldEJ5fRClhVcCpKSCdg1yTWMIHS6HOuStVyZv/fojAWUP1T95P0JxK1Kfkxwzf7WWaBEHGPlnmjTPa7Db2HuSNq/U68MJ9zIFnbpdqZOEMiiAg67avBJaOAKZSsbcSWJbKYOLT8rCJHlGsd5Djoq9zlugAA=
+    secure: E0FJoWLB1z4T0gNSWPsnIolwbnj1DOEKonVjHAtwS2KC12LC3UNTALWlITAHdB9ZNulvoJ1UjzPcUFQI+5DIU8oq/Y9PtptiHQEJ0iHlxHkwz2Ki06GWUSXPkyTvgptpb0le5GBi9nXkxGsJDPr0x96Shib+oUKfhKRhraeaNUM=
   on:
     tags: true
     repo: bmx0r/python-libnessus
