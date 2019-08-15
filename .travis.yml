@@ -24,7 +24,7 @@ after_script:
 after_success: coveralls
 deploy:
   provider: pypi
-  user: Michael.Boutillier
+  user: michael.boutillier
   password:
     secure: GzFRAdLGSG0SYHzwSY/G1G3j+MqLLXineFEvMZYtlDfhRnGfFr9WdOiK/2NbGz0Uj6pF1iPj1ojZdKyn0INOuOyjICGQDzZCVky5gonCl8ZmulUqn1dwHGkNw5zlzfrrAz2ojjFmpE2W34j5NAUrEdfyLR9+nmtrpexAhLHRhbs=
   on:
