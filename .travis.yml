@@ -1,22 +1,21 @@
 language: python
 python:
-- '2.6'
 - '2.7'
-- '3.3'
 - '3.4'
+- '3.5'
+- '3.6'
 services:
 - elasticsearch
 - mongodb
 install:
-- pip install pep8 --use-mirrors
-- pip install pyflakes --use-mirrors
+- pip install pep8
+- pip install pyflakes
 - pip install coveralls
 - pip install jsonpickle
 - pip install pymongo elasticsearch
 - pip freeze
 - python setup.py install
 before_script:
-- pep8 . --exclude test,docs,examples,build --ignore=W503,E123
 - pyflakes libnessus/*.py
 - sleep 10
 script: nosetests --with-coverage --cover-package=libnessus

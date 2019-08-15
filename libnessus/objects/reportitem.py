@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-'''
+"""
 File: vuln.py
 Description:
-'''
-
+"""
+from libnessus import exceptions
 from libnessus.objects.dictdiffer import DictDiffer
 
 
@@ -28,7 +28,7 @@ class NessusReportItem(object):
         if len(_missing_attr) == 0:
             self.__vuln_info = vuln_info
         else:
-            raise Exception("Not all the attributes to create a decent "
+            raise exceptions.MissingAttribute("Not all the attributes to create a decent "
                             "NessusVuln object are available. "
                             "Missing: ", _missing_attr)
 
@@ -49,13 +49,13 @@ class NessusReportItem(object):
         return hash(self.plugin_id)
 
     def iscomparable(self, other):
-        '''
+        """
         Description: check if two obj are comparable
         by checking the class name and plugin_id value are equal
         :param other: NessusReportItem
         :type other: NessusReportItem
         :raises: TypeError if not comparable
-        '''
+        """
         if not isinstance(other, self.__class__):
             raise TypeError(("Non sense incompatibe object : ", self, other))
         if self.plugin_id != other.plugin_id:
@@ -95,7 +95,7 @@ class NessusReportItem(object):
             )
 
     def diff(self, other):
-        '''
+        """
         Description: Compare two NessusReportItem
         :param other: NessusReportItem
         :type other: NessusReportItem
@@ -104,7 +104,7 @@ class NessusReportItem(object):
         get_vuln_info property that have changed
         :rtype: dict
         :raises: TypeError
-        '''
+        """
         try:
             self.iscomparable(other)
         except TypeError as etyperr:
@@ -173,6 +173,17 @@ class NessusReportItem(object):
         except:
             plugin_name = self.__vuln_info['pluginName']
         return plugin_name
+
+    @property
+    def cve(self):
+        """
+        Get CVE or return empty string
+        :return str
+        """
+        for (k, v) in self.__vuln_info.items():
+            if k == 'cve':
+                return str(v)
+        return ''
 
     @property
     def plugin_family(self):
@@ -255,7 +266,7 @@ class NessusReportItem(object):
     @property
     def solution(self):
         """
-        Get the sulution provide by nessus
+        Get the solution provide by nessus
         :return str
         """
         return self.__vuln_info['solution']

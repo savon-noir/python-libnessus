@@ -6,10 +6,10 @@ from libnessus.parser import NessusParser
 
 
 class TestNessus(unittest.TestCase):
-    '''TestNEssus class only contains the setUp functions all test class will
-       inherit from this one'''
+    """TestNEssus class only contains the setUp functions all test class will
+       inherit from this one"""
     def setUp(self):
-        '''setup a table of report based on the files in flist '''
+        """setup a table of report based on the files in flist """
         self.fdir = os.path.dirname(os.path.realpath(__file__))
         self.flist = [
             {'file': "%s/%s" % (self.fdir, 'files/nessus_report_local2.nessus'),
