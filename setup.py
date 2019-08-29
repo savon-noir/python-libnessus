@@ -1,7 +1,17 @@
+import os
 from setuptools import setup, find_packages
 
-with open("README.md") as rfile:
-    long_description = rfile.read()
+if os.path.isfile('README.md'):
+    with open("README.md") as rfile:
+        long_decription = rfile.read()
+        long_description_content_type = 'text/markdown'
+elif os.path.isfile('README.rst'):
+    with open("README.rst") as rfile:
+        long_description = rfile.read()
+        long_description_content_type = 'text/x-rst'
+else:
+    long_description = ''
+    long_description_content_type = 'text/markdown'
 
 setup(
     name='python-libnessus',
@@ -16,7 +26,7 @@ setup(
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type=long_description_content_type,
     classifiers=["Development Status :: 4 - Beta",
                  "Environment :: Console",
                  "Programming Language :: Python :: 2.7",
