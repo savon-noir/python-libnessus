@@ -14,14 +14,14 @@ with open("README.md") as rfile:
 
 setup(
     name='python-libnessus',
-    version='1.0.0.9',
+    version='1.0.0.10',
     author='Ronald Bister and Mike Boutillier',
     author_email='michael.boutillier@gmail.com',
     packages=find_packages(exclude=["*.test"]),
     install_requires=[
             'jsonpickle', ],
     url='https://github.com/bmx0r/python-libnessus',
-    download_url='https://github.com/bmx0r/python-libnessus/tarball/1.0.0.9',
+    download_url='https://github.com/bmx0r/python-libnessus/tarball/1.0.0.10',
     license='Creative Common "Attribution" license (CC-BY) v3',
     description=('Python Nessus module to parse, chat with XMLRPC API, ...'),
     long_description=long_decription,
