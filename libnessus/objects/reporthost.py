@@ -9,7 +9,7 @@ from libnessus.objects.dictdiffer import DictDiffer
 from libnessus.objects import reportlogger
 from libnessus import exceptions as NessusExceptions
 
-log = reportlogger.ReportLogger
+log = reportlogger.ReportLogger('HOST PARSER')
 
 class NessusReportHost(object):
     """
@@ -23,8 +23,7 @@ class NessusReportHost(object):
         if len(_missing_attr) == 0:
             self.__host_properties = host_properties
         else:
-            log.debug("Host Missing Attributes: ")
-            log.debug(host_properties)
+            log.debug('Missing Attributes: ' + ' '.join(host_properties))
             raise NessusExceptions.MissingAttribute("Not all the attributes to create a decent "
                             "NessusReportHost are available. "
                             "Missing: {}".format(" ".join(_missing_attr)))
