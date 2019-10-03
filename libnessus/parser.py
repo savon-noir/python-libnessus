@@ -62,9 +62,13 @@ class NessusParser(object):
         for nessus_report in root.findall("Report"):
             nessus_hosts = []
             for nessus_host in nessus_report.findall("ReportHost"):
-                _nhost = cls.parse_host(nessus_host, strict)
-                nessus_hosts.append(_nhost)
-
+                try:
+                    _nhost = cls.parse_host(nessus_host, strict)
+                    nessus_hosts.append(_nhost)
+                except NessusExceptions.MissingAttribute:
+                    if strict:
+                        raise
+                    continue
             if 'name' in nessus_report.attrib:
                 report_name = nessus_report.attrib['name']
             else:
@@ -73,6 +77,7 @@ class NessusParser(object):
             nrp = NessusReport(name=report_name, hosts=nessus_hosts)
 
         return nrp
+
 
     @classmethod
     def parse_host(cls, root=None, strict=False):
