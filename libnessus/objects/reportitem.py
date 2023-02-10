@@ -206,7 +206,7 @@ class NessusReportItem(object):
         """
         Get a dict of the risk
         should return a dict with key of the internal dict that match patterns:
-        'risk_factor' or 'cvss_*'
+        'risk_factor' or 'cvss_*' if CVSS2 or 'cvss3_*' if CVSS3
         :return dict
         """
         # syntax allowed from 2.7>= or 3 damnit!
@@ -214,7 +214,7 @@ class NessusReportItem(object):
         # or k.startswith("risk_factor")}
         risk = dict(
             (k, v) for (k, v) in self.__vuln_info.items()
-            if k.startswith("cvss_") or k.startswith("risk_factor")
+            if k.startswith("cvss_") or k.startswith("cvss3_") or k.startswith("risk_factor")
             )
         return risk
 
@@ -269,4 +269,4 @@ class NessusReportItem(object):
         Get the solution provide by nessus
         :return str
         """
-        return self.__vuln_info['solution']
+        return self.__vuln_info.get('solution', "")
