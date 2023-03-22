@@ -28,9 +28,9 @@ class TestNessusReport(TestNessus):
         """
 
     def test_iscomparable(self):
-        '''
+        """
         test_iscomparable test to throm typeError if not the same type
-        '''
+        """
         value = self.forgedreport
         # test different type
         self.assertRaises(TypeError, value.iscomparable, 5)

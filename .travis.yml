@@ -1,22 +1,21 @@
 language: python
 python:
-- '2.6'
 - '2.7'
-- '3.3'
 - '3.4'
+- '3.5'
+- '3.6'
 services:
 - elasticsearch
 - mongodb
 install:
-- pip install pep8 --use-mirrors
-- pip install pyflakes --use-mirrors
+- pip install pep8
+- pip install pyflakes
 - pip install coveralls
 - pip install jsonpickle
 - pip install pymongo elasticsearch
 - pip freeze
 - python setup.py install
 before_script:
-- pep8 . --exclude test,docs,examples,build --ignore=W503,E123
 - pyflakes libnessus/*.py
 - sleep 10
 script: nosetests --with-coverage --cover-package=libnessus
@@ -25,9 +24,9 @@ after_script:
 after_success: coveralls
 deploy:
   provider: pypi
-  user: Michael.Boutillier
+  user: michael.boutillier
   password:
-    secure: HqRFlOIZPM4GwfqetCHRIwFCorYqKN5qhk/Gfk6s17oEUz2xvuKUJ3W+TQMJzyGe57idc0U1ZQfmI2g2lcCEAvYx/CPEo9pFC1XOVfXZWbkvmnNYDUgtcDYnLNTOQ4d8JR14WK/muTjVgU2y8Pyo/+/5t7DqiLopFLikyKcNab8=
+    secure: GzFRAdLGSG0SYHzwSY/G1G3j+MqLLXineFEvMZYtlDfhRnGfFr9WdOiK/2NbGz0Uj6pF1iPj1ojZdKyn0INOuOyjICGQDzZCVky5gonCl8ZmulUqn1dwHGkNw5zlzfrrAz2ojjFmpE2W34j5NAUrEdfyLR9+nmtrpexAhLHRhbs=
   on:
     tags: true
     repo: bmx0r/python-libnessus
